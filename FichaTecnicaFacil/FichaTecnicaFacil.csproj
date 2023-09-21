@@ -103,6 +103,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FrmFichaTecnica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmFichaTecnica.Designer.cs">
+      <DependentUpon>FrmFichaTecnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\subviews\FrmIngrediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\subviews\FrmIngrediente.Designer.cs">
+      <DependentUpon>FrmIngrediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\subviews\FrmReceitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\subviews\FrmReceitas.Designer.cs">
+      <DependentUpon>FrmReceitas.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +134,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\FrmFichaTecnica.resx">
+      <DependentUpon>FrmFichaTecnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\subviews\FrmIngrediente.resx">
+      <DependentUpon>FrmIngrediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\subviews\FrmReceitas.resx">
+      <DependentUpon>FrmReceitas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -133,7 +160,15 @@
   <ItemGroup>
     <Folder Include="Controller\" />
     <Folder Include="Entidades\" />
-    <Folder Include="Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CAIXA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FICHA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MODULO LOJA.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />
