@@ -73,9 +73,39 @@ namespace FichaTecnicaFacil.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fecharJanela32px {
+            get {
+                object obj = ResourceManager.GetObject("fecharJanela32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FICHA {
             get {
                 object obj = ResourceManager.GetObject("FICHA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap maxmize32px {
+            get {
+                object obj = ResourceManager.GetObject("maxmize32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimize32p {
+            get {
+                object obj = ResourceManager.GetObject("minimize32p", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

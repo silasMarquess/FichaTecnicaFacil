@@ -121,8 +121,17 @@
   <data name="CAIXA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CAIXA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fecharJanela32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fecharJanela32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FICHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FICHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="maxmize32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\maxmize32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="minimize32p" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimize32p.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="MODULO_LOJA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MODULO LOJA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

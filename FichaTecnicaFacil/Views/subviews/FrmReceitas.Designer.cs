@@ -149,7 +149,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.771F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.22901F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 422F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 424F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -164,10 +164,10 @@ namespace FichaTecnicaFacil.Views.subviews
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(423, 1);
+            this.button2.Location = new System.Drawing.Point(422, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(181, 35);
+            this.button2.Size = new System.Drawing.Size(180, 35);
             this.button2.TabIndex = 0;
             this.button2.Text = "Salvar Ficha";
             this.button2.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@ namespace FichaTecnicaFacil.Views.subviews
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(606, 1);
+            this.button3.Location = new System.Drawing.Point(604, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 35);
@@ -696,7 +696,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 137F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 146F));
-            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 123F));
+            this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
             this.tableLayoutPanel16.Controls.Add(this.textBox11, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.textBox10, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.textBox9, 0, 0);
@@ -718,7 +718,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.textBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox11.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox11.Location = new System.Drawing.Point(612, 3);
+            this.textBox11.Location = new System.Drawing.Point(610, 3);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(170, 30);
             this.textBox11.TabIndex = 7;
@@ -731,7 +731,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.textBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox10.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox10.Location = new System.Drawing.Point(788, 3);
+            this.textBox10.Location = new System.Drawing.Point(786, 3);
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(131, 30);
             this.textBox10.TabIndex = 6;
@@ -744,7 +744,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.textBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox9.Location = new System.Drawing.Point(925, 3);
+            this.textBox9.Location = new System.Drawing.Point(923, 3);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(140, 30);
             this.textBox9.TabIndex = 5;
@@ -759,7 +759,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.textBox8.ForeColor = System.Drawing.Color.RoyalBlue;
             this.textBox8.Location = new System.Drawing.Point(3, 3);
             this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(303, 29);
+            this.textBox8.Size = new System.Drawing.Size(302, 29);
             this.textBox8.TabIndex = 4;
             this.textBox8.Text = "informe nome";
             this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -770,9 +770,9 @@ namespace FichaTecnicaFacil.Views.subviews
             this.textBox7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox7.Location = new System.Drawing.Point(312, 3);
+            this.textBox7.Location = new System.Drawing.Point(311, 3);
             this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(93, 30);
+            this.textBox7.Size = new System.Drawing.Size(92, 30);
             this.textBox7.TabIndex = 3;
             this.textBox7.Text = "-";
             this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -783,7 +783,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.textBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox6.Location = new System.Drawing.Point(411, 3);
+            this.textBox6.Location = new System.Drawing.Point(409, 3);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(195, 30);
             this.textBox6.TabIndex = 2;

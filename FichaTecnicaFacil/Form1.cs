@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FichaTecnicaFacil.Controler;
 
 namespace FichaTecnicaFacil
 {
     public partial class Form1 : Form
     {
+        private Form1Controler _control;
         public Form1()
         {
             InitializeComponent();
+            _control = new Form1Controler(this);
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            _control.OpenFormFichaTecnica();
         }
     }
 }

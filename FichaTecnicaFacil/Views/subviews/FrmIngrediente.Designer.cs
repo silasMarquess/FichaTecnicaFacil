@@ -29,9 +29,9 @@ namespace FichaTecnicaFacil.Views.subviews
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_ListaProdutos = new System.Windows.Forms.DataGridView();
             this.Ingrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.preco_embalagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.conteudo_embalagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,22 +39,22 @@ namespace FichaTecnicaFacil.Views.subviews
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_ConteudoEmbalagem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_SalvarProduto = new System.Windows.Forms.Button();
+            this.Cb_UN = new System.Windows.Forms.ComboBox();
+            this.txt_PrecoEmbalagem = new System.Windows.Forms.TextBox();
+            this.txt_decricao = new System.Windows.Forms.TextBox();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_NumProdutosCadastrados = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@ namespace FichaTecnicaFacil.Views.subviews
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.21239F));
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.dgv_ListaProdutos, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -77,34 +77,34 @@ namespace FichaTecnicaFacil.Views.subviews
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // dataGridView1
+            // dgv_ListaProdutos
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_ListaProdutos.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_ListaProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_ListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ingrediente,
             this.preco_embalagem,
             this.conteudo_embalagem,
             this.un,
             this.delete,
             this.editar});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 97);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1160, 557);
-            this.dataGridView1.TabIndex = 2;
+            this.dgv_ListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ListaProdutos.Location = new System.Drawing.Point(0, 97);
+            this.dgv_ListaProdutos.Margin = new System.Windows.Forms.Padding(0);
+            this.dgv_ListaProdutos.Name = "dgv_ListaProdutos";
+            this.dgv_ListaProdutos.RowHeadersVisible = false;
+            this.dgv_ListaProdutos.Size = new System.Drawing.Size(1160, 557);
+            this.dgv_ListaProdutos.TabIndex = 2;
             // 
             // Ingrediente
             // 
@@ -152,13 +152,13 @@ namespace FichaTecnicaFacil.Views.subviews
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txt_ConteudoEmbalagem);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.btn_SalvarProduto);
+            this.groupBox1.Controls.Add(this.Cb_UN);
+            this.groupBox1.Controls.Add(this.txt_PrecoEmbalagem);
+            this.groupBox1.Controls.Add(this.txt_decricao);
+            this.groupBox1.Controls.Add(this.txt_id);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -172,48 +172,48 @@ namespace FichaTecnicaFacil.Views.subviews
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "PRODUTOS DE USO (INGREDIENTES)";
             // 
-            // textBox4
+            // txt_ConteudoEmbalagem
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Yellow;
-            this.textBox4.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.Red;
-            this.textBox4.Location = new System.Drawing.Point(786, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(162, 29);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.Text = "-";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ConteudoEmbalagem.BackColor = System.Drawing.Color.Yellow;
+            this.txt_ConteudoEmbalagem.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ConteudoEmbalagem.ForeColor = System.Drawing.Color.Red;
+            this.txt_ConteudoEmbalagem.Location = new System.Drawing.Point(766, 49);
+            this.txt_ConteudoEmbalagem.Name = "txt_ConteudoEmbalagem";
+            this.txt_ConteudoEmbalagem.Size = new System.Drawing.Size(162, 29);
+            this.txt_ConteudoEmbalagem.TabIndex = 10;
+            this.txt_ConteudoEmbalagem.Text = "-";
+            this.txt_ConteudoEmbalagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(783, 31);
+            this.label5.Location = new System.Drawing.Point(763, 31);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 17);
             this.label5.TabIndex = 9;
             this.label5.Text = "Conteúdo/Embalagem:";
             // 
-            // button1
+            // btn_SalvarProduto
             // 
-            this.button1.BackColor = System.Drawing.Color.Cornsilk;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::FichaTecnicaFacil.Properties.Resources.salvar2;
-            this.button1.Location = new System.Drawing.Point(969, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 56);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "SALVAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_SalvarProduto.BackColor = System.Drawing.Color.Cornsilk;
+            this.btn_SalvarProduto.FlatAppearance.BorderSize = 0;
+            this.btn_SalvarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_SalvarProduto.Image = global::FichaTecnicaFacil.Properties.Resources.salvar2;
+            this.btn_SalvarProduto.Location = new System.Drawing.Point(969, 23);
+            this.btn_SalvarProduto.Name = "btn_SalvarProduto";
+            this.btn_SalvarProduto.Size = new System.Drawing.Size(135, 56);
+            this.btn_SalvarProduto.TabIndex = 8;
+            this.btn_SalvarProduto.Text = "SALVAR";
+            this.btn_SalvarProduto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_SalvarProduto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_SalvarProduto.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // Cb_UN
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.Yellow;
-            this.comboBox1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.Cb_UN.BackColor = System.Drawing.Color.Yellow;
+            this.Cb_UN.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_UN.FormattingEnabled = true;
+            this.Cb_UN.Items.AddRange(new object[] {
             "UN",
             "CT",
             "CX",
@@ -228,57 +228,57 @@ namespace FichaTecnicaFacil.Views.subviews
             "cm",
             "",
             ""});
-            this.comboBox1.Location = new System.Drawing.Point(659, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 30);
-            this.comboBox1.TabIndex = 7;
+            this.Cb_UN.Location = new System.Drawing.Point(659, 49);
+            this.Cb_UN.Name = "Cb_UN";
+            this.Cb_UN.Size = new System.Drawing.Size(101, 30);
+            this.Cb_UN.TabIndex = 7;
             // 
-            // textBox3
+            // txt_PrecoEmbalagem
             // 
-            this.textBox3.BackColor = System.Drawing.Color.Yellow;
-            this.textBox3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.Red;
-            this.textBox3.Location = new System.Drawing.Point(500, 50);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(153, 29);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "R$ 0,00";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_PrecoEmbalagem.BackColor = System.Drawing.Color.Yellow;
+            this.txt_PrecoEmbalagem.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PrecoEmbalagem.ForeColor = System.Drawing.Color.Red;
+            this.txt_PrecoEmbalagem.Location = new System.Drawing.Point(500, 50);
+            this.txt_PrecoEmbalagem.Name = "txt_PrecoEmbalagem";
+            this.txt_PrecoEmbalagem.Size = new System.Drawing.Size(153, 29);
+            this.txt_PrecoEmbalagem.TabIndex = 6;
+            this.txt_PrecoEmbalagem.Text = "R$ 0,00";
+            this.txt_PrecoEmbalagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txt_decricao
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Yellow;
-            this.textBox2.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(91, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(403, 29);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "-";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_decricao.BackColor = System.Drawing.Color.Yellow;
+            this.txt_decricao.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_decricao.Location = new System.Drawing.Point(91, 50);
+            this.txt_decricao.Name = "txt_decricao";
+            this.txt_decricao.Size = new System.Drawing.Size(403, 29);
+            this.txt_decricao.TabIndex = 5;
+            this.txt_decricao.Text = "-";
+            this.txt_decricao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // txt_id
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox1.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(73, 29);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_id.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txt_id.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Location = new System.Drawing.Point(12, 50);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(73, 29);
+            this.txt_id.TabIndex = 4;
+            this.txt_id.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(656, 30);
+            this.label4.Location = new System.Drawing.Point(656, 31);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 17);
+            this.label4.Size = new System.Drawing.Size(104, 17);
             this.label4.TabIndex = 3;
-            this.label4.Text = "UN";
+            this.label4.Text = "UN (medida):";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(492, 30);
+            this.label3.Location = new System.Drawing.Point(492, 31);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 17);
             this.label3.TabIndex = 2;
@@ -287,7 +287,7 @@ namespace FichaTecnicaFacil.Views.subviews
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(88, 30);
+            this.label2.Location = new System.Drawing.Point(88, 31);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(261, 17);
             this.label2.TabIndex = 1;
@@ -305,7 +305,7 @@ namespace FichaTecnicaFacil.Views.subviews
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGreen;
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.txt_NumProdutosCadastrados);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 657);
@@ -313,14 +313,14 @@ namespace FichaTecnicaFacil.Views.subviews
             this.panel1.Size = new System.Drawing.Size(1154, 44);
             this.panel1.TabIndex = 1;
             // 
-            // textBox5
+            // txt_NumProdutosCadastrados
             // 
-            this.textBox5.BackColor = System.Drawing.Color.Yellow;
-            this.textBox5.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(262, 8);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 29);
-            this.textBox5.TabIndex = 6;
+            this.txt_NumProdutosCadastrados.BackColor = System.Drawing.Color.Yellow;
+            this.txt_NumProdutosCadastrados.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NumProdutosCadastrados.Location = new System.Drawing.Point(262, 8);
+            this.txt_NumProdutosCadastrados.Name = "txt_NumProdutosCadastrados";
+            this.txt_NumProdutosCadastrados.Size = new System.Drawing.Size(120, 29);
+            this.txt_NumProdutosCadastrados.TabIndex = 6;
             // 
             // label6
             // 
@@ -342,7 +342,7 @@ namespace FichaTecnicaFacil.Views.subviews
             this.Name = "FrmIngrediente";
             this.Text = "PRODUTOS";
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -355,26 +355,26 @@ namespace FichaTecnicaFacil.Views.subviews
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ingrediente;
         private System.Windows.Forms.DataGridViewTextBoxColumn preco_embalagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn conteudo_embalagem;
         private System.Windows.Forms.DataGridViewTextBoxColumn un;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
         private System.Windows.Forms.DataGridViewButtonColumn editar;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.TextBox txt_decricao;
+        public System.Windows.Forms.TextBox txt_id;
+        public System.Windows.Forms.TextBox txt_PrecoEmbalagem;
+        public System.Windows.Forms.ComboBox Cb_UN;
+        public System.Windows.Forms.TextBox txt_ConteudoEmbalagem;
+        public System.Windows.Forms.Button btn_SalvarProduto;
+        public System.Windows.Forms.DataGridView dgv_ListaProdutos;
+        public System.Windows.Forms.TextBox txt_NumProdutosCadastrados;
     }
 }

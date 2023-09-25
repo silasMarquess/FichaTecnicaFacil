@@ -31,9 +31,9 @@ namespace FichaTecnicaFacil
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -44,7 +44,7 @@ namespace FichaTecnicaFacil
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.09223F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.90777F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 172F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 173F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -71,8 +71,35 @@ namespace FichaTecnicaFacil
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(585, 155);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(584, 155);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Image = global::FichaTecnicaFacil.Properties.Resources.CAIXA;
+            this.button3.Location = new System.Drawing.Point(391, 3);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(190, 149);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "CONTROLE DE CAIXA";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::FichaTecnicaFacil.Properties.Resources.FICHA;
+            this.button2.Location = new System.Drawing.Point(197, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(188, 149);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "FICHA TÉCNICA";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -87,32 +114,6 @@ namespace FichaTecnicaFacil
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::FichaTecnicaFacil.Properties.Resources.FICHA;
-            this.button2.Location = new System.Drawing.Point(197, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 149);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "FICHA TÉCNICA";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::FichaTecnicaFacil.Properties.Resources.CAIXA;
-            this.button3.Location = new System.Drawing.Point(391, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(191, 149);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "CONTROLE DE CAIXA";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -120,7 +121,7 @@ namespace FichaTecnicaFacil
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(211, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(585, 172);
+            this.label1.Size = new System.Drawing.Size(584, 172);
             this.label1.TabIndex = 1;
             this.label1.Text = "FICHA TÉCNICA FACIL";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
