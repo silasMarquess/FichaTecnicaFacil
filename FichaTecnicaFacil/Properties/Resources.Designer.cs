@@ -91,6 +91,16 @@ namespace FichaTecnicaFacil.Properties {
         }
         
         /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap salvar2 {
+            get {
+                object obj = ResourceManager.GetObject("salvar2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a server=localhost;userid=postgres;password=182520;database=dbftfacil ; port=5433.
         /// </summary>
         internal static string URL {

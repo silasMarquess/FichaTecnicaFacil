@@ -39,3 +39,6 @@ D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnic
 D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.csproj.CopyComplete
 D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.exe
 D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.pdb
+D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.Views.FrmFichaTecnica.resources
+D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.Views.subviews.FrmIngrediente.resources
+D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.Views.subviews.FrmReceitas.resources
