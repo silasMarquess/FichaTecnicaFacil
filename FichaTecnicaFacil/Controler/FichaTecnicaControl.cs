@@ -25,5 +25,10 @@ namespace FichaTecnicaFacil.Controler
             _form.Close();
             _formPai._form.Visible = true;
         }
+
+        public void CadastrarIngrediente()
+        {
+
+        }
     }
 }

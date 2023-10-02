@@ -26,7 +26,6 @@ namespace FichaTecnicaFacil.Controler
         {
             FrmFichaTecnica form = new FrmFichaTecnica(this);
             form.ShowDialog();
-            _form.Visible = false;
         }
 
         public void OpenFormCaixa()
