@@ -93,6 +93,16 @@ namespace FichaTecnicaFacil.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Limpeza {
+            get {
+                object obj = ResourceManager.GetObject("Limpeza", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap maxmize32px {
             get {
                 object obj = ResourceManager.GetObject("maxmize32px", resourceCulture);
@@ -131,7 +141,7 @@ namespace FichaTecnicaFacil.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a server=localhost;userid=postgres;password=182520;database=dbftfacil ; port=5433.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a server=localhost;userid=root;password=182520;database=dbnffacil ; port=3306.
         /// </summary>
         internal static string URL {
             get {

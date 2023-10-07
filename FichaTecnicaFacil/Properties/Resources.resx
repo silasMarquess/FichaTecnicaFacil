@@ -127,6 +127,9 @@
   <data name="FICHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FICHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Limpeza" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Limpeza.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="maxmize32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\maxmize32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -140,6 +143,6 @@
     <value>..\Resources\salvar2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="URL" xml:space="preserve">
-    <value>server=localhost;userid=postgres;password=182520;database=dbftfacil ; port=5433</value>
+    <value>server=localhost;userid=root;password=182520;database=dbnffacil ; port=3306</value>
   </data>
 </root>

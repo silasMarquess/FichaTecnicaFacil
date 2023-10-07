@@ -14,7 +14,7 @@ namespace FichaTecnicaFacil.DAO
     {
         public static void InsertProduto(Produto p)
         {
-            string sql = "insert into Produto(PrecoEmbalagem, ConteudoEmbalagem, UN, descricao)" +
+            string sql = "insert into Produto(PrecoEmbalagem, ConteudoEmbalagem, UN, descricao) " +
                 "values(@PrecoEmbalagem, @ConteudoEmbalagem, @UN, @descricao)";
 
             MySqlCommand cmd  =  new MySqlCommand(sql, DBConexao._conexao);
@@ -42,7 +42,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static void DeleteProduto(Produto p)
         {
-            string sql = "delete from tb_produto where idProduto = @id";
+            string sql = "delete from produto where idProduto = @id";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@id", p.Id);
             cmd.ExecuteNonQuery();
