@@ -25,6 +25,18 @@ namespace FichaTecnicaFacil.Entidades
             Produto = produto;
         }
 
+        public override bool Equals(object obj)
+        {
+            bool teste = false;
+            Ingrediente outro = (Ingrediente)obj;
+
+            if (outro.Produto.Descricao == this.Produto.Descricao)
+            {
+                teste = true;
+            }
+            return teste;
+        }
+
         public double CalculaCustoIngrediente()
         {
             double conteudoInformado = Qtde;

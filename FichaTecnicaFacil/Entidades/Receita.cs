@@ -36,9 +36,14 @@ namespace FichaTecnicaFacil.Entidades
 
         }
 
+        public override int GetHashCode()
+        {
+            return Descricao.GetHashCode();
+        }
 
         public void AddIngrediente(Ingrediente ing)
         {
+            if (ListaIngrediente.Contains(ing)) throw new DomainException("Erro: Ingrediente ja cadastrado");
             ListaIngrediente.Add(ing);
         }
         public double CalculaValorReceita()

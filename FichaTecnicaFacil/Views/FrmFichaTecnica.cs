@@ -149,27 +149,64 @@ namespace FichaTecnicaFacil.Views
 
         private void txt_PrecoEmbalagem_KeyDown(object sender, KeyEventArgs e)
         {
-           
+
         }
 
         private void btn_NovaRecita_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btn_AddIngrediente_Click(object sender, EventArgs e)
         {
-            if(_receitaAtual is null)
-            {
-                MessageBox.Show("Nemhuma Instâncida de receita Iniciada");
-                //validar
 
+            try
+            {
+                Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
+
+                if (p is null)
+                {
+                    if (string.IsNullOrEmpty(txt_ReceitaNomeIngrediente.Text)) throw new DomainException("erro: Nome do Ingrediente não pode ser vazio");
+                    if (string.IsNullOrEmpty(txtReceitaIngQtde.Text)) throw new DomainException("quantidade do Item de Receita nao pode ser vazio");
+                    if (string.IsNullOrEmpty(txt_PrecoEmbalagem.Text)) throw new DomainException("Preço da embalagem não pode ser vazio !");
+                    if (string.IsNullOrEmpty(txtRecContEmb.Text)) throw new DomainException("Conteudo da embalagem não pode ser vazio !");
+                    if (string.IsNullOrEmpty(Cb_UNIngrediente.Text = string.Empty)) throw new DomainException("Campo de UN não pode ser vazio");
+
+                    string nome = txt_ReceitaNomeIngrediente.Text;
+                    double precoEmbalagem = double.Parse(txtRecIngredPrecoEmbalagem.Text);
+                    double conteudoEmbalagem = double.Parse(txtRecContEmb.Text);
+                    UN un = (UN)Cb_UNIngrediente.SelectedIndex;
+                    p = new Produto(0, precoEmbalagem, conteudoEmbalagem, un, nome);
+                }
+                double qtde = double.Parse(txtReceitaIngQtde.Text);
+                Ingrediente i = new Ingrediente(0, qtde, p);
+                _receitaAtual.AddIngrediente(i);
+                MessageBox.Show(p.Descricao + " Adicionado à receita ");
+                this.MostraItensReceita();
             }
-            else
+            catch (DomainException ex)
             {
-                Ingrediente i = new Ingrediente();
+                MessageBox.Show(ex.Message);
+            }
 
-                
+        }
+
+        public void MostraItensReceita()
+        {
+            List<Ingrediente> lista = _receitaAtual.ListaIngrediente;
+            dgv_RecListaIngredientes.Rows.Clear();
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                DataGridViewRow linha = (DataGridViewRow)dgv_RecListaIngredientes.Rows[i].Clone();
+                linha.Cells[0].Value = lista[i].Produto.Descricao.ToString();
+                linha.Cells[0].Style.ForeColor = System.Drawing.Color.Blue;
+                linha.Cells[1].Value = lista[i].Qtde + lista[i].Produto.Un.ToString();
+                linha.Cells[2].Value = "R$ " + lista[i].Produto.PrecoEmbalagem.ToString("F2");
+                linha.Cells[3].Value = lista[i].Produto.ConteudoEmbalagem.ToString();
+                linha.Cells[4].Value = lista[i].Produto.Un.ToString();
+                linha.Cells[5].Value = lista[i].CalculaCustoIngrediente().ToString("F2");
+                dgv_RecListaIngredientes.Rows.Add(linha);
             }
         }
 
@@ -218,6 +255,7 @@ namespace FichaTecnicaFacil.Views
                     txtRecIngredPrecoEmbalagem.Text = string.Empty;
                     txtRecContEmb.Text = string.Empty;
                     CbRecIngUN.Text = string.Empty;
+                    this.MostraItensReceita();
                 }
                 else
                 {
@@ -226,7 +264,8 @@ namespace FichaTecnicaFacil.Views
                     CbRecIngUN.Enabled = false;
                 }
 
-            }catch(DomainException ex)
+            }
+            catch (DomainException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -262,11 +301,15 @@ namespace FichaTecnicaFacil.Views
         private void dgv_RecListaIngredientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
-            txt_ReceitaNomeIngrediente.Text = p.Descricao;
-            txtReceitaIngQtde.Select();
-            txtRecIngredPrecoEmbalagem.Text = p.PrecoEmbalagem.ToString("F2");
-            txtRecContEmb.Text = p.ConteudoEmbalagem.ToString("F2");
-            CbRecIngUN.Text = p.Un.ToString();
+
+            if (p != null)
+            {
+                txt_ReceitaNomeIngrediente.Text = p.Descricao;
+                txtReceitaIngQtde.Select();
+                txtRecIngredPrecoEmbalagem.Text = p.PrecoEmbalagem.ToString("F2");
+                txtRecContEmb.Text = p.ConteudoEmbalagem.ToString("F2");
+                CbRecIngUN.Text = p.Un.ToString();
+            }
 
         }
 
