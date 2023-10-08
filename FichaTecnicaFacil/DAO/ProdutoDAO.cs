@@ -67,6 +67,25 @@ namespace FichaTecnicaFacil.DAO
             return lista;
         }
 
+        public static List<Produto> getListaProdutos(string descricao)
+        {
+            List<Produto> lista = new List<Produto>();
+            string sql = "select * from  produto  where descricao LIKE '"+descricao+"%'";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                int idProduto = rd.GetInt32("idProduto");
+                double precoEmbalagem = rd.GetDouble("precoEmbalagem");
+                double conteudo = rd.GetDouble("conteudoEmbalagem");
+                UN un = (UN)rd.GetInt16("UN");
+                string descricao2 = rd.GetString("descricao");
+                Produto p = new Produto(idProduto, precoEmbalagem, conteudo, un, descricao2);
+                lista.Add(p);
+            }
+            return lista;
+        }
+
         public static bool VerificaSeJaExiste(Produto p)
         {
             string sql = "Select * from Produto where descricao = @descricao and UN =@un and  PrecoEmbalagem = @preco";

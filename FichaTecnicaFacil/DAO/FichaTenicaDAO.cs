@@ -137,5 +137,14 @@ namespace FichaTecnicaFacil.DAO
             MySqlDataReader rd = cmd.ExecuteReader();
             return (rd.Read()) ? true : false;
         }
+
+        public static bool VerificaSeIdReceitaExiste(string IdReceita)
+        {
+            string sql = "select * from receita where idReceita =@IdReceita";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@IdReceita", IdReceita);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            return (rd.Read()) ? true : false;
+        }
     }
 }

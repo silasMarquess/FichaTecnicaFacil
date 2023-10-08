@@ -16,7 +16,9 @@ namespace FichaTecnicaFacil.Views
     public partial class FrmFichaTecnica : Form
     {
         private FichaTecnicaControl _control;
+        private Receita _receitaAtual;
         private int Ident = 0;
+        private List<Produto> listaIngredienteFiltrados;
         public FrmFichaTecnica()
         {
             InitializeComponent();
@@ -148,6 +150,130 @@ namespace FichaTecnicaFacil.Views
         private void txt_PrecoEmbalagem_KeyDown(object sender, KeyEventArgs e)
         {
            
+        }
+
+        private void btn_NovaRecita_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btn_AddIngrediente_Click(object sender, EventArgs e)
+        {
+            if(_receitaAtual is null)
+            {
+                MessageBox.Show("Nemhuma Instâncida de receita Iniciada");
+                //validar
+
+            }
+            else
+            {
+                Ingrediente i = new Ingrediente();
+
+                
+            }
+        }
+
+        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel18_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel17_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_ValidadeReceita_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_ReceitaNomeIngrediente_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string nomeIngrediente = txt_ReceitaNomeIngrediente.Text;
+                listaIngredienteFiltrados = _control.GetListaIngrdientePeloNome(nomeIngrediente);
+
+                if (listaIngredienteFiltrados.Count == 0)
+                {
+                    txtRecIngredPrecoEmbalagem.Enabled = true;
+                    txtRecContEmb.Enabled = true;
+                    CbRecIngUN.Enabled = true;
+                    txtRecIngredPrecoEmbalagem.Text = string.Empty;
+                    txtRecContEmb.Text = string.Empty;
+                    CbRecIngUN.Text = string.Empty;
+                }
+                else
+                {
+                    txtRecIngredPrecoEmbalagem.Enabled = false;
+                    txtRecContEmb.Enabled = false;
+                    CbRecIngUN.Enabled = false;
+                }
+
+            }catch(DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabControl_Receita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl_Receita.SelectedIndex == 0)
+            {
+                txt_IdReceita.Text = _control.GenerateCodigoReceita();
+                _receitaAtual = new Receita();
+                _receitaAtual.Id = txt_IdReceita.Text;
+                txt_DescricaoReceita.Select();
+            }
+        }
+
+        private void FrmFichaTecnica_Load(object sender, EventArgs e)
+        {
+            if (tabControl_Receita.SelectedIndex == 0)
+            {
+                txt_IdReceita.Text = _control.GenerateCodigoReceita();
+                _receitaAtual = new Receita();
+                _receitaAtual.Id = txt_IdReceita.Text;
+                txt_DescricaoReceita.Select();
+            }
+        }
+
+        private void dgv_RecListaIngredientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
+            txt_ReceitaNomeIngrediente.Text = p.Descricao;
+            txtReceitaIngQtde.Select();
+            txtRecIngredPrecoEmbalagem.Text = p.PrecoEmbalagem.ToString("F2");
+            txtRecContEmb.Text = p.ConteudoEmbalagem.ToString("F2");
+            CbRecIngUN.Text = p.Un.ToString();
+
+        }
+
+        public bool getIngredientePeloNome(Produto p)
+        {
+            string nome = dgv_RecListaIngredientes.CurrentRow.Cells[0].Value.ToString();
+            return (nome == p.Descricao) ? true : false;
         }
     }
 }

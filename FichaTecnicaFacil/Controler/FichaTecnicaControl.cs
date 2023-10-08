@@ -122,5 +122,63 @@ namespace FichaTecnicaFacil.Controler
             int id = int.Parse(_form.dgv_ListaProdutos.CurrentRow.Cells[0].Value.ToString());
             return (id == p.Id) ? true : false;
         }
+
+
+
+        //CONTROLE DE RECEITAS
+        public void InsertReceitaControl(Receita receita)
+        {
+            ValidaInsercao();
+            bool teste = DBConexao.ValidateOperation(FichaTenicaDAO.VerificaSeReceitaExiste, receita);
+            if (teste) throw new DomainException("Erro: Receita ja existe");
+            DBConexao.ModifyOperation(FichaTenicaDAO.InsertFicha, receita);
+            MessageBox.Show("Receita Cadastrada com sucesso !");
+        }
+
+        public List<Produto> GetListaIngrdientePeloNome(string nome)
+        {
+            List<Produto> lista = DBConexao.getLisObjectOperation(ProdutoDAO.getListaProdutos, nome);
+            _form.dgv_RecListaIngredientes.Rows.Clear();
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                DataGridViewRow linha = (DataGridViewRow)_form.dgv_RecListaIngredientes.Rows[i].Clone();
+                linha.Cells[0].Value = lista[i].Descricao.ToString();
+                linha.Cells[0].Style.ForeColor = System.Drawing.Color.Blue;
+                linha.Cells[1].Value = "0,00";
+                linha.Cells[2].Value = "R$ " + lista[i].PrecoEmbalagem.ToString("F2");
+                linha.Cells[3].Value = lista[i].ConteudoEmbalagem.ToString();
+                linha.Cells[4].Value = lista[i].Un.ToString();
+                linha.Cells[5].Value = "0,00"; 
+                _form.dgv_RecListaIngredientes.Rows.Add(linha);
+            }
+            return lista;
+        }
+
+
+
+
+        public string GenerateCodigoReceita()
+        {
+            Random rd = new Random();
+            int numeros = rd.Next();
+            string codigo = "RE" + numeros.ToString().Substring(0, 4);
+            bool teste = DBConexao.ValidateOperation(FichaTenicaDAO.VerificaSeIdReceitaExiste, codigo);
+
+            while (teste)
+            {
+                numeros = rd.Next();
+                codigo = numeros.ToString().Substring(0, 4);
+            }
+            return codigo;
+        }
+
+
+        public void ValidaInsercaoReceita()
+        {
+            if (string.IsNullOrEmpty(_form.txt_DescricaoReceita.Text)) throw new DomainException("Nome da Receita nao pode ser vazio");
+            if (string.IsNullOrEmpty(_form.txt_RendimentoReceita.Text)) throw new DomainException("Rendimento nao pode ser vazio ");
+            if (string.IsNullOrEmpty(_form.txt_ValidadeReceita.Text)) throw new DomainException("Validade da receita nao pode ser vazio ");
+        }
     }
 }
