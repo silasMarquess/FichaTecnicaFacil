@@ -168,14 +168,14 @@ namespace FichaTecnicaFacil.Views
                 {
                     if (string.IsNullOrEmpty(txt_ReceitaNomeIngrediente.Text)) throw new DomainException("erro: Nome do Ingrediente não pode ser vazio");
                     if (string.IsNullOrEmpty(txtReceitaIngQtde.Text)) throw new DomainException("quantidade do Item de Receita nao pode ser vazio");
-                    if (string.IsNullOrEmpty(txt_PrecoEmbalagem.Text)) throw new DomainException("Preço da embalagem não pode ser vazio !");
+                    if (string.IsNullOrEmpty(txtRecIngredPrecoEmbalagem.Text)) throw new DomainException("Preço da embalagem não pode ser vazio !");
                     if (string.IsNullOrEmpty(txtRecContEmb.Text)) throw new DomainException("Conteudo da embalagem não pode ser vazio !");
-                    if (string.IsNullOrEmpty(Cb_UNIngrediente.Text = string.Empty)) throw new DomainException("Campo de UN não pode ser vazio");
+                    if (string.IsNullOrEmpty(CbRecIngUN.Text)) throw new DomainException("Campo de UN não pode ser vazio");
 
                     string nome = txt_ReceitaNomeIngrediente.Text;
                     double precoEmbalagem = double.Parse(txtRecIngredPrecoEmbalagem.Text);
                     double conteudoEmbalagem = double.Parse(txtRecContEmb.Text);
-                    UN un = (UN)Cb_UNIngrediente.SelectedIndex;
+                    UN un = (UN)CbRecIngUN.SelectedIndex;
                     p = new Produto(0, precoEmbalagem, conteudoEmbalagem, un, nome);
                 }
                 double qtde = double.Parse(txtReceitaIngQtde.Text);
@@ -187,6 +187,11 @@ namespace FichaTecnicaFacil.Views
             catch (DomainException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                txtReceitaIngQtde.Text = string.Empty;
+                txtTotalSomaIngredientes.Text = "R$ "+_receitaAtual.getTotalIngrdiente().ToString("F2");
             }
 
         }
@@ -245,7 +250,14 @@ namespace FichaTecnicaFacil.Views
             try
             {
                 string nomeIngrediente = txt_ReceitaNomeIngrediente.Text;
-                listaIngredienteFiltrados = _control.GetListaIngrdientePeloNome(nomeIngrediente);
+                if (nomeIngrediente != string.Empty)
+                {
+                    listaIngredienteFiltrados = _control.GetListaIngrdientePeloNome(nomeIngrediente);
+                }
+                else
+                {
+                    this.MostraItensReceita();
+                }
 
                 if (listaIngredienteFiltrados.Count == 0)
                 {
@@ -255,7 +267,6 @@ namespace FichaTecnicaFacil.Views
                     txtRecIngredPrecoEmbalagem.Text = string.Empty;
                     txtRecContEmb.Text = string.Empty;
                     CbRecIngUN.Text = string.Empty;
-                    this.MostraItensReceita();
                 }
                 else
                 {
@@ -302,13 +313,26 @@ namespace FichaTecnicaFacil.Views
         {
             Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
 
-            if (p != null)
+            if (dgv_RecListaIngredientes.Columns[e.ColumnIndex].Index == 6)
             {
-                txt_ReceitaNomeIngrediente.Text = p.Descricao;
-                txtReceitaIngQtde.Select();
-                txtRecIngredPrecoEmbalagem.Text = p.PrecoEmbalagem.ToString("F2");
-                txtRecContEmb.Text = p.ConteudoEmbalagem.ToString("F2");
-                CbRecIngUN.Text = p.Un.ToString();
+                Ingrediente i = _receitaAtual.ListaIngrediente.Find(getIngredientePeloNome);
+                _receitaAtual.ListaIngrediente.Remove(i);
+                MessageBox.Show("Item removido !");
+                this.MostraItensReceita();
+            }
+            else
+            {
+
+                if (p != null)
+                {
+                    txt_ReceitaNomeIngrediente.Text = p.Descricao;
+                    txtReceitaIngQtde.Select();
+                    txtRecIngredPrecoEmbalagem.Text = p.PrecoEmbalagem.ToString("F2");
+                    txtRecContEmb.Text = p.ConteudoEmbalagem.ToString("F2");
+                    CbRecIngUN.Text = p.Un.ToString();
+                    txtReceitaIngQtde.Text = string.Empty;
+                }
+
             }
 
         }
@@ -317,6 +341,25 @@ namespace FichaTecnicaFacil.Views
         {
             string nome = dgv_RecListaIngredientes.CurrentRow.Cells[0].Value.ToString();
             return (nome == p.Descricao) ? true : false;
+        }
+
+        public bool getIngredientePeloNome(Ingrediente i)
+        {
+            string nome = dgv_RecListaIngredientes.CurrentRow.Cells[0].Value.ToString();
+            return (nome == i.Produto.Descricao) ? true : false;
+        }
+
+        private void txtGastosAdicionais_KeyDown(object sender, KeyEventArgs e)
+        {
+          
+        }
+
+        private void btnCalcularCustoReceita_Click(object sender, EventArgs e)
+        {
+            //validação
+            double gastosGerais = double.Parse(txtGastosAdicionais.Text);
+            double MaodeObra = double.Parse(txtCustoMaoObra.Text);
+            txtCustoReceita.Text ="R$ "+ _receitaAtual.CalculaCustoReceita(gastosGerais, MaodeObra).ToString("F2");
         }
     }
 }

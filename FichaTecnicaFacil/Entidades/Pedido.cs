@@ -44,7 +44,7 @@ namespace FichaTecnicaFacil.Entidades
             double total = 0;
             foreach (Receita r in ListaReceita)
             {
-                total += r.CalculaValorReceita();
+             //   total += r.CalculaValorReceita();
             }
             return total + CustosAdicionais;
         }

@@ -107,23 +107,23 @@ namespace FichaTecnicaFacil.Views
             this.button3 = new System.Windows.Forms.Button();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.txtGastosAdicionais = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtTotalSomaIngredientes = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtPrecoFinal = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel23 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.txtMargemLucro = new System.Windows.Forms.TextBox();
+            this.txtMargemLucroDinheiro = new System.Windows.Forms.TextBox();
+            this.txtCustoReceita = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel25 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.txtCustoMaoObra = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_ListaProdutos = new System.Windows.Forms.DataGridView();
@@ -162,7 +162,8 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Custo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnCalcularCustoReceita = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -208,6 +209,7 @@ namespace FichaTecnicaFacil.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -304,8 +306,8 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel15.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.66667F));
-            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.33333F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.18736F));
+            this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.81264F));
             this.tableLayoutPanel15.Size = new System.Drawing.Size(1205, 459);
             this.tableLayoutPanel15.TabIndex = 0;
             // 
@@ -321,7 +323,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1199, 180);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1199, 205);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel5
@@ -340,7 +342,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.63107F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.36893F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 58F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(632, 178);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(632, 203);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // tableLayoutPanel6
@@ -355,7 +357,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(632, 54);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(632, 66);
             this.tableLayoutPanel6.TabIndex = 0;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
@@ -373,7 +375,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel10.RowCount = 2;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(632, 54);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(632, 66);
             this.tableLayoutPanel10.TabIndex = 1;
             // 
             // label9
@@ -389,12 +391,12 @@ namespace FichaTecnicaFacil.Views
             // txt_DescricaoReceita
             // 
             this.txt_DescricaoReceita.BackColor = System.Drawing.Color.Yellow;
+            this.txt_DescricaoReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_DescricaoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_DescricaoReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_DescricaoReceita.Location = new System.Drawing.Point(0, 23);
-            this.txt_DescricaoReceita.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_DescricaoReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DescricaoReceita.Location = new System.Drawing.Point(3, 31);
             this.txt_DescricaoReceita.Name = "txt_DescricaoReceita";
-            this.txt_DescricaoReceita.Size = new System.Drawing.Size(632, 27);
+            this.txt_DescricaoReceita.Size = new System.Drawing.Size(626, 25);
             this.txt_DescricaoReceita.TabIndex = 1;
             // 
             // tableLayoutPanel7
@@ -405,12 +407,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel11, 1, 0);
             this.tableLayoutPanel7.Controls.Add(this.tableLayoutPanel9, 0, 0);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 54);
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(0, 66);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(632, 65);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(632, 78);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // tableLayoutPanel11
@@ -427,7 +429,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(510, 65);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(510, 78);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // label10
@@ -443,12 +445,13 @@ namespace FichaTecnicaFacil.Views
             // txt_ValidadeReceita
             // 
             this.txt_ValidadeReceita.BackColor = System.Drawing.Color.Yellow;
+            this.txt_ValidadeReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ValidadeReceita.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_ValidadeReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ValidadeReceita.Location = new System.Drawing.Point(0, 28);
+            this.txt_ValidadeReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ValidadeReceita.Location = new System.Drawing.Point(0, 33);
             this.txt_ValidadeReceita.Margin = new System.Windows.Forms.Padding(0);
             this.txt_ValidadeReceita.Name = "txt_ValidadeReceita";
-            this.txt_ValidadeReceita.Size = new System.Drawing.Size(510, 27);
+            this.txt_ValidadeReceita.Size = new System.Drawing.Size(510, 25);
             this.txt_ValidadeReceita.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -465,7 +468,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(120, 63);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(120, 76);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // label8
@@ -481,12 +484,13 @@ namespace FichaTecnicaFacil.Views
             // txt_IdReceita
             // 
             this.txt_IdReceita.BackColor = System.Drawing.Color.Yellow;
+            this.txt_IdReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_IdReceita.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_IdReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_IdReceita.Location = new System.Drawing.Point(0, 27);
+            this.txt_IdReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_IdReceita.Location = new System.Drawing.Point(0, 32);
             this.txt_IdReceita.Margin = new System.Windows.Forms.Padding(0);
             this.txt_IdReceita.Name = "txt_IdReceita";
-            this.txt_IdReceita.Size = new System.Drawing.Size(120, 27);
+            this.txt_IdReceita.Size = new System.Drawing.Size(120, 25);
             this.txt_IdReceita.TabIndex = 1;
             // 
             // tableLayoutPanel8
@@ -497,7 +501,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel12, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel13, 1, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 119);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(0, 144);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 1;
@@ -535,12 +539,13 @@ namespace FichaTecnicaFacil.Views
             // txt_RendimentoReceita
             // 
             this.txt_RendimentoReceita.BackColor = System.Drawing.Color.Yellow;
+            this.txt_RendimentoReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_RendimentoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_RendimentoReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_RendimentoReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_RendimentoReceita.Location = new System.Drawing.Point(0, 24);
             this.txt_RendimentoReceita.Margin = new System.Windows.Forms.Padding(0);
             this.txt_RendimentoReceita.Name = "txt_RendimentoReceita";
-            this.txt_RendimentoReceita.Size = new System.Drawing.Size(458, 27);
+            this.txt_RendimentoReceita.Size = new System.Drawing.Size(458, 25);
             this.txt_RendimentoReceita.TabIndex = 1;
             // 
             // tableLayoutPanel13
@@ -573,12 +578,13 @@ namespace FichaTecnicaFacil.Views
             // txt_dataCadastro
             // 
             this.txt_dataCadastro.BackColor = System.Drawing.Color.Yellow;
+            this.txt_dataCadastro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_dataCadastro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_dataCadastro.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dataCadastro.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dataCadastro.Location = new System.Drawing.Point(0, 25);
             this.txt_dataCadastro.Margin = new System.Windows.Forms.Padding(0);
             this.txt_dataCadastro.Name = "txt_dataCadastro";
-            this.txt_dataCadastro.Size = new System.Drawing.Size(172, 27);
+            this.txt_dataCadastro.Size = new System.Drawing.Size(172, 25);
             this.txt_dataCadastro.TabIndex = 1;
             // 
             // tableLayoutPanel14
@@ -593,7 +599,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.2807F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.7193F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(559, 174);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(559, 199);
             this.tableLayoutPanel14.TabIndex = 1;
             // 
             // label13
@@ -612,12 +618,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel26.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel26.Controls.Add(this.groupBox2, 0, 1);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 27);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 2;
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 19.31034F));
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.68965F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(553, 147);
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(553, 169);
             this.tableLayoutPanel26.TabIndex = 1;
             // 
             // panel3
@@ -627,18 +633,20 @@ namespace FichaTecnicaFacil.Views
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(553, 28);
+            this.panel3.Size = new System.Drawing.Size(553, 32);
             this.panel3.TabIndex = 0;
             // 
             // txt_ReceitaNomeIngrediente
             // 
             this.txt_ReceitaNomeIngrediente.BackColor = System.Drawing.Color.Yellow;
+            this.txt_ReceitaNomeIngrediente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ReceitaNomeIngrediente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_ReceitaNomeIngrediente.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_ReceitaNomeIngrediente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ReceitaNomeIngrediente.ForeColor = System.Drawing.Color.RoyalBlue;
             this.txt_ReceitaNomeIngrediente.Location = new System.Drawing.Point(0, 0);
+            this.txt_ReceitaNomeIngrediente.Margin = new System.Windows.Forms.Padding(1);
             this.txt_ReceitaNomeIngrediente.Name = "txt_ReceitaNomeIngrediente";
-            this.txt_ReceitaNomeIngrediente.Size = new System.Drawing.Size(553, 27);
+            this.txt_ReceitaNomeIngrediente.Size = new System.Drawing.Size(553, 25);
             this.txt_ReceitaNomeIngrediente.TabIndex = 4;
             this.txt_ReceitaNomeIngrediente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_ReceitaNomeIngrediente.TextChanged += new System.EventHandler(this.txt_ReceitaNomeIngrediente_TextChanged);
@@ -655,10 +663,10 @@ namespace FichaTecnicaFacil.Views
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.txtReceitaIngQtde);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(3, 38);
+            this.groupBox2.Location = new System.Drawing.Point(3, 42);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(547, 106);
+            this.groupBox2.Size = new System.Drawing.Size(547, 124);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados de Ingredientes";
@@ -682,7 +690,7 @@ namespace FichaTecnicaFacil.Views
             "m3",
             "m2",
             "cm2"});
-            this.CbRecIngUN.Location = new System.Drawing.Point(381, 52);
+            this.CbRecIngUN.Location = new System.Drawing.Point(114, 53);
             this.CbRecIngUN.Name = "CbRecIngUN";
             this.CbRecIngUN.Size = new System.Drawing.Size(101, 30);
             this.CbRecIngUN.TabIndex = 10;
@@ -690,7 +698,7 @@ namespace FichaTecnicaFacil.Views
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(386, 32);
+            this.label28.Location = new System.Drawing.Point(119, 33);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(91, 17);
             this.label28.TabIndex = 9;
@@ -700,7 +708,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(233, 33);
+            this.label27.Location = new System.Drawing.Point(214, 33);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(146, 17);
             this.label27.TabIndex = 0;
@@ -712,7 +720,7 @@ namespace FichaTecnicaFacil.Views
             this.txtRecContEmb.Enabled = false;
             this.txtRecContEmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecContEmb.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtRecContEmb.Location = new System.Drawing.Point(240, 53);
+            this.txtRecContEmb.Location = new System.Drawing.Point(221, 53);
             this.txtRecContEmb.Name = "txtRecContEmb";
             this.txtRecContEmb.Size = new System.Drawing.Size(135, 30);
             this.txtRecContEmb.TabIndex = 2;
@@ -732,7 +740,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(115, 33);
+            this.label26.Location = new System.Drawing.Point(359, 33);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(120, 17);
             this.label26.TabIndex = 0;
@@ -744,9 +752,9 @@ namespace FichaTecnicaFacil.Views
             this.txtRecIngredPrecoEmbalagem.Enabled = false;
             this.txtRecIngredPrecoEmbalagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecIngredPrecoEmbalagem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtRecIngredPrecoEmbalagem.Location = new System.Drawing.Point(114, 53);
+            this.txtRecIngredPrecoEmbalagem.Location = new System.Drawing.Point(362, 53);
             this.txtRecIngredPrecoEmbalagem.Name = "txtRecIngredPrecoEmbalagem";
-            this.txtRecIngredPrecoEmbalagem.Size = new System.Drawing.Size(122, 30);
+            this.txtRecIngredPrecoEmbalagem.Size = new System.Drawing.Size(117, 30);
             this.txtRecIngredPrecoEmbalagem.TabIndex = 2;
             this.txtRecIngredPrecoEmbalagem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -765,7 +773,7 @@ namespace FichaTecnicaFacil.Views
             this.txtReceitaIngQtde.BackColor = System.Drawing.Color.Yellow;
             this.txtReceitaIngQtde.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceitaIngQtde.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtReceitaIngQtde.Location = new System.Drawing.Point(9, 53);
+            this.txtReceitaIngQtde.Location = new System.Drawing.Point(7, 53);
             this.txtReceitaIngQtde.Name = "txtReceitaIngQtde";
             this.txtReceitaIngQtde.Size = new System.Drawing.Size(99, 30);
             this.txtReceitaIngQtde.TabIndex = 2;
@@ -777,12 +785,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel16.Controls.Add(this.panel5, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.dgv_RecListaIngredientes, 0, 1);
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 189);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(3, 214);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel16.Size = new System.Drawing.Size(1199, 267);
+            this.tableLayoutPanel16.Size = new System.Drawing.Size(1199, 242);
             this.tableLayoutPanel16.TabIndex = 2;
             // 
             // panel5
@@ -830,15 +838,14 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.Custo,
-            this.dataGridViewButtonColumn1,
-            this.dataGridViewButtonColumn2});
+            this.dataGridViewButtonColumn1});
             this.dgv_RecListaIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_RecListaIngredientes.Location = new System.Drawing.Point(0, 28);
             this.dgv_RecListaIngredientes.Margin = new System.Windows.Forms.Padding(0);
             this.dgv_RecListaIngredientes.Name = "dgv_RecListaIngredientes";
             this.dgv_RecListaIngredientes.ReadOnly = true;
             this.dgv_RecListaIngredientes.RowHeadersVisible = false;
-            this.dgv_RecListaIngredientes.Size = new System.Drawing.Size(1199, 239);
+            this.dgv_RecListaIngredientes.Size = new System.Drawing.Size(1199, 214);
             this.dgv_RecListaIngredientes.TabIndex = 0;
             this.dgv_RecListaIngredientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_RecListaIngredientes_CellClick);
             // 
@@ -1099,7 +1106,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.771F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.22901F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 434F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 436F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1114,7 +1121,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(430, 1);
+            this.button2.Location = new System.Drawing.Point(428, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(183, 34);
@@ -1126,7 +1133,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(615, 1);
+            this.button3.Location = new System.Drawing.Point(613, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 34);
@@ -1149,8 +1156,8 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel18.RowCount = 4;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
-            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel18.Size = new System.Drawing.Size(1223, 201);
             this.tableLayoutPanel18.TabIndex = 2;
@@ -1161,7 +1168,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.ColumnCount = 2;
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel19.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 259F));
-            this.tableLayoutPanel19.Controls.Add(this.textBox13, 1, 0);
+            this.tableLayoutPanel19.Controls.Add(this.txtGastosAdicionais, 1, 0);
             this.tableLayoutPanel19.Controls.Add(this.label16, 0, 0);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel19.Location = new System.Drawing.Point(3, 37);
@@ -1171,21 +1178,21 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.Size = new System.Drawing.Size(1217, 28);
             this.tableLayoutPanel19.TabIndex = 1;
             // 
-            // textBox13
+            // txtGastosAdicionais
             // 
-            this.textBox13.BackColor = System.Drawing.Color.Yellow;
-            this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.ForeColor = System.Drawing.Color.Red;
-            this.textBox13.Location = new System.Drawing.Point(958, 0);
-            this.textBox13.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox13.Multiline = true;
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(259, 28);
-            this.textBox13.TabIndex = 2;
-            this.textBox13.Text = "R$ 0,00";
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtGastosAdicionais.BackColor = System.Drawing.Color.Yellow;
+            this.txtGastosAdicionais.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtGastosAdicionais.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtGastosAdicionais.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGastosAdicionais.ForeColor = System.Drawing.Color.Red;
+            this.txtGastosAdicionais.Location = new System.Drawing.Point(958, 0);
+            this.txtGastosAdicionais.Margin = new System.Windows.Forms.Padding(0);
+            this.txtGastosAdicionais.Multiline = true;
+            this.txtGastosAdicionais.Name = "txtGastosAdicionais";
+            this.txtGastosAdicionais.Size = new System.Drawing.Size(259, 28);
+            this.txtGastosAdicionais.TabIndex = 2;
+            this.txtGastosAdicionais.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtGastosAdicionais.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGastosAdicionais_KeyDown);
             // 
             // label16
             // 
@@ -1204,7 +1211,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel20.ColumnCount = 2;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 258F));
-            this.tableLayoutPanel20.Controls.Add(this.textBox12, 1, 0);
+            this.tableLayoutPanel20.Controls.Add(this.txtTotalSomaIngredientes, 1, 0);
             this.tableLayoutPanel20.Controls.Add(this.label17, 0, 0);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel20.Location = new System.Drawing.Point(3, 3);
@@ -1214,22 +1221,21 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel20.Size = new System.Drawing.Size(1217, 28);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
-            // textBox12
+            // txtTotalSomaIngredientes
             // 
-            this.textBox12.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox12.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.ForeColor = System.Drawing.Color.Red;
-            this.textBox12.Location = new System.Drawing.Point(959, 0);
-            this.textBox12.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox12.Multiline = true;
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(258, 28);
-            this.textBox12.TabIndex = 2;
-            this.textBox12.Text = "R$ 0,00";
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
+            this.txtTotalSomaIngredientes.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.txtTotalSomaIngredientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalSomaIngredientes.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTotalSomaIngredientes.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalSomaIngredientes.ForeColor = System.Drawing.Color.Red;
+            this.txtTotalSomaIngredientes.Location = new System.Drawing.Point(959, 0);
+            this.txtTotalSomaIngredientes.Margin = new System.Windows.Forms.Padding(0);
+            this.txtTotalSomaIngredientes.Multiline = true;
+            this.txtTotalSomaIngredientes.Name = "txtTotalSomaIngredientes";
+            this.txtTotalSomaIngredientes.Size = new System.Drawing.Size(258, 28);
+            this.txtTotalSomaIngredientes.TabIndex = 2;
+            this.txtTotalSomaIngredientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalSomaIngredientes.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // label17
             // 
@@ -1249,20 +1255,20 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 324F));
             this.tableLayoutPanel22.Controls.Add(this.label18, 0, 2);
-            this.tableLayoutPanel22.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel22.Controls.Add(this.label20, 0, 1);
-            this.tableLayoutPanel22.Controls.Add(this.textBox16, 1, 2);
+            this.tableLayoutPanel22.Controls.Add(this.txtPrecoFinal, 1, 2);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 1, 1);
-            this.tableLayoutPanel22.Controls.Add(this.textBox18, 1, 0);
+            this.tableLayoutPanel22.Controls.Add(this.txtCustoReceita, 1, 0);
+            this.tableLayoutPanel22.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel22.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 105);
+            this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 106);
             this.tableLayoutPanel22.Name = "tableLayoutPanel22";
             this.tableLayoutPanel22.RowCount = 3;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 36.29032F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.83871F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(1217, 93);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(1217, 92);
             this.tableLayoutPanel22.TabIndex = 2;
             // 
             // label18
@@ -1272,20 +1278,20 @@ namespace FichaTecnicaFacil.Views
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.Location = new System.Drawing.Point(3, 60);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(887, 33);
+            this.label18.Size = new System.Drawing.Size(887, 32);
             this.label18.TabIndex = 6;
             this.label18.Text = "PREÇO FINAL (A + B + C + D):";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label19
             // 
+            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
-            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(3, 0);
+            this.label19.Location = new System.Drawing.Point(608, 6);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(887, 33);
+            this.label19.Size = new System.Drawing.Size(156, 21);
             this.label19.TabIndex = 1;
             this.label19.Text = "CUSTO DE RECEITA:";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1304,29 +1310,29 @@ namespace FichaTecnicaFacil.Views
             this.label20.Text = "D) MARGEM DE LUCRO(Ex: 50% ou R$ 7,30 Sobre o Custo de Receita):";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // textBox16
+            // txtPrecoFinal
             // 
-            this.textBox16.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox16.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.ForeColor = System.Drawing.Color.RosyBrown;
-            this.textBox16.Location = new System.Drawing.Point(894, 61);
-            this.textBox16.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(322, 31);
-            this.textBox16.TabIndex = 5;
-            this.textBox16.Text = "R$ 0,00";
-            this.textBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtPrecoFinal.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtPrecoFinal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPrecoFinal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoFinal.ForeColor = System.Drawing.Color.RosyBrown;
+            this.txtPrecoFinal.Location = new System.Drawing.Point(894, 61);
+            this.txtPrecoFinal.Margin = new System.Windows.Forms.Padding(1);
+            this.txtPrecoFinal.Multiline = true;
+            this.txtPrecoFinal.Name = "txtPrecoFinal";
+            this.txtPrecoFinal.Size = new System.Drawing.Size(322, 30);
+            this.txtPrecoFinal.TabIndex = 5;
+            this.txtPrecoFinal.Text = "R$ 0,00";
+            this.txtPrecoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel23
             // 
             this.tableLayoutPanel23.ColumnCount = 2;
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.Controls.Add(this.textBox15, 0, 0);
-            this.tableLayoutPanel23.Controls.Add(this.textBox17, 1, 0);
+            this.tableLayoutPanel23.Controls.Add(this.txtMargemLucro, 0, 0);
+            this.tableLayoutPanel23.Controls.Add(this.txtMargemLucroDinheiro, 1, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel23.Location = new System.Drawing.Point(893, 33);
             this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
@@ -1336,52 +1342,52 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel23.Size = new System.Drawing.Size(324, 27);
             this.tableLayoutPanel23.TabIndex = 7;
             // 
-            // textBox15
+            // txtMargemLucro
             // 
-            this.textBox15.BackColor = System.Drawing.Color.YellowGreen;
-            this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.ForeColor = System.Drawing.Color.Red;
-            this.textBox15.Location = new System.Drawing.Point(1, 1);
-            this.textBox15.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(160, 25);
-            this.textBox15.TabIndex = 5;
-            this.textBox15.Text = "0,00 %";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMargemLucro.BackColor = System.Drawing.Color.YellowGreen;
+            this.txtMargemLucro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMargemLucro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMargemLucro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMargemLucro.ForeColor = System.Drawing.Color.Red;
+            this.txtMargemLucro.Location = new System.Drawing.Point(1, 1);
+            this.txtMargemLucro.Margin = new System.Windows.Forms.Padding(1);
+            this.txtMargemLucro.Multiline = true;
+            this.txtMargemLucro.Name = "txtMargemLucro";
+            this.txtMargemLucro.Size = new System.Drawing.Size(160, 25);
+            this.txtMargemLucro.TabIndex = 5;
+            this.txtMargemLucro.Text = "0,00 %";
+            this.txtMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox17
+            // txtMargemLucroDinheiro
             // 
-            this.textBox17.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox17.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.ForeColor = System.Drawing.Color.Red;
-            this.textBox17.Location = new System.Drawing.Point(163, 1);
-            this.textBox17.Margin = new System.Windows.Forms.Padding(1);
-            this.textBox17.Multiline = true;
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(160, 25);
-            this.textBox17.TabIndex = 5;
-            this.textBox17.Text = "R$ 0,00";
-            this.textBox17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMargemLucroDinheiro.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.txtMargemLucroDinheiro.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMargemLucroDinheiro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMargemLucroDinheiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMargemLucroDinheiro.ForeColor = System.Drawing.Color.Red;
+            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(163, 1);
+            this.txtMargemLucroDinheiro.Margin = new System.Windows.Forms.Padding(1);
+            this.txtMargemLucroDinheiro.Multiline = true;
+            this.txtMargemLucroDinheiro.Name = "txtMargemLucroDinheiro";
+            this.txtMargemLucroDinheiro.Size = new System.Drawing.Size(160, 25);
+            this.txtMargemLucroDinheiro.TabIndex = 5;
+            this.txtMargemLucroDinheiro.Text = "R$ 0,00";
+            this.txtMargemLucroDinheiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox18
+            // txtCustoReceita
             // 
-            this.textBox18.BackColor = System.Drawing.SystemColors.WindowText;
-            this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.ForeColor = System.Drawing.Color.Yellow;
-            this.textBox18.Location = new System.Drawing.Point(896, 3);
-            this.textBox18.Multiline = true;
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(318, 27);
-            this.textBox18.TabIndex = 8;
-            this.textBox18.Text = "0,00";
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCustoReceita.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtCustoReceita.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCustoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCustoReceita.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustoReceita.ForeColor = System.Drawing.Color.Yellow;
+            this.txtCustoReceita.Location = new System.Drawing.Point(896, 3);
+            this.txtCustoReceita.Multiline = true;
+            this.txtCustoReceita.Name = "txtCustoReceita";
+            this.txtCustoReceita.Size = new System.Drawing.Size(318, 27);
+            this.txtCustoReceita.TabIndex = 8;
+            this.txtCustoReceita.Text = "0,00";
+            this.txtCustoReceita.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tableLayoutPanel25
             // 
@@ -1389,14 +1395,14 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 78.8825F));
             this.tableLayoutPanel25.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.1175F));
             this.tableLayoutPanel25.Controls.Add(this.label21, 0, 0);
-            this.tableLayoutPanel25.Controls.Add(this.textBox14, 1, 0);
+            this.tableLayoutPanel25.Controls.Add(this.txtCustoMaoObra, 1, 0);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel25.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tableLayoutPanel25.Location = new System.Drawing.Point(3, 71);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
             this.tableLayoutPanel25.RowCount = 1;
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel25.Size = new System.Drawing.Size(1217, 28);
+            this.tableLayoutPanel25.Size = new System.Drawing.Size(1217, 29);
             this.tableLayoutPanel25.TabIndex = 3;
             // 
             // label21
@@ -1406,27 +1412,26 @@ namespace FichaTecnicaFacil.Views
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.Location = new System.Drawing.Point(3, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(256, 28);
+            this.label21.Size = new System.Drawing.Size(256, 29);
             this.label21.TabIndex = 3;
             this.label21.Text = "C) CUSTO DE MÃO DE OBRA:";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // textBox14
+            // txtCustoMaoObra
             // 
-            this.textBox14.BackColor = System.Drawing.Color.Yellow;
-            this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.ForeColor = System.Drawing.Color.Red;
-            this.textBox14.Location = new System.Drawing.Point(960, 0);
-            this.textBox14.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(257, 28);
-            this.textBox14.TabIndex = 3;
-            this.textBox14.Text = "R$ 0,00";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox14.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
+            this.txtCustoMaoObra.BackColor = System.Drawing.Color.Yellow;
+            this.txtCustoMaoObra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCustoMaoObra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtCustoMaoObra.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustoMaoObra.ForeColor = System.Drawing.Color.Red;
+            this.txtCustoMaoObra.Location = new System.Drawing.Point(960, 0);
+            this.txtCustoMaoObra.Margin = new System.Windows.Forms.Padding(0);
+            this.txtCustoMaoObra.Multiline = true;
+            this.txtCustoMaoObra.Name = "txtCustoMaoObra";
+            this.txtCustoMaoObra.Size = new System.Drawing.Size(257, 29);
+            this.txtCustoMaoObra.TabIndex = 3;
+            this.txtCustoMaoObra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtCustoMaoObra.TextChanged += new System.EventHandler(this.textBox14_TextChanged);
             // 
             // tabPage2
             // 
@@ -1867,14 +1872,30 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewButtonColumn1.UseColumnTextForButtonValue = true;
             this.dataGridViewButtonColumn1.Width = 60;
             // 
-            // dataGridViewButtonColumn2
+            // panel1
             // 
-            this.dataGridViewButtonColumn2.HeaderText = "EDIT";
-            this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
-            this.dataGridViewButtonColumn2.ReadOnly = true;
-            this.dataGridViewButtonColumn2.Text = "Editar";
-            this.dataGridViewButtonColumn2.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn2.Width = 60;
+            this.panel1.Controls.Add(this.btnCalcularCustoReceita);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(893, 33);
+            this.panel1.TabIndex = 9;
+            // 
+            // btnCalcularCustoReceita
+            // 
+            this.btnCalcularCustoReceita.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCalcularCustoReceita.BackColor = System.Drawing.Color.Aqua;
+            this.btnCalcularCustoReceita.FlatAppearance.BorderSize = 0;
+            this.btnCalcularCustoReceita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(764, 4);
+            this.btnCalcularCustoReceita.Name = "btnCalcularCustoReceita";
+            this.btnCalcularCustoReceita.Size = new System.Drawing.Size(124, 24);
+            this.btnCalcularCustoReceita.TabIndex = 2;
+            this.btnCalcularCustoReceita.Text = "Calcular";
+            this.btnCalcularCustoReceita.UseVisualStyleBackColor = false;
+            this.btnCalcularCustoReceita.Click += new System.EventHandler(this.btnCalcularCustoReceita_Click);
             // 
             // FrmFichaTecnica
             // 
@@ -1951,6 +1972,8 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1989,21 +2012,14 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.TextBox txtReceitaIngQtde;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
-        private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox14;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.Button button4;
@@ -2085,5 +2101,14 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn Custo;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        public System.Windows.Forms.TextBox txtTotalSomaIngredientes;
+        public System.Windows.Forms.TextBox txtGastosAdicionais;
+        public System.Windows.Forms.TextBox txtCustoMaoObra;
+        public System.Windows.Forms.TextBox txtCustoReceita;
+        public System.Windows.Forms.TextBox txtMargemLucro;
+        public System.Windows.Forms.TextBox txtMargemLucroDinheiro;
+        public System.Windows.Forms.TextBox txtPrecoFinal;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Button btnCalcularCustoReceita;
     }
 }

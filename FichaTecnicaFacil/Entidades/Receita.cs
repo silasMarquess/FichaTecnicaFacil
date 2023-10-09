@@ -46,18 +46,26 @@ namespace FichaTecnicaFacil.Entidades
             if (ListaIngrediente.Contains(ing)) throw new DomainException("Erro: Ingrediente ja cadastrado");
             ListaIngrediente.Add(ing);
         }
-        public double CalculaValorReceita()
+        public double CalculaCustoReceita(double gastosGerais, double ValorMaoObra)
+        {
+            double custoIngredientes = this.getTotalIngrdiente();
+            double valorReceita = custoIngredientes + gastosGerais + ValorMaoObra;
+            return valorReceita;
+        }
+
+        public double CalcularTotalReceita(double gastosGerais, double ValorMaoObra,double margemLucro)
+        {
+            return this.CalculaCustoReceita(gastosGerais,ValorMaoObra) + margemLucro;
+        }
+
+        public double getTotalIngrdiente()
         {
             double custoIngredientes = 0;
             foreach (Ingrediente i in ListaIngrediente)
             {
                 custoIngredientes += i.CalculaCustoIngrediente();
             }
-            double gastosGerais = this.GastosGerais;
-            double ValorMaoObra = this.ValorMaoObra;
-            double margemLucro = this.MargemLucro;
-            double valorReceita = custoIngredientes + gastosGerais + ValorMaoObra;
-            return valorReceita;
+            return custoIngredientes;
         }
     }
 }

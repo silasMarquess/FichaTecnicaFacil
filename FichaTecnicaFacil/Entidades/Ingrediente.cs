@@ -44,7 +44,6 @@ namespace FichaTecnicaFacil.Entidades
             double ConteudoEmbalagem = Produto.ConteudoEmbalagem;
             double CustoIngrediente = (conteudoInformado * valorEmb) / ConteudoEmbalagem;
             return CustoIngrediente;
-
         }
     }
 }
