@@ -178,11 +178,21 @@ namespace FichaTecnicaFacil.Views
                     UN un = (UN)CbRecIngUN.SelectedIndex;
                     p = new Produto(0, precoEmbalagem, conteudoEmbalagem, un, nome);
                 }
+
+                if (string.IsNullOrEmpty(txtReceitaIngQtde.Text)) throw new DomainException("quantidade do Item de Receita nao pode ser vazio");
                 double qtde = double.Parse(txtReceitaIngQtde.Text);
                 Ingrediente i = new Ingrediente(0, qtde, p);
                 _receitaAtual.AddIngrediente(i);
                 MessageBox.Show(p.Descricao + " Adicionado à receita ");
                 this.MostraItensReceita();
+
+                txtReceitaIngQtde.Text = string.Empty;
+                btn_AddIngrediente.Enabled = false;
+                txtReceitaIngQtde.Enabled = false;
+                CbRecIngUN.Enabled = false;
+                txtRecContEmb.Enabled = false;
+                txtRecIngredPrecoEmbalagem.Enabled = false;
+                txt_ReceitaNomeIngrediente.Text = string.Empty;
             }
             catch (DomainException ex)
             {
@@ -190,8 +200,8 @@ namespace FichaTecnicaFacil.Views
             }
             finally
             {
-                txtReceitaIngQtde.Text = string.Empty;
-                txtTotalSomaIngredientes.Text = "R$ "+_receitaAtual.getTotalIngrdiente().ToString("F2");
+
+                txtTotalSomaIngredientes.Text = "R$ " + _receitaAtual.getTotalIngrdiente().ToString("F2");
             }
 
         }
@@ -267,12 +277,16 @@ namespace FichaTecnicaFacil.Views
                     txtRecIngredPrecoEmbalagem.Text = string.Empty;
                     txtRecContEmb.Text = string.Empty;
                     CbRecIngUN.Text = string.Empty;
+                    btn_AddIngrediente.Enabled = true;
+                    txtReceitaIngQtde.Enabled = true;
                 }
                 else
                 {
                     txtRecIngredPrecoEmbalagem.Enabled = false;
                     txtRecContEmb.Enabled = false;
                     CbRecIngUN.Enabled = false;
+                    btn_AddIngrediente.Enabled = false;
+                    txtReceitaIngQtde.Enabled = false;
                 }
 
             }
@@ -280,6 +294,7 @@ namespace FichaTecnicaFacil.Views
             {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
@@ -295,6 +310,7 @@ namespace FichaTecnicaFacil.Views
                 _receitaAtual = new Receita();
                 _receitaAtual.Id = txt_IdReceita.Text;
                 txt_DescricaoReceita.Select();
+                txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
             }
         }
 
@@ -305,6 +321,7 @@ namespace FichaTecnicaFacil.Views
                 txt_IdReceita.Text = _control.GenerateCodigoReceita();
                 _receitaAtual = new Receita();
                 _receitaAtual.Id = txt_IdReceita.Text;
+                txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
                 txt_DescricaoReceita.Select();
             }
         }
@@ -319,6 +336,9 @@ namespace FichaTecnicaFacil.Views
                 _receitaAtual.ListaIngrediente.Remove(i);
                 MessageBox.Show("Item removido !");
                 this.MostraItensReceita();
+                txtTotalSomaIngredientes.Text = string.Empty;
+                txtPrecoFinal.Text = string.Empty;
+
             }
             else
             {
@@ -331,6 +351,8 @@ namespace FichaTecnicaFacil.Views
                     txtRecContEmb.Text = p.ConteudoEmbalagem.ToString("F2");
                     CbRecIngUN.Text = p.Un.ToString();
                     txtReceitaIngQtde.Text = string.Empty;
+                    btn_AddIngrediente.Enabled = true;
+                    txtReceitaIngQtde.Enabled = true;
                 }
 
             }
@@ -351,15 +373,181 @@ namespace FichaTecnicaFacil.Views
 
         private void txtGastosAdicionais_KeyDown(object sender, KeyEventArgs e)
         {
-          
+
         }
 
         private void btnCalcularCustoReceita_Click(object sender, EventArgs e)
         {
-            //validação
-            double gastosGerais = double.Parse(txtGastosAdicionais.Text);
-            double MaodeObra = double.Parse(txtCustoMaoObra.Text);
-            txtCustoReceita.Text ="R$ "+ _receitaAtual.CalculaCustoReceita(gastosGerais, MaodeObra).ToString("F2");
+            try
+            {
+                if (string.IsNullOrEmpty(txtGastosAdicionais.Text) || string.IsNullOrEmpty(txtCustoMaoObra.Text)) throw new DomainException("Verifique os campos de texto que não podem ser vazios !");
+                double gastosGerais = double.Parse(txtGastosAdicionais.Text);
+                double MaodeObra = double.Parse(txtCustoMaoObra.Text);
+                txtCustoReceita.Text = "R$ " + _receitaAtual.CalculaCustoReceita(gastosGerais, MaodeObra).ToString("F2");
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtMargemLucro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMargemLucroDinheiro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CBox_MargemLucroPerc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CBoxMargemLucroPerc.Checked)
+            {
+                txtMargemLucroDinheiro.Enabled = false;
+                CboxMargemReal.Checked = false;
+                txtMargemLucroDinheiro.Text = string.Empty;
+                txtMargemLucroPerc.Enabled = true;
+            }
+            else
+            {
+                txtMargemLucroPerc.Enabled = false;
+                txtMargemLucroPerc.Text = string.Empty;
+                txtPrecoFinal.Text = string.Empty;
+            }
+        }
+
+        private void txtPrecoFinal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CboxMargemReal_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (CboxMargemReal.Checked)
+            {
+                txtMargemLucroDinheiro.Enabled = true;
+                CBoxMargemLucroPerc.Checked = false;
+            }
+            else
+            {
+                txtMargemLucroDinheiro.Text = string.Empty;
+                txtMargemLucroDinheiro.Enabled = false;
+                txtPrecoFinal.Text = string.Empty;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnCalcularPrecoFinal_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                double gastosGerais = double.Parse(txtGastosAdicionais.Text);
+                double MaodeObra = double.Parse(txtCustoMaoObra.Text);
+
+                if (CboxMargemReal.Checked)
+                {
+                    if (txtMargemLucroDinheiro.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
+                    double real = double.Parse(txtMargemLucroDinheiro.Text);
+                    txtPrecoFinal.Text = _receitaAtual.CalcularTotalReceitaValorReal(gastosGerais, MaodeObra, real).ToString("F2");
+                }
+                else
+                {
+                    if (txtMargemLucroPerc.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
+                    double perc = double.Parse(txtMargemLucroPerc.Text);
+                    txtPrecoFinal.Text = _receitaAtual.CalcularTotalReceita(gastosGerais, MaodeObra, perc).ToString("F2");
+                }
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtReceitaIngQtde_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.EnterSomenteDec(e);
+        }
+
+        private void dgv_RecListaIngredientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtTotalSomaIngredientes_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtTotalSomaIngredientes.SelectAll();
+        }
+
+        private void txtGastosAdicionais_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtGastosAdicionais.SelectAll();
+        }
+
+        private void txtCustoMaoObra_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtCustoMaoObra.SelectAll();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //VALIDAÇÃO
+                if (_receitaAtual.ListaIngrediente.Count == 0) throw new DomainException("A lista de Ingrediente não pode ser vazia !");
+                if (txt_DescricaoReceita.Text == string.Empty) throw new DomainException("Nome de receita não pode ser vazio !");
+                if (txt_ValidadeReceita.Text == string.Empty) _receitaAtual.Validade = "não Informado !";
+                if (txt_RendimentoReceita.Text == string.Empty) _receitaAtual.Rendimento = "não informado !";
+
+                if (string.IsNullOrEmpty(txtGastosAdicionais.Text) || string.IsNullOrEmpty(txtCustoMaoObra.Text)) throw new DomainException("Verifique os campos de Margem de Lucro que não podem ser vazios !");
+
+                _receitaAtual.GastosGerais = double.Parse(txtGastosAdicionais.Text);
+                _receitaAtual.Data = DateTime.Now;
+                _receitaAtual.ValorMaoObra = double.Parse(txtCustoMaoObra.Text);
+                _receitaAtual.Validade = txt_ValidadeReceita.Text;
+                _receitaAtual.Descricao = txt_DescricaoReceita.Text;
+                _receitaAtual.Rendimento = txt_RendimentoReceita.Text;
+                _receitaAtual.Id = txt_IdReceita.Text;
+
+                double MargemLucroValorReal = double.Parse(txtMargemLucroDinheiro.Text);
+                double totalCustoReceita = _receitaAtual.CalculaCustoReceita(_receitaAtual.GastosGerais, _receitaAtual.ValorMaoObra);
+
+                if (CboxMargemReal.Checked)
+                {
+                    if (txtMargemLucroDinheiro.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
+                    _receitaAtual.MargemLucro = (MargemLucroValorReal / totalCustoReceita) * 100;
+                }
+                else
+                {
+                    if (txtMargemLucroPerc.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
+                    _receitaAtual.MargemLucro = double.Parse(txtMargemLucroPerc.Text);
+                }
+
+                _control.InsertReceitaControl(_receitaAtual);
+
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

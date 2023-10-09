@@ -12,14 +12,14 @@ namespace FichaTecnicaFacil.Entidades
         public string Rendimento { get; set; }
         public double MargemLucro { get; set; }
         public double ValorMaoObra { get; set; }
-        public DateTime Validade { get; set; }
+        public string Validade { get; set; }
         public string Descricao { get; set; }
         public DateTime Data { get; set; }
         public double GastosGerais { get; set; }
 
         public List<Ingrediente> ListaIngrediente { get; private set; } = new List<Ingrediente>();
 
-        public Receita(string id, string rendimento, double margemLucro, double valorMaoObra, DateTime validade, string descricao, DateTime data, double gastosGerais)
+        public Receita(string id, string rendimento, double margemLucro, double valorMaoObra, string validade, string descricao, DateTime data, double gastosGerais)
         {
             Id = id;
             Rendimento = rendimento;
@@ -55,7 +55,12 @@ namespace FichaTecnicaFacil.Entidades
 
         public double CalcularTotalReceita(double gastosGerais, double ValorMaoObra,double margemLucro)
         {
-            return this.CalculaCustoReceita(gastosGerais,ValorMaoObra) + margemLucro;
+            return this.CalculaCustoReceita(gastosGerais, ValorMaoObra) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra) * margemLucro * 0.01;
+        }
+
+        public double CalcularTotalReceitaValorReal(double gastosGerais, double ValorMaoObra, double margemLucro)
+        {
+            return this.CalculaCustoReceita(gastosGerais, ValorMaoObra) + margemLucro;
         }
 
         public double getTotalIngrdiente()

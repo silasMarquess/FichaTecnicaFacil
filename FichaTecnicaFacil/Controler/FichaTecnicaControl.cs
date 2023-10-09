@@ -131,7 +131,11 @@ namespace FichaTecnicaFacil.Controler
             ValidaInsercao();
             bool teste = DBConexao.ValidateOperation(FichaTenicaDAO.VerificaSeReceitaExiste, receita);
             if (teste) throw new DomainException("Erro: Receita ja existe");
-            DBConexao.ModifyOperation(FichaTenicaDAO.InsertFicha, receita);
+
+            Action<Receita> act = FichaTenicaDAO.InsertFicha;
+            act += FichaTenicaDAO.InsertItemReceita;
+
+            DBConexao.ModifyOperation(act, receita);
             MessageBox.Show("Receita Cadastrada com sucesso !");
         }
 

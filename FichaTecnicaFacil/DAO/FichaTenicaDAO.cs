@@ -30,7 +30,7 @@ namespace FichaTecnicaFacil.DAO
             cmd.ExecuteNonQuery();
         }
 
-        public void InsertItemReceita(Receita r)
+        public static void InsertItemReceita(Receita r)
         {
             string sql = "insert into ingrediente(qtde, fk_Reeita_idReceita, fk_Produto_idProduto) " +
                 "values (@qtde,@fk_Receita_idReceita, @fk_Produto_idProduto)";
@@ -58,7 +58,7 @@ namespace FichaTecnicaFacil.DAO
                 DateTime data = rd.GetDateTime("data");
                 double margemLucro = rd.GetDouble("MargemLucro");
                 double valorMaoObra = rd.GetDouble("ValorMaoObra");
-                DateTime validade = rd.GetDateTime("validade");
+                string validade = rd.GetString("validade");
                 string descricao = rd.GetString("descricaoReceita");
                 string redimento = rd.GetString("rendimento");
                 double gastosGerais = rd.GetDouble("gastosGerais");
