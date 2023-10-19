@@ -43,7 +43,12 @@ namespace FichaTecnicaFacil.Entidades
 
         public void AddIngrediente(Ingrediente ing)
         {
-            if (ListaIngrediente.Contains(ing)) throw new DomainException("Erro: Ingrediente ja cadastrado");
+            if (ListaIngrediente.Contains(ing)) {
+
+                int index = ListaIngrediente.IndexOf(ing);
+                ListaIngrediente[index].Qtde = ing.Qtde;
+                throw new DomainException("Quantidade Atualizada !");
+            } 
             ListaIngrediente.Add(ing);
         }
         public double CalculaCustoReceita(double gastosGerais, double ValorMaoObra)
@@ -53,9 +58,20 @@ namespace FichaTecnicaFacil.Entidades
             return valorReceita;
         }
 
+        public double CalculaCustoReceita(double gastosGerais, double ValorMaoObra,double totalIngrediente)
+        {
+            double valorReceita = totalIngrediente + gastosGerais + ValorMaoObra;
+            return valorReceita;
+        }
+
         public double CalcularTotalReceita(double gastosGerais, double ValorMaoObra,double margemLucro)
         {
             return this.CalculaCustoReceita(gastosGerais, ValorMaoObra) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra) * margemLucro * 0.01;
+        }
+
+        public double CalcularTotalReceita(double gastosGerais, double ValorMaoObra, double margemLucro, double totalIngrediente)
+        {
+            return this.CalculaCustoReceita(gastosGerais, ValorMaoObra,totalIngrediente) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra,totalIngrediente) * margemLucro * 0.01;
         }
 
         public double CalcularTotalReceitaValorReal(double gastosGerais, double ValorMaoObra, double margemLucro)

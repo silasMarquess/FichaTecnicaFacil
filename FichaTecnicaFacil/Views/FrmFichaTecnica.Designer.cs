@@ -29,8 +29,8 @@ namespace FichaTecnicaFacil.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -93,7 +93,8 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label30 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_ListaReceitasCadastradas = new System.Windows.Forms.DataGridView();
+            this.idReceita = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.desc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rendimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Validade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -101,13 +102,12 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewButtonColumn3 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewButtonColumn4 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txt_PesquisaReceitaPeloNome = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dgv_ConsultaListaIngredienteRec = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
@@ -170,6 +170,8 @@ namespace FichaTecnicaFacil.Views
             this.txt_NumProdutosCadastrados = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -199,10 +201,10 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel27.SuspendLayout();
             this.tableLayoutPanel28.SuspendLayout();
             this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaReceitasCadastradas)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ConsultaListaIngredienteRec)).BeginInit();
             this.tableLayoutPanel21.SuspendLayout();
             this.tableLayoutPanel18.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
@@ -219,6 +221,7 @@ namespace FichaTecnicaFacil.Views
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaProdutos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -302,7 +305,7 @@ namespace FichaTecnicaFacil.Views
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(1211, 446);
             this.tabPage3.TabIndex = 0;
-            this.tabPage3.Text = "CADASTRADO";
+            this.tabPage3.Text = "ENTRADA DE RECEITAS";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel15
@@ -375,8 +378,8 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel10.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel10.ColumnCount = 1;
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel10.Controls.Add(this.txt_DescricaoReceita, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.panel8, 0, 0);
             this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
@@ -391,7 +394,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 0);
+            this.label9.Location = new System.Drawing.Point(-1, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(276, 20);
             this.label9.TabIndex = 0;
@@ -400,7 +403,6 @@ namespace FichaTecnicaFacil.Views
             // txt_DescricaoReceita
             // 
             this.txt_DescricaoReceita.BackColor = System.Drawing.Color.Yellow;
-            this.txt_DescricaoReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_DescricaoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_DescricaoReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DescricaoReceita.Location = new System.Drawing.Point(3, 28);
@@ -454,7 +456,6 @@ namespace FichaTecnicaFacil.Views
             // txt_ValidadeReceita
             // 
             this.txt_ValidadeReceita.BackColor = System.Drawing.Color.Yellow;
-            this.txt_ValidadeReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ValidadeReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_ValidadeReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ValidadeReceita.Location = new System.Drawing.Point(0, 29);
@@ -548,7 +549,6 @@ namespace FichaTecnicaFacil.Views
             // txt_RendimentoReceita
             // 
             this.txt_RendimentoReceita.BackColor = System.Drawing.Color.Yellow;
-            this.txt_RendimentoReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_RendimentoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_RendimentoReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_RendimentoReceita.Location = new System.Drawing.Point(0, 24);
@@ -648,17 +648,14 @@ namespace FichaTecnicaFacil.Views
             // txt_ReceitaNomeIngrediente
             // 
             this.txt_ReceitaNomeIngrediente.BackColor = System.Drawing.Color.Yellow;
-            this.txt_ReceitaNomeIngrediente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_ReceitaNomeIngrediente.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_ReceitaNomeIngrediente.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ReceitaNomeIngrediente.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txt_ReceitaNomeIngrediente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_ReceitaNomeIngrediente.Location = new System.Drawing.Point(0, 0);
-            this.txt_ReceitaNomeIngrediente.Margin = new System.Windows.Forms.Padding(1);
             this.txt_ReceitaNomeIngrediente.Name = "txt_ReceitaNomeIngrediente";
-            this.txt_ReceitaNomeIngrediente.Size = new System.Drawing.Size(553, 25);
-            this.txt_ReceitaNomeIngrediente.TabIndex = 4;
-            this.txt_ReceitaNomeIngrediente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_ReceitaNomeIngrediente.Size = new System.Drawing.Size(553, 29);
+            this.txt_ReceitaNomeIngrediente.TabIndex = 0;
             this.txt_ReceitaNomeIngrediente.TextChanged += new System.EventHandler(this.txt_ReceitaNomeIngrediente_TextChanged);
+            this.txt_ReceitaNomeIngrediente.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txt_ReceitaNomeIngrediente_MouseDown);
             // 
             // groupBox2
             // 
@@ -729,7 +726,7 @@ namespace FichaTecnicaFacil.Views
             this.txtRecContEmb.Enabled = false;
             this.txtRecContEmb.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecContEmb.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtRecContEmb.Location = new System.Drawing.Point(226, 56);
+            this.txtRecContEmb.Location = new System.Drawing.Point(226, 57);
             this.txtRecContEmb.Name = "txtRecContEmb";
             this.txtRecContEmb.Size = new System.Drawing.Size(135, 27);
             this.txtRecContEmb.TabIndex = 2;
@@ -764,7 +761,7 @@ namespace FichaTecnicaFacil.Views
             this.txtRecIngredPrecoEmbalagem.Enabled = false;
             this.txtRecIngredPrecoEmbalagem.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRecIngredPrecoEmbalagem.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtRecIngredPrecoEmbalagem.Location = new System.Drawing.Point(367, 56);
+            this.txtRecIngredPrecoEmbalagem.Location = new System.Drawing.Point(367, 57);
             this.txtRecIngredPrecoEmbalagem.Name = "txtRecIngredPrecoEmbalagem";
             this.txtRecIngredPrecoEmbalagem.Size = new System.Drawing.Size(117, 27);
             this.txtRecIngredPrecoEmbalagem.TabIndex = 2;
@@ -787,7 +784,7 @@ namespace FichaTecnicaFacil.Views
             this.txtReceitaIngQtde.Enabled = false;
             this.txtReceitaIngQtde.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtReceitaIngQtde.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtReceitaIngQtde.Location = new System.Drawing.Point(12, 56);
+            this.txtReceitaIngQtde.Location = new System.Drawing.Point(12, 57);
             this.txtReceitaIngQtde.Name = "txtReceitaIngQtde";
             this.txtReceitaIngQtde.Size = new System.Drawing.Size(99, 27);
             this.txtReceitaIngQtde.TabIndex = 2;
@@ -837,14 +834,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_RecListaIngredientes.BackgroundColor = System.Drawing.Color.White;
             this.dgv_RecListaIngredientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_RecListaIngredientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_RecListaIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_RecListaIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_RecListaIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_RecListaIngredientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -935,8 +932,8 @@ namespace FichaTecnicaFacil.Views
             // tableLayoutPanel17
             // 
             this.tableLayoutPanel17.ColumnCount = 2;
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.56847F));
-            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.43153F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.56017F));
+            this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.43983F));
             this.tableLayoutPanel17.Controls.Add(this.tableLayoutPanel27, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.groupBox3, 1, 0);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -959,7 +956,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel27.RowCount = 2;
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.35242F));
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.64758F));
-            this.tableLayoutPanel27.Size = new System.Drawing.Size(760, 434);
+            this.tableLayoutPanel27.Size = new System.Drawing.Size(784, 434);
             this.tableLayoutPanel27.TabIndex = 0;
             // 
             // tableLayoutPanel28
@@ -967,7 +964,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28.ColumnCount = 1;
             this.tableLayoutPanel28.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel28.Controls.Add(this.panel6, 0, 0);
-            this.tableLayoutPanel28.Controls.Add(this.dataGridView2, 0, 1);
+            this.tableLayoutPanel28.Controls.Add(this.dgv_ListaReceitasCadastradas, 0, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel28.Location = new System.Drawing.Point(3, 47);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
@@ -975,7 +972,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(754, 384);
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(778, 384);
             this.tableLayoutPanel28.TabIndex = 3;
             // 
             // panel6
@@ -986,7 +983,7 @@ namespace FichaTecnicaFacil.Views
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(754, 28);
+            this.panel6.Size = new System.Drawing.Size(778, 28);
             this.panel6.TabIndex = 1;
             // 
             // label30
@@ -1002,34 +999,42 @@ namespace FichaTecnicaFacil.Views
             this.label30.Text = "LISTA DE RECEITA";
             this.label30.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // dataGridView2
+            // dgv_ListaReceitasCadastradas
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_ListaReceitasCadastradas.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ListaReceitasCadastradas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_ListaReceitasCadastradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgv_ListaReceitasCadastradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListaReceitasCadastradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idReceita,
             this.desc,
             this.Rendimento,
             this.Validade,
             this.Data,
             this.dataGridViewButtonColumn3,
             this.dataGridViewButtonColumn4});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 28);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(754, 356);
-            this.dataGridView2.TabIndex = 0;
+            this.dgv_ListaReceitasCadastradas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ListaReceitasCadastradas.Location = new System.Drawing.Point(0, 28);
+            this.dgv_ListaReceitasCadastradas.Margin = new System.Windows.Forms.Padding(0);
+            this.dgv_ListaReceitasCadastradas.Name = "dgv_ListaReceitasCadastradas";
+            this.dgv_ListaReceitasCadastradas.RowHeadersVisible = false;
+            this.dgv_ListaReceitasCadastradas.Size = new System.Drawing.Size(778, 356);
+            this.dgv_ListaReceitasCadastradas.TabIndex = 0;
+            this.dgv_ListaReceitasCadastradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaReceitasCadastradas_CellClick);
+            // 
+            // idReceita
+            // 
+            this.idReceita.HeaderText = "ID";
+            this.idReceita.Name = "idReceita";
+            this.idReceita.Width = 60;
             // 
             // desc
             // 
@@ -1056,7 +1061,7 @@ namespace FichaTecnicaFacil.Views
             this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
-            this.Data.Width = 80;
+            this.Data.Width = 65;
             // 
             // dataGridViewButtonColumn3
             // 
@@ -1065,7 +1070,7 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewButtonColumn3.Name = "dataGridViewButtonColumn3";
             this.dataGridViewButtonColumn3.Text = "Delete";
             this.dataGridViewButtonColumn3.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn3.Width = 60;
+            this.dataGridViewButtonColumn3.Width = 57;
             // 
             // dataGridViewButtonColumn4
             // 
@@ -1073,29 +1078,30 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewButtonColumn4.Name = "dataGridViewButtonColumn4";
             this.dataGridViewButtonColumn4.Text = "Editar";
             this.dataGridViewButtonColumn4.UseColumnTextForButtonValue = true;
-            this.dataGridViewButtonColumn4.Width = 60;
+            this.dataGridViewButtonColumn4.Width = 57;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.textBox9);
+            this.panel4.Controls.Add(this.txt_PesquisaReceitaPeloNome);
             this.panel4.Controls.Add(this.label29);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(754, 38);
+            this.panel4.Size = new System.Drawing.Size(778, 38);
             this.panel4.TabIndex = 0;
             // 
-            // textBox9
+            // txt_PesquisaReceitaPeloNome
             // 
-            this.textBox9.BackColor = System.Drawing.Color.Yellow;
-            this.textBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.textBox9.Location = new System.Drawing.Point(101, 6);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(327, 29);
-            this.textBox9.TabIndex = 5;
-            this.textBox9.Text = "informe nome";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_PesquisaReceitaPeloNome.BackColor = System.Drawing.Color.Yellow;
+            this.txt_PesquisaReceitaPeloNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_PesquisaReceitaPeloNome.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.txt_PesquisaReceitaPeloNome.Location = new System.Drawing.Point(101, 5);
+            this.txt_PesquisaReceitaPeloNome.Name = "txt_PesquisaReceitaPeloNome";
+            this.txt_PesquisaReceitaPeloNome.Size = new System.Drawing.Size(355, 29);
+            this.txt_PesquisaReceitaPeloNome.TabIndex = 5;
+            this.txt_PesquisaReceitaPeloNome.Text = "informe nome";
+            this.txt_PesquisaReceitaPeloNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_PesquisaReceitaPeloNome.TextChanged += new System.EventHandler(this.txt_PesquisaReceitaPeloNome_TextChanged);
             // 
             // label29
             // 
@@ -1108,20 +1114,20 @@ namespace FichaTecnicaFacil.Views
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Controls.Add(this.dgv_ConsultaListaIngredienteRec);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(769, 3);
+            this.groupBox3.Location = new System.Drawing.Point(793, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(433, 434);
+            this.groupBox3.Size = new System.Drawing.Size(409, 434);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lista de Ingredientes:";
             // 
-            // dataGridView3
+            // dgv_ConsultaListaIngredienteRec
             // 
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView3.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgv_ConsultaListaIngredienteRec.BackgroundColor = System.Drawing.Color.White;
+            this.dgv_ConsultaListaIngredienteRec.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_ConsultaListaIngredienteRec.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1129,20 +1135,19 @@ namespace FichaTecnicaFacil.Views
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_ConsultaListaIngredienteRec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgv_ConsultaListaIngredienteRec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ConsultaListaIngredienteRec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn9,
             this.dataGridViewTextBoxColumn10});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView3.Location = new System.Drawing.Point(3, 21);
-            this.dataGridView3.Margin = new System.Windows.Forms.Padding(0);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.Size = new System.Drawing.Size(427, 410);
-            this.dataGridView3.TabIndex = 1;
+            this.dgv_ConsultaListaIngredienteRec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_ConsultaListaIngredienteRec.Location = new System.Drawing.Point(3, 21);
+            this.dgv_ConsultaListaIngredienteRec.Margin = new System.Windows.Forms.Padding(0);
+            this.dgv_ConsultaListaIngredienteRec.Name = "dgv_ConsultaListaIngredienteRec";
+            this.dgv_ConsultaListaIngredienteRec.RowHeadersVisible = false;
+            this.dgv_ConsultaListaIngredienteRec.Size = new System.Drawing.Size(403, 410);
+            this.dgv_ConsultaListaIngredienteRec.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -1156,13 +1161,6 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewTextBoxColumn6.HeaderText = "Qtde";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 60;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.dataGridViewTextBoxColumn9.HeaderText = "UN:";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 55;
             // 
             // dataGridViewTextBoxColumn10
             // 
@@ -1178,7 +1176,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.771F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.22901F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 439F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 445F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1193,10 +1191,10 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(426, 1);
+            this.button2.Location = new System.Drawing.Point(422, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(182, 26);
+            this.button2.Size = new System.Drawing.Size(180, 26);
             this.button2.TabIndex = 0;
             this.button2.Text = "Salvar Ficha";
             this.button2.UseVisualStyleBackColor = true;
@@ -1206,7 +1204,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(610, 1);
+            this.button3.Location = new System.Drawing.Point(604, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 26);
@@ -1308,11 +1306,11 @@ namespace FichaTecnicaFacil.Views
             this.txtTotalSomaIngredientes.Location = new System.Drawing.Point(892, 0);
             this.txtTotalSomaIngredientes.Margin = new System.Windows.Forms.Padding(0);
             this.txtTotalSomaIngredientes.Name = "txtTotalSomaIngredientes";
+            this.txtTotalSomaIngredientes.ReadOnly = true;
             this.txtTotalSomaIngredientes.Size = new System.Drawing.Size(325, 26);
             this.txtTotalSomaIngredientes.TabIndex = 2;
             this.txtTotalSomaIngredientes.Text = "0,00";
             this.txtTotalSomaIngredientes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTotalSomaIngredientes.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             this.txtTotalSomaIngredientes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtReceitaIngQtde_KeyPress);
             this.txtTotalSomaIngredientes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtTotalSomaIngredientes_MouseDown);
             // 
@@ -1334,7 +1332,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel22.ColumnCount = 2;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 328F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 340F));
             this.tableLayoutPanel22.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel22.Controls.Add(this.txtPrecoFinal, 1, 2);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 1, 1);
@@ -1361,7 +1359,7 @@ namespace FichaTecnicaFacil.Views
             this.label20.ForeColor = System.Drawing.Color.DarkRed;
             this.label20.Location = new System.Drawing.Point(5, 40);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(877, 30);
+            this.label20.Size = new System.Drawing.Size(865, 30);
             this.label20.TabIndex = 4;
             this.label20.Text = "D) MARGEM DE LUCRO(Ex: 50% ou R$ 7,30 Sobre o Custo de Receita):";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1373,11 +1371,12 @@ namespace FichaTecnicaFacil.Views
             this.txtPrecoFinal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoFinal.ForeColor = System.Drawing.Color.RosyBrown;
-            this.txtPrecoFinal.Location = new System.Drawing.Point(888, 73);
+            this.txtPrecoFinal.Location = new System.Drawing.Point(876, 73);
             this.txtPrecoFinal.Margin = new System.Windows.Forms.Padding(1);
             this.txtPrecoFinal.Multiline = true;
             this.txtPrecoFinal.Name = "txtPrecoFinal";
-            this.txtPrecoFinal.Size = new System.Drawing.Size(326, 33);
+            this.txtPrecoFinal.ReadOnly = true;
+            this.txtPrecoFinal.Size = new System.Drawing.Size(338, 33);
             this.txtPrecoFinal.TabIndex = 5;
             this.txtPrecoFinal.Text = "R$ 0,00";
             this.txtPrecoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1391,12 +1390,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 0, 0);
             this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel29, 1, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(887, 40);
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(875, 40);
             this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(328, 30);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(340, 30);
             this.tableLayoutPanel23.TabIndex = 7;
             // 
             // tableLayoutPanel24
@@ -1459,12 +1458,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel29.Controls.Add(this.txtMargemLucroDinheiro, 1, 0);
             this.tableLayoutPanel29.Controls.Add(this.CboxMargemReal, 0, 0);
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(164, 0);
+            this.tableLayoutPanel29.Location = new System.Drawing.Point(170, 0);
             this.tableLayoutPanel29.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel29.Name = "tableLayoutPanel29";
             this.tableLayoutPanel29.RowCount = 1;
             this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(164, 30);
+            this.tableLayoutPanel29.Size = new System.Drawing.Size(170, 30);
             this.tableLayoutPanel29.TabIndex = 6;
             // 
             // txtMargemLucroDinheiro
@@ -1475,11 +1474,11 @@ namespace FichaTecnicaFacil.Views
             this.txtMargemLucroDinheiro.Enabled = false;
             this.txtMargemLucroDinheiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMargemLucroDinheiro.ForeColor = System.Drawing.Color.Red;
-            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(57, 1);
+            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(59, 1);
             this.txtMargemLucroDinheiro.Margin = new System.Windows.Forms.Padding(1);
             this.txtMargemLucroDinheiro.Multiline = true;
             this.txtMargemLucroDinheiro.Name = "txtMargemLucroDinheiro";
-            this.txtMargemLucroDinheiro.Size = new System.Drawing.Size(106, 28);
+            this.txtMargemLucroDinheiro.Size = new System.Drawing.Size(110, 28);
             this.txtMargemLucroDinheiro.TabIndex = 5;
             this.txtMargemLucroDinheiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMargemLucroDinheiro.TextChanged += new System.EventHandler(this.txtMargemLucro_TextChanged);
@@ -1490,7 +1489,7 @@ namespace FichaTecnicaFacil.Views
             this.CboxMargemReal.AutoSize = true;
             this.CboxMargemReal.Dock = System.Windows.Forms.DockStyle.Right;
             this.CboxMargemReal.ForeColor = System.Drawing.Color.Cyan;
-            this.CboxMargemReal.Location = new System.Drawing.Point(11, 3);
+            this.CboxMargemReal.Location = new System.Drawing.Point(13, 3);
             this.CboxMargemReal.Name = "CboxMargemReal";
             this.CboxMargemReal.Size = new System.Drawing.Size(42, 24);
             this.CboxMargemReal.TabIndex = 6;
@@ -1505,10 +1504,11 @@ namespace FichaTecnicaFacil.Views
             this.txtCustoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCustoReceita.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustoReceita.ForeColor = System.Drawing.Color.Yellow;
-            this.txtCustoReceita.Location = new System.Drawing.Point(890, 5);
+            this.txtCustoReceita.Location = new System.Drawing.Point(878, 5);
             this.txtCustoReceita.Multiline = true;
             this.txtCustoReceita.Name = "txtCustoReceita";
-            this.txtCustoReceita.Size = new System.Drawing.Size(322, 30);
+            this.txtCustoReceita.ReadOnly = true;
+            this.txtCustoReceita.Size = new System.Drawing.Size(334, 30);
             this.txtCustoReceita.TabIndex = 8;
             this.txtCustoReceita.Text = "0,00";
             this.txtCustoReceita.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1521,7 +1521,7 @@ namespace FichaTecnicaFacil.Views
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(883, 36);
+            this.panel1.Size = new System.Drawing.Size(871, 36);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1532,7 +1532,7 @@ namespace FichaTecnicaFacil.Views
             this.btnCalcularCustoReceita.FlatAppearance.BorderSize = 0;
             this.btnCalcularCustoReceita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcularCustoReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(759, 0);
+            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(747, 0);
             this.btnCalcularCustoReceita.Name = "btnCalcularCustoReceita";
             this.btnCalcularCustoReceita.Size = new System.Drawing.Size(124, 36);
             this.btnCalcularCustoReceita.TabIndex = 2;
@@ -1547,7 +1547,7 @@ namespace FichaTecnicaFacil.Views
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(589, 8);
+            this.label19.Location = new System.Drawing.Point(577, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(156, 21);
             this.label19.TabIndex = 1;
@@ -1563,7 +1563,7 @@ namespace FichaTecnicaFacil.Views
             this.panel7.Location = new System.Drawing.Point(2, 72);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(883, 35);
+            this.panel7.Size = new System.Drawing.Size(871, 35);
             this.panel7.TabIndex = 10;
             // 
             // btnCalcularPrecoFinal
@@ -1573,7 +1573,7 @@ namespace FichaTecnicaFacil.Views
             this.btnCalcularPrecoFinal.FlatAppearance.BorderSize = 0;
             this.btnCalcularPrecoFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcularPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularPrecoFinal.Location = new System.Drawing.Point(759, 0);
+            this.btnCalcularPrecoFinal.Location = new System.Drawing.Point(747, 0);
             this.btnCalcularPrecoFinal.Name = "btnCalcularPrecoFinal";
             this.btnCalcularPrecoFinal.Size = new System.Drawing.Size(124, 35);
             this.btnCalcularPrecoFinal.TabIndex = 3;
@@ -2023,6 +2023,28 @@ namespace FichaTecnicaFacil.Views
             this.label1.Text = "Ficha Técnica";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.button1);
+            this.panel8.Controls.Add(this.label9);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
+            this.panel8.Margin = new System.Windows.Forms.Padding(0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(632, 25);
+            this.panel8.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.Location = new System.Drawing.Point(517, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 25);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Limpar Campos";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmFichaTecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2074,11 +2096,11 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListaReceitasCadastradas)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ConsultaListaIngredienteRec)).EndInit();
             this.tableLayoutPanel21.ResumeLayout(false);
             this.tableLayoutPanel18.ResumeLayout(false);
             this.tableLayoutPanel19.ResumeLayout(false);
@@ -2105,6 +2127,8 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2139,7 +2163,6 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
-        private System.Windows.Forms.TextBox txt_ReceitaNomeIngrediente;
         private System.Windows.Forms.TextBox txtReceitaIngQtde;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
@@ -2196,22 +2219,9 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel28;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rendimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Validade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.TextBox txt_DescricaoReceita;
         public System.Windows.Forms.TextBox txt_IdReceita;
@@ -2247,5 +2257,21 @@ namespace FichaTecnicaFacil.Views
         public System.Windows.Forms.CheckBox CboxMargemReal;
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.Button btnCalcularPrecoFinal;
+        public System.Windows.Forms.TextBox txt_ReceitaNomeIngrediente;
+        public System.Windows.Forms.TextBox txt_PesquisaReceitaPeloNome;
+        public System.Windows.Forms.DataGridView dgv_ListaReceitasCadastradas;
+        public System.Windows.Forms.DataGridView dgv_ConsultaListaIngredienteRec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idReceita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rendimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Validade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn3;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button button1;
     }
 }

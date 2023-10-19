@@ -17,8 +17,9 @@ namespace FichaTecnicaFacil.Views
     {
         private FichaTecnicaControl _control;
         private Receita _receitaAtual;
-        private int Ident = 0;
+        private int Ident;
         private List<Produto> listaIngredienteFiltrados;
+
         public FrmFichaTecnica()
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace FichaTecnicaFacil.Views
             InitializeComponent();
             _control = new FichaTecnicaControl(this, control);
             control._form.Visible = false;
+            Ident = 0;
         }
 
         private void btn_Minimize_Click(object sender, EventArgs e)
@@ -39,11 +41,6 @@ namespace FichaTecnicaFacil.Views
         private void btn_Maxmize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void btn_fecharJanela_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
@@ -152,17 +149,15 @@ namespace FichaTecnicaFacil.Views
 
         }
 
-        private void btn_NovaRecita_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_AddIngrediente_Click(object sender, EventArgs e)
         {
 
             try
             {
+
                 Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
+                if (listaIngredienteFiltrados != null) listaIngredienteFiltrados.Clear();
+
 
                 if (p is null)
                 {
@@ -183,7 +178,9 @@ namespace FichaTecnicaFacil.Views
                 double qtde = double.Parse(txtReceitaIngQtde.Text);
                 Ingrediente i = new Ingrediente(0, qtde, p);
                 _receitaAtual.AddIngrediente(i);
+
                 MessageBox.Show(p.Descricao + " Adicionado à receita ");
+
                 this.MostraItensReceita();
 
                 txtReceitaIngQtde.Text = string.Empty;
@@ -191,8 +188,9 @@ namespace FichaTecnicaFacil.Views
                 txtReceitaIngQtde.Enabled = false;
                 CbRecIngUN.Enabled = false;
                 txtRecContEmb.Enabled = false;
+                txtRecContEmb.Text = "0,00";
                 txtRecIngredPrecoEmbalagem.Enabled = false;
-                txt_ReceitaNomeIngrediente.Text = string.Empty;
+                txtRecIngredPrecoEmbalagem.Text = "0,00";
             }
             catch (DomainException ex)
             {
@@ -202,6 +200,7 @@ namespace FichaTecnicaFacil.Views
             {
 
                 txtTotalSomaIngredientes.Text = "R$ " + _receitaAtual.getTotalIngrdiente().ToString("F2");
+                this.MostraItensReceita();
             }
 
         }
@@ -209,18 +208,56 @@ namespace FichaTecnicaFacil.Views
         public void MostraItensReceita()
         {
             List<Ingrediente> lista = _receitaAtual.ListaIngrediente;
-            dgv_RecListaIngredientes.Rows.Clear();
+            if (listaIngredienteFiltrados != null && listaIngredienteFiltrados.Count == 0) dgv_RecListaIngredientes.Rows.Clear();
 
             for (int i = 0; i < lista.Count; i++)
             {
                 DataGridViewRow linha = (DataGridViewRow)dgv_RecListaIngredientes.Rows[i].Clone();
                 linha.Cells[0].Value = lista[i].Produto.Descricao.ToString();
                 linha.Cells[0].Style.ForeColor = System.Drawing.Color.Blue;
+
                 linha.Cells[1].Value = lista[i].Qtde + lista[i].Produto.Un.ToString();
+                linha.Cells[1].Style.ForeColor = System.Drawing.Color.Blue;
+
                 linha.Cells[2].Value = "R$ " + lista[i].Produto.PrecoEmbalagem.ToString("F2");
+                linha.Cells[2].Style.ForeColor = System.Drawing.Color.Blue;
+
                 linha.Cells[3].Value = lista[i].Produto.ConteudoEmbalagem.ToString();
+                linha.Cells[3].Style.ForeColor = System.Drawing.Color.Blue;
+
                 linha.Cells[4].Value = lista[i].Produto.Un.ToString();
+                linha.Cells[4].Style.ForeColor = System.Drawing.Color.Blue;
+
                 linha.Cells[5].Value = lista[i].CalculaCustoIngrediente().ToString("F2");
+                linha.Cells[5].Style.ForeColor = System.Drawing.Color.Blue;
+                dgv_RecListaIngredientes.Rows.Add(linha);
+            }
+        }
+
+        public void MostraItensAdicionais()
+        {
+            dgv_RecListaIngredientes.Rows.Clear();
+            for (int i = 0; i < listaIngredienteFiltrados.Count; i++)
+            {
+                DataGridViewRow linha = (DataGridViewRow)dgv_RecListaIngredientes.Rows[i].Clone();
+                linha.Cells[0].Value = listaIngredienteFiltrados[i].Descricao.ToString();
+                linha.Cells[0].Style.ForeColor = System.Drawing.Color.Red;
+
+                linha.Cells[1].Value = "0,00";
+                linha.Cells[1].Style.ForeColor = System.Drawing.Color.Red;
+
+                linha.Cells[2].Value = "R$ " + listaIngredienteFiltrados[i].PrecoEmbalagem.ToString("F2");
+                linha.Cells[2].Style.ForeColor = System.Drawing.Color.Red;
+
+                linha.Cells[3].Value = listaIngredienteFiltrados[i].ConteudoEmbalagem.ToString();
+                linha.Cells[3].Style.ForeColor = System.Drawing.Color.Red;
+
+                linha.Cells[4].Value = listaIngredienteFiltrados[i].Un.ToString();
+                linha.Cells[4].Style.ForeColor = System.Drawing.Color.Red;
+
+                linha.Cells[5].Value = "0,00";
+                linha.Cells[5].Style.ForeColor = System.Drawing.Color.Red;
+
                 dgv_RecListaIngredientes.Rows.Add(linha);
             }
         }
@@ -230,10 +267,6 @@ namespace FichaTecnicaFacil.Views
 
         }
 
-        private void textBox12_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void tableLayoutPanel18_Paint(object sender, PaintEventArgs e)
         {
@@ -245,58 +278,6 @@ namespace FichaTecnicaFacil.Views
 
         }
 
-        private void label13_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_ValidadeReceita_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_ReceitaNomeIngrediente_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                string nomeIngrediente = txt_ReceitaNomeIngrediente.Text;
-                if (nomeIngrediente != string.Empty)
-                {
-                    listaIngredienteFiltrados = _control.GetListaIngrdientePeloNome(nomeIngrediente);
-                }
-                else
-                {
-                    this.MostraItensReceita();
-                }
-
-                if (listaIngredienteFiltrados.Count == 0)
-                {
-                    txtRecIngredPrecoEmbalagem.Enabled = true;
-                    txtRecContEmb.Enabled = true;
-                    CbRecIngUN.Enabled = true;
-                    txtRecIngredPrecoEmbalagem.Text = string.Empty;
-                    txtRecContEmb.Text = string.Empty;
-                    CbRecIngUN.Text = string.Empty;
-                    btn_AddIngrediente.Enabled = true;
-                    txtReceitaIngQtde.Enabled = true;
-                }
-                else
-                {
-                    txtRecIngredPrecoEmbalagem.Enabled = false;
-                    txtRecContEmb.Enabled = false;
-                    CbRecIngUN.Enabled = false;
-                    btn_AddIngrediente.Enabled = false;
-                    txtReceitaIngQtde.Enabled = false;
-                }
-
-            }
-            catch (DomainException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        }
-
         private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
         {
 
@@ -304,13 +285,30 @@ namespace FichaTecnicaFacil.Views
 
         private void tabControl_Receita_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl_Receita.SelectedIndex == 0)
+            if (tabControl_Receita.SelectedIndex == 0 && Ident != 1)
             {
                 txt_IdReceita.Text = _control.GenerateCodigoReceita();
+                txtGastosAdicionais.ReadOnly = false;
+                txtCustoMaoObra.ReadOnly = false;
+                txtMargemLucroDinheiro.ReadOnly = false;
+                txtMargemLucroPerc.ReadOnly = false;
+                btnCalcularCustoReceita.Enabled = true;
+                btnCalcularPrecoFinal.Enabled = true;
                 _receitaAtual = new Receita();
                 _receitaAtual.Id = txt_IdReceita.Text;
                 txt_DescricaoReceita.Select();
                 txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
+            }
+            else if (tabControl_Receita.SelectedIndex == 1)
+            {
+                _control.getListaReceita();
+                txtGastosAdicionais.ReadOnly = true;
+                txtCustoMaoObra.ReadOnly = true;
+                txtMargemLucroDinheiro.ReadOnly = true;
+                txtMargemLucroPerc.ReadOnly = true;
+                btnCalcularCustoReceita.Enabled = false;
+                btnCalcularPrecoFinal.Enabled = false;
+
             }
         }
 
@@ -328,23 +326,35 @@ namespace FichaTecnicaFacil.Views
 
         private void dgv_RecListaIngredientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
+            Ingrediente i = _receitaAtual.ListaIngrediente.Find(getIngredientePeloNome);
 
             if (dgv_RecListaIngredientes.Columns[e.ColumnIndex].Index == 6)
             {
-                Ingrediente i = _receitaAtual.ListaIngrediente.Find(getIngredientePeloNome);
+                // Ingrediente i = _receitaAtual.ListaIngrediente.Find(getIngredientePeloNome);
                 _receitaAtual.ListaIngrediente.Remove(i);
+                dgv_RecListaIngredientes.Rows.Clear();
                 MessageBox.Show("Item removido !");
                 this.MostraItensReceita();
-                txtTotalSomaIngredientes.Text = string.Empty;
+                txtTotalSomaIngredientes.Text = _receitaAtual.getTotalIngrdiente().ToString("F2");
                 txtPrecoFinal.Text = string.Empty;
-
             }
             else
             {
 
-                if (p != null)
+                if (i != null)
                 {
+                    txt_ReceitaNomeIngrediente.Text = i.Produto.Descricao;
+                    txtReceitaIngQtde.Select();
+                    txtRecIngredPrecoEmbalagem.Text = i.Produto.PrecoEmbalagem.ToString("F2");
+                    txtRecContEmb.Text = i.Produto.ConteudoEmbalagem.ToString("F2");
+                    CbRecIngUN.Text = i.Produto.Un.ToString();
+                    txtReceitaIngQtde.Text = i.Qtde.ToString();
+                    btn_AddIngrediente.Enabled = true;
+                    txtReceitaIngQtde.Enabled = true;
+                }
+                else
+                {
+                    Produto p = listaIngredienteFiltrados.Find(getIngredientePeloNome);
                     txt_ReceitaNomeIngrediente.Text = p.Descricao;
                     txtReceitaIngQtde.Select();
                     txtRecIngredPrecoEmbalagem.Text = p.PrecoEmbalagem.ToString("F2");
@@ -354,7 +364,6 @@ namespace FichaTecnicaFacil.Views
                     btn_AddIngrediente.Enabled = true;
                     txtReceitaIngQtde.Enabled = true;
                 }
-
             }
 
         }
@@ -392,11 +401,6 @@ namespace FichaTecnicaFacil.Views
         }
 
         private void txtMargemLucro_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMargemLucroDinheiro_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -514,8 +518,9 @@ namespace FichaTecnicaFacil.Views
                 //VALIDAÇÃO
                 if (_receitaAtual.ListaIngrediente.Count == 0) throw new DomainException("A lista de Ingrediente não pode ser vazia !");
                 if (txt_DescricaoReceita.Text == string.Empty) throw new DomainException("Nome de receita não pode ser vazio !");
-                if (txt_ValidadeReceita.Text == string.Empty) _receitaAtual.Validade = "não Informado !";
-                if (txt_RendimentoReceita.Text == string.Empty) _receitaAtual.Rendimento = "não informado !";
+
+                if (txt_ValidadeReceita.Text == string.Empty) txt_ValidadeReceita.Text = "não Informado !";
+                if (txt_RendimentoReceita.Text == string.Empty) txt_RendimentoReceita.Text = "não informado !";
 
                 if (string.IsNullOrEmpty(txtGastosAdicionais.Text) || string.IsNullOrEmpty(txtCustoMaoObra.Text)) throw new DomainException("Verifique os campos de Margem de Lucro que não podem ser vazios !");
 
@@ -527,11 +532,11 @@ namespace FichaTecnicaFacil.Views
                 _receitaAtual.Rendimento = txt_RendimentoReceita.Text;
                 _receitaAtual.Id = txt_IdReceita.Text;
 
-                double MargemLucroValorReal = double.Parse(txtMargemLucroDinheiro.Text);
                 double totalCustoReceita = _receitaAtual.CalculaCustoReceita(_receitaAtual.GastosGerais, _receitaAtual.ValorMaoObra);
 
                 if (CboxMargemReal.Checked)
                 {
+                    double MargemLucroValorReal = double.Parse(txtMargemLucroDinheiro.Text);
                     if (txtMargemLucroDinheiro.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
                     _receitaAtual.MargemLucro = (MargemLucroValorReal / totalCustoReceita) * 100;
                 }
@@ -541,13 +546,173 @@ namespace FichaTecnicaFacil.Views
                     _receitaAtual.MargemLucro = double.Parse(txtMargemLucroPerc.Text);
                 }
 
-                _control.InsertReceitaControl(_receitaAtual);
+
+                if (Ident == 0)
+                {
+                    _control.InsertReceitaControl(_receitaAtual);
+                }
+                else
+                {
+                    _control.UpdateReceita(_receitaAtual);
+                    Ident = 0;
+                }
+                _control.LimparCamposFichaTecnica();
+                _receitaAtual = null;
+                //CRIAR NOVA INSTANCIA DE RECEITA
+                txt_IdReceita.Text = _control.GenerateCodigoReceita();
+                _receitaAtual = new Receita();
+                _receitaAtual.Id = txt_IdReceita.Text;
+                txt_DescricaoReceita.Select();
+                txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
+                this.MostraItensReceita();
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txt_ReceitaNomeIngrediente_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string nomeIngrediente = txt_ReceitaNomeIngrediente.Text;
+
+                if (nomeIngrediente == string.Empty)
+                {
+                    dgv_RecListaIngredientes.Rows.Clear();
+                    listaIngredienteFiltrados.Clear();
+                    this.MostraItensReceita();
+                    txtReceitaIngQtde.Enabled = false;
+                    CbRecIngUN.Enabled = false;
+                    txtRecContEmb.Enabled = false;
+                    btn_AddIngrediente.Enabled = false;
+                    txtRecIngredPrecoEmbalagem.Enabled = false;
+                    throw new DomainException("Nada Filtrado");
+                }
+                else
+                {
+                    listaIngredienteFiltrados = _control.GetListaIngrdientePeloNome(nomeIngrediente);
+                    List<Produto> lista2 = new List<Produto>();
+
+                    foreach (Produto p in listaIngredienteFiltrados)
+                    {
+                        bool teste = false;
+
+                        if (_receitaAtual.ListaIngrediente.Count == 0)
+                        {
+                            teste = false;
+                        }
+                        else
+                        {
+                            foreach (Ingrediente i in _receitaAtual.ListaIngrediente)
+                            {
+                                if (p.Id == i.Produto.Id)
+                                {
+                                    teste = true;
+                                }
+                            }
+                        }
+                        if (teste == false)
+                        {
+                            lista2.Add(p);
+                        }
+                    }
+
+                    listaIngredienteFiltrados = lista2;
+
+                    if (listaIngredienteFiltrados.Count == 0)
+                    {
+                        txtReceitaIngQtde.Enabled = true;
+                        CbRecIngUN.Enabled = true;
+                        txtRecContEmb.Enabled = true;
+                        btn_AddIngrediente.Enabled = true;
+                        txtRecIngredPrecoEmbalagem.Enabled = true;
+                    }
+                    else
+                    {
+                        txtReceitaIngQtde.Enabled = false;
+                        CbRecIngUN.Enabled = false;
+                        txtRecContEmb.Enabled = false;
+                        txtRecIngredPrecoEmbalagem.Enabled = false;
+                    }
+                    MostraItensAdicionais();
+                    MostraItensReceita();
+
+                }
 
             }
             catch (DomainException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void txt_ReceitaNomeIngrediente_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt_ReceitaNomeIngrediente.SelectAll();
+        }
+
+        private void txt_PesquisaReceitaPeloNome_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string nomeReceita = txt_PesquisaReceitaPeloNome.Text;
+                _control.getReceitasPorNome(nomeReceita);
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgv_ListaReceitasCadastradas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgv_ListaReceitasCadastradas.Columns[e.ColumnIndex].Index == 5)
+                {
+                    DialogResult res = MessageBox.Show("Deseja realmente deletar essa Receita", "CONFIRMAÇÃO", MessageBoxButtons.YesNo);
+                    if (res == DialogResult.No) throw new DomainException("Operação cancelada com sucesso !");
+                    _control.DeleteReceita();
+                    _control.getListaReceita();
+                }
+                else if (dgv_ListaReceitasCadastradas.Columns[e.ColumnIndex].Index == 6)
+                {
+                    dgv_RecListaIngredientes.Rows.Clear();
+                    tabControl_Receita.SelectedIndex = 0;
+
+                    _receitaAtual = _control.getInformacoesUpdateReceita();
+                    this.MostraItensReceita();
+                    Ident = 1;
+
+                }
+                else
+                {
+                    _control.getReceitaMostraIngredientes();
+                }
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ident = 0;
+            _control.LimparCamposFichaTecnica();
+            _receitaAtual = null;
+
+            //CRIAR NOVA INSTANCIA DE RECEITA
+            txt_IdReceita.Text = _control.GenerateCodigoReceita();
+            _receitaAtual = new Receita();
+            _receitaAtual.Id = txt_IdReceita.Text;
+            txt_DescricaoReceita.Select();
+            txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
+            dgv_RecListaIngredientes.Rows.Clear();
+            this.MostraItensReceita();
+
         }
     }
 }

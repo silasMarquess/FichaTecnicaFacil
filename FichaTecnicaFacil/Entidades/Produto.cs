@@ -24,6 +24,19 @@ namespace FichaTecnicaFacil.Entidades
             Descricao = descricao;
         }
 
+
+        public override bool Equals(object obj)
+        {
+            bool teste = false;
+            Produto outro= (Produto)obj;
+
+            if (outro.Id== this.Id)
+            {
+                teste = true;
+            }
+            return teste;
+        }
+
         public Produto()
         {
 

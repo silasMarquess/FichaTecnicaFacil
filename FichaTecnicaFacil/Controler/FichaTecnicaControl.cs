@@ -16,7 +16,8 @@ namespace FichaTecnicaFacil.Controler
         private FrmFichaTecnica _form;
         private Form1Controler _formPai;
         private List<Produto> lista;
-
+        private List<Receita> listaReceitaFiltrada;
+        private int Ident = 0;
         public FichaTecnicaControl(FrmFichaTecnica form, Form1Controler formPai)
         {
             _form = form;
@@ -45,13 +46,13 @@ namespace FichaTecnicaFacil.Controler
             lista = DBConexao.getLisObjectOperation(ProdutoDAO.getListaProdutos);
             _form.dgv_ListaProdutos.Rows.Clear();
 
-            for(int i =0; i<lista.Count; i++)
+            for (int i = 0; i < lista.Count; i++)
             {
                 DataGridViewRow linha = (DataGridViewRow)_form.dgv_ListaProdutos.Rows[i].Clone();
                 linha.Cells[0].Value = lista[i].Id.ToString();
                 linha.Cells[1].Value = lista[i].Descricao.ToString();
                 linha.Cells[1].Style.ForeColor = System.Drawing.Color.Blue;
-                linha.Cells[2].Value = "R$ "+lista[i].PrecoEmbalagem.ToString("F2");
+                linha.Cells[2].Value = "R$ " + lista[i].PrecoEmbalagem.ToString("F2");
                 linha.Cells[3].Value = lista[i].ConteudoEmbalagem.ToString();
                 linha.Cells[4].Value = lista[i].Un.ToString();
                 _form.dgv_ListaProdutos.Rows.Add(linha);
@@ -63,7 +64,7 @@ namespace FichaTecnicaFacil.Controler
         {
 
             DialogResult res = MessageBox.Show("Confirme a Exclusão do Produto?:", "CONFIRMAÇÃO", MessageBoxButtons.YesNo);
-            if(res == DialogResult.No)
+            if (res == DialogResult.No)
             {
                 throw new DomainException("Operação cancelada com sucesso !");
             }
@@ -82,7 +83,7 @@ namespace FichaTecnicaFacil.Controler
                 throw new DomainException("Operação cancelada com sucesso !");
             }
             DBConexao.ModifyOperation(ProdutoDAO.UpdateProduto, p);
-            MessageBox.Show("Produto selecionado atualizado com sucesso" );
+            MessageBox.Show("Produto selecionado atualizado com sucesso");
 
         }
 
@@ -106,11 +107,11 @@ namespace FichaTecnicaFacil.Controler
             _form.Cb_UNIngrediente.SelectedIndex = -1;
 
         }
-        
+
 
         public void ValidaInsercao()
         {
-            if (string.IsNullOrEmpty(_form.txt_descricaoIngrediente.Text))   throw new DomainException("Campo de descrição não pode ser vazio");
+            if (string.IsNullOrEmpty(_form.txt_DescricaoReceita.Text)) throw new DomainException("Campo de descrição não pode ser vazio");
             if (string.IsNullOrEmpty(_form.txt_PrecoEmbalagem.Text)) throw new DomainException("Campo de Preco da embalagem nao pode ser vazio");
             if (string.IsNullOrEmpty(_form.Cb_UNIngrediente.Text)) throw new DomainException("UN é orbrigatorio");
             if (string.IsNullOrEmpty(_form.txt_ConteudoEmbalagem.Text)) throw new DomainException("Conteudo total da embalagem é orbrigatorio");
@@ -126,9 +127,10 @@ namespace FichaTecnicaFacil.Controler
 
 
         //CONTROLE DE RECEITAS
+
+
         public void InsertReceitaControl(Receita receita)
         {
-            ValidaInsercao();
             bool teste = DBConexao.ValidateOperation(FichaTenicaDAO.VerificaSeReceitaExiste, receita);
             if (teste) throw new DomainException("Erro: Receita ja existe");
 
@@ -137,6 +139,49 @@ namespace FichaTecnicaFacil.Controler
 
             DBConexao.ModifyOperation(act, receita);
             MessageBox.Show("Receita Cadastrada com sucesso !");
+        }
+
+
+        public void UpdateReceita(Receita r)
+        {
+            DBConexao.ModifyOperation(FichaTenicaDAO.deleteIngredientePorReceita, r);
+            Action<Receita> act = FichaTenicaDAO.UpdateReceita;
+            act += FichaTenicaDAO.InsertItemReceita;
+            DBConexao.ModifyOperation(act, r);
+            MessageBox.Show("dados de receita atualizados com sucesso !");
+        }
+
+        public void getListaReceita()
+        {
+            listaReceitaFiltrada = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaReceita);
+            MostraListaReceita(listaReceitaFiltrada);
+
+        }
+
+        public void getReceitasPorNome(string nomeReceita)
+        {
+            listaReceitaFiltrada = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaReceita, nomeReceita);
+            MostraListaReceita(listaReceitaFiltrada);
+        }
+
+        private void MostraListaReceita(List<Receita> listaFonte)
+        {
+            _form.dgv_ListaReceitasCadastradas.Rows.Clear();
+
+            for (int i = 0; i < listaFonte.Count; i++)
+            {
+                DataGridViewRow linha = (DataGridViewRow)_form.dgv_ListaReceitasCadastradas.Rows[i].Clone();
+
+                linha.Cells[0].Value = listaFonte[i].Id.ToString();
+                linha.Cells[1].Value = listaFonte[i].Descricao.ToString();
+
+                linha.Cells[2].Value = listaFonte[i].Rendimento;
+                linha.Cells[3].Value = listaFonte[i].Validade;
+
+                linha.Cells[4].Value = listaFonte[i].Data.ToShortDateString();
+
+                _form.dgv_ListaReceitasCadastradas.Rows.Add(linha);
+            }
         }
 
         public List<Produto> GetListaIngrdientePeloNome(string nome)
@@ -153,14 +198,82 @@ namespace FichaTecnicaFacil.Controler
                 linha.Cells[2].Value = "R$ " + lista[i].PrecoEmbalagem.ToString("F2");
                 linha.Cells[3].Value = lista[i].ConteudoEmbalagem.ToString();
                 linha.Cells[4].Value = lista[i].Un.ToString();
-                linha.Cells[5].Value = "0,00"; 
+                linha.Cells[5].Value = "0,00";
                 _form.dgv_RecListaIngredientes.Rows.Add(linha);
             }
             return lista;
         }
 
+        public void LimparCamposFichaTecnica()
+        {
+            _form.txt_DescricaoReceita.Text = string.Empty;
+            _form.txt_ValidadeReceita.Text = string.Empty;
+            _form.txt_RendimentoReceita.Text = string.Empty;
+            _form.txtTotalSomaIngredientes.Text = "0,00";
+            _form.txtGastosAdicionais.Text = "0,00";
+            _form.txtCustoMaoObra.Text = "0,00";
+            _form.CbRecIngUN.SelectedIndex = 0;
+            _form.txtCustoReceita.Text = "0,00";
+            _form.txtPrecoFinal.Text = "0,00";
 
 
+        }
+
+        public void getReceitaMostraIngredientes()
+        {
+            Receita r = listaReceitaFiltrada.Find(getReceitaPorID);
+            if (r ==null) throw new DomainException("Nada selecionado");
+
+            MostraIngredientesPorReceita(r);
+        }
+        private void MostraIngredientesPorReceita(Receita r)
+        {
+            double somaIngrediente = 0;
+            List<Ingrediente> listaI = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaIngredientePorReceita, r);
+            _form.dgv_ConsultaListaIngredienteRec.Rows.Clear();
+
+            for (int i = 0; i < listaI.Count; i++)
+            {
+                DataGridViewRow linha = (DataGridViewRow)_form.dgv_ConsultaListaIngredienteRec.Rows[i].Clone();
+                linha.Cells[0].Value = listaI[i].Produto.Descricao;
+                linha.Cells[1].Value = listaI[i].Qtde + listaI[i].Produto.Un.ToString();
+                linha.Cells[2].Value = "R$ " + listaI[i].CalculaCustoIngrediente().ToString("F2");
+                _form.dgv_ConsultaListaIngredienteRec.Rows.Add(linha);
+                somaIngrediente += listaI[i].CalculaCustoIngrediente();
+            }
+
+            _form.txtTotalSomaIngredientes.Text = "R$ " + somaIngrediente.ToString("F2");
+            _form.txtGastosAdicionais.Text = r.GastosGerais.ToString("F2");
+            _form.txtCustoMaoObra.Text = r.ValorMaoObra.ToString("F2");
+            _form.txtCustoReceita.Text = "R$ " + r.CalculaCustoReceita(r.GastosGerais, r.ValorMaoObra,somaIngrediente);
+            _form.CBoxMargemLucroPerc.Checked = true;
+            _form.txtMargemLucroPerc.Text = r.MargemLucro.ToString("F2");
+            _form.txtPrecoFinal.Text = r.CalcularTotalReceita(r.GastosGerais, r.ValorMaoObra, r.MargemLucro,somaIngrediente).ToString("F2");
+
+        }
+
+        public void DeleteReceita()
+        {
+            Receita r = listaReceitaFiltrada.Find(getReceitaPorID);
+            DBConexao.ModifyOperation(FichaTenicaDAO.DeleteReceita,r);
+            MessageBox.Show("Receita deletada com sucesso !");
+        }
+
+        public Receita getInformacoesUpdateReceita()
+        {
+            Receita r = listaReceitaFiltrada.Find(getReceitaPorID);
+            List<Ingrediente> listaI = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaIngredientePorReceita, r);
+            r.ListaIngrediente.Clear();
+            r.ListaIngrediente.AddRange(listaI);
+
+            //mostrando dados Receita
+            _form.txt_DescricaoReceita.Text = r.Descricao;
+            _form.txt_IdReceita.Text = r.Id.ToString();
+            _form.txt_ValidadeReceita.Text = r.Validade;
+            _form.txt_RendimentoReceita.Text = r.Rendimento;
+            _form.txt_dataCadastro.Text = r.Data.ToShortDateString();
+            return r;
+        }
 
         public string GenerateCodigoReceita()
         {
@@ -183,6 +296,12 @@ namespace FichaTecnicaFacil.Controler
             if (string.IsNullOrEmpty(_form.txt_DescricaoReceita.Text)) throw new DomainException("Nome da Receita nao pode ser vazio");
             if (string.IsNullOrEmpty(_form.txt_RendimentoReceita.Text)) throw new DomainException("Rendimento nao pode ser vazio ");
             if (string.IsNullOrEmpty(_form.txt_ValidadeReceita.Text)) throw new DomainException("Validade da receita nao pode ser vazio ");
+        }
+
+        private bool getReceitaPorID(Receita r)
+        {
+            string id = _form.dgv_ListaReceitasCadastradas.CurrentRow.Cells[0].Value.ToString();
+            return (id == r.Id) ? true : false;
         }
     }
 }

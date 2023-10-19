@@ -14,8 +14,8 @@ namespace FichaTecnicaFacil.DAO
     {
         public static void InsertFicha(Receita r)
         {
-            string sql = "insert into Receita(idReceita,data, MargemLucro, ValorMaoObra, validade, descricaoReceita, rendimento) " +
-                 "values(@idReceita,@data, @MargemLucro, @ValorMaoObra, @validade, @descricaoReceita, @rendimento)";
+            string sql = "insert into Receita(idReceita,data, MargemLucro, ValorMaoObra, validade, descricaoReceita, rendimento,gastosGerais) " +
+                 "values(@idReceita,@data, @MargemLucro, @ValorMaoObra, @validade, @descricaoReceita, @rendimento, @gastosGerais)";
 
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@idReceita", r.Id);
@@ -27,12 +27,13 @@ namespace FichaTecnicaFacil.DAO
             cmd.Parameters.AddWithValue("@validade", r.Validade);
             cmd.Parameters.AddWithValue("@descricaoReceita", r.Descricao);
             cmd.Parameters.AddWithValue("@rendimento", r.Rendimento);
+            cmd.Parameters.AddWithValue("@gastosGerais", r.GastosGerais);
             cmd.ExecuteNonQuery();
         }
 
         public static void InsertItemReceita(Receita r)
         {
-            string sql = "insert into ingrediente(qtde, fk_Reeita_idReceita, fk_Produto_idProduto) " +
+            string sql = "insert into ingrediente(qtde, fk_Receita_idReceita, fk_Produto_idProduto) " +
                 "values (@qtde,@fk_Receita_idReceita, @fk_Produto_idProduto)";
 
             foreach (Ingrediente i in r.ListaIngrediente)
@@ -43,6 +44,28 @@ namespace FichaTecnicaFacil.DAO
                 cmd.Parameters.AddWithValue("@fk_Produto_idProduto", i.Produto.Id);
                 cmd.ExecuteNonQuery();
             }
+        }
+
+
+        public static void UpdateItemReceita(Receita r)
+        {
+            string sql = "update Ingrediente qtde = @qtde where fk_Receita_idreceita = @idreceita";
+
+            foreach (Ingrediente i in r.ListaIngrediente)
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+                cmd.Parameters.AddWithValue("@qtde", i.Qtde);
+                cmd.Parameters.AddWithValue("@fk_Receita_idReceita", r.Id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void deleteIngredientePorReceita(Receita r)
+        {
+            string query = "delete from Ingrediente where fk_Receita_Idreceita = @receita";
+            MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@receita", r.Id);
+            cmd.ExecuteNonQuery();
         }
 
         public static List<Receita> getListaReceita()
@@ -70,27 +93,56 @@ namespace FichaTecnicaFacil.DAO
 
         }
 
+        public static List<Receita> getListaReceita(string nomeReceita)
+        {
+            List<Receita> lista = new List<Receita>();
+            string sql = "select * from receita where descricaoReceita LIKE '%"+nomeReceita+"%'";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                string id = rd.GetString("idReceita");
+                DateTime data = rd.GetDateTime("data");
+                double margemLucro = rd.GetDouble("MargemLucro");
+                double valorMaoObra = rd.GetDouble("ValorMaoObra");
+                string validade = rd.GetString("validade");
+                string descricao = rd.GetString("descricaoReceita");
+                string redimento = rd.GetString("rendimento");
+                double gastosGerais = rd.GetDouble("gastosGerais");
+
+                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais);
+                lista.Add(receita);
+            }
+            return lista;
+
+        }
+
 
         public static void UpdateReceita(Receita r)
         {
-            string sql = "update Receita set MargemLucro =@margemLucro, valorMaoObra=@valorMaoObra, validade =@validade, descricaoReceita = @descricao," +
-                "rendimento =@rendimento  where idReceita = @idReceita";
+            string sql = "update Receita set MargemLucro =@margemLucro, valorMaoObra=@valorMaoObra, validade =@validade, descricaoReceita = @descricao, " +
+                "rendimento = @rendimento, gastosGerais = @gastosGerais  where idReceita = @idReceita";
+
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@idReceita", r.Id);
 
-            cmd.Parameters.AddWithValue("@MargemLucro", r.MargemLucro);
+            cmd.Parameters.AddWithValue("@margemLucro", r.MargemLucro);
             cmd.Parameters.AddWithValue("@ValorMaoObra", r.ValorMaoObra);
 
             cmd.Parameters.AddWithValue("@validade", r.Validade);
-            cmd.Parameters.AddWithValue("@descricaoReceita", r.Descricao);
+            cmd.Parameters.AddWithValue("@descricao", r.Descricao);
             cmd.Parameters.AddWithValue("@rendimento", r.Rendimento);
+            cmd.Parameters.AddWithValue("@gastosGerais", r.GastosGerais) ;
             cmd.ExecuteNonQuery();
 
         }
 
-        public static void getListaIngredientePorReceita(Receita r)
+        public static List<Ingrediente> getListaIngredientePorReceita(Receita r)
         {
-            string sql = "select i.qtde, i.idIngrediente, p.idProduto, p.PrecoEmbalagem, p.ConteudoEmbalagem, p.UN, p.descricao from Ingrediente " +
+            List<Ingrediente> lista = new List<Ingrediente>();
+
+            string sql = "select i.qtde, i.idIngrediente, p.idProduto, p.PrecoEmbalagem, p.ConteudoEmbalagem, p.UN, p.descricao " +
                 "from Ingrediente as i  " +
                 "inner join Produto as p " +
                 "on fk_produto_idProduto = p.idProduto " +
@@ -104,7 +156,7 @@ namespace FichaTecnicaFacil.DAO
             {
                 //Fazendo Produto
                 int idProduto = rd.GetInt32("idProduto");
-                double precoProduto = rd.GetDouble("precoProduto");
+                double precoProduto = rd.GetDouble("precoEmbalagem");
                 double conteudoEmbalagem = rd.GetDouble("conteudoEmbalagem");
                 UN un = (UN)rd.GetInt32("UN");
                 string descricao = rd.GetString("descricao");
@@ -114,9 +166,10 @@ namespace FichaTecnicaFacil.DAO
                 double qtde = rd.GetDouble("qtde");
                 int idIngrediente = rd.GetInt32("idIngrediente");
                 Ingrediente I = new Ingrediente(idIngrediente, qtde, p);
-                r.AddIngrediente(I);
+                lista.Add(I);
 
             }
+            return lista;
 
         }
 
@@ -132,8 +185,9 @@ namespace FichaTecnicaFacil.DAO
 
         public static bool VerificaSeReceitaExiste(Receita r)
         {
-            string sql = "select * from receita where descricaoReceiat = @descricaoReceita";
+            string sql = "select * from receita where descricaoReceita = @descricaoReceita";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@descricaoReceita",r.Descricao);
             MySqlDataReader rd = cmd.ExecuteReader();
             return (rd.Read()) ? true : false;
         }
