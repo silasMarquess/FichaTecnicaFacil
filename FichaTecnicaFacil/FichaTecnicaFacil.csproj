@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="Controler\FichaTecnicaControl.cs" />
     <Compile Include="Controler\Form1Controler.cs" />
+    <Compile Include="Controler\FrmPedidoControl.cs" />
     <Compile Include="DAO\DBConexao.cs" />
     <Compile Include="DAO\FichaTenicaDAO.cs" />
     <Compile Include="DAO\PedidosDAO.cs" />
@@ -139,6 +140,7 @@
     <Compile Include="Entidades\Pedido.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Entidades\Receita.cs" />
+    <Compile Include="Entidades\Venda.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +154,12 @@
     </Compile>
     <Compile Include="Views\FrmFichaTecnica.Designer.cs">
       <DependentUpon>FrmFichaTecnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FrmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmPedidos.Designer.cs">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -168,6 +176,9 @@
     </Compile>
     <EmbeddedResource Include="Views\FrmFichaTecnica.resx">
       <DependentUpon>FrmFichaTecnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -209,6 +220,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Limpeza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrinho.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('..\packages\Microsoft.Extensions.Logging.Abstractions.6.0.0\build\Microsoft.Extensions.Logging.Abstractions.targets')" />

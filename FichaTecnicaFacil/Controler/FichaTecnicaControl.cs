@@ -164,7 +164,7 @@ namespace FichaTecnicaFacil.Controler
             MostraListaReceita(listaReceitaFiltrada);
         }
 
-        private void MostraListaReceita(List<Receita> listaFonte)
+        public void MostraListaReceita(List<Receita> listaFonte)
         {
             _form.dgv_ListaReceitasCadastradas.Rows.Clear();
 

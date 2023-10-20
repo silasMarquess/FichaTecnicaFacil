@@ -79,6 +79,17 @@ namespace FichaTecnicaFacil.Entidades
             return this.CalculaCustoReceita(gastosGerais, ValorMaoObra) + margemLucro;
         }
 
+        public override bool Equals(object obj)
+        {
+            bool teste = false;
+            Receita outro = (Receita)obj;
+            if (outro.Id == this.Id)
+            {
+                teste = true;
+            }
+            return teste;
+        }
+
         public double getTotalIngrdiente()
         {
             double custoIngredientes = 0;

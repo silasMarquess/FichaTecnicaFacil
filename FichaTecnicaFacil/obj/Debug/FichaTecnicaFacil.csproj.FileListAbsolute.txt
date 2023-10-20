@@ -57,3 +57,4 @@ D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\bin\Debug\K4os.Compre
 D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\bin\Debug\K4os.Hash.xxHash.xml
 D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\bin\Debug\MySql.Data.xml
 D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\bin\Debug\System.IO.Pipelines.xml
+D:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\Debug\FichaTecnicaFacil.Views.FrmPedidos.resources

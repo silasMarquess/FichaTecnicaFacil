@@ -28,10 +28,12 @@ namespace FichaTecnicaFacil.Controler
             form.ShowDialog();
         }
 
-        public void OpenFormCaixa()
+        public void OpenFormPedido()
         {
-
+            FrmPedidos form = new FrmPedidos(this);
+            form.ShowDialog();
         }
+
 
 
     }

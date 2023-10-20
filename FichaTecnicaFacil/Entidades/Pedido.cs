@@ -11,7 +11,7 @@ namespace FichaTecnicaFacil.Entidades
     {
         public string CodigoPedido { get; set; }
         public DateTime DataPedido { get; set; }
-        public double CustosAdicionais { get; set; }
+        public double Desconto { get; set; }
         public DateTime PrazoEntregada { get; set; }
         public DateTime DataFechamento { get; set; }
         public statusPedido Status { get; set; }
@@ -27,11 +27,11 @@ namespace FichaTecnicaFacil.Entidades
 
         }
 
-        public Pedido(string codigoPedido, DateTime dataPedido, double custosAdicionais, DateTime prazoEntregada, DateTime dataFechamento, statusPedido status, string nomeCLiente, string telefoneCliente)
+        public Pedido(string codigoPedido, DateTime dataPedido, double desconto, DateTime prazoEntregada, DateTime dataFechamento, statusPedido status, string nomeCLiente, string telefoneCliente)
         {
             CodigoPedido = codigoPedido;
             DataPedido = dataPedido;
-            CustosAdicionais = custosAdicionais;
+            Desconto = desconto;
             PrazoEntregada = prazoEntregada;
             DataFechamento = dataFechamento;
             Status = status;
@@ -46,11 +46,15 @@ namespace FichaTecnicaFacil.Entidades
             {
              //   total += r.CalculaValorReceita();
             }
-            return total + CustosAdicionais;
+            return total + Desconto;
         }
 
         public void AddReceita(Receita receita)
         {
+            if (ListaReceita.Contains(receita))
+            {
+                throw new DomainException("Receita ja Existe !");
+            }
             ListaReceita.Add(receita);
         }
 

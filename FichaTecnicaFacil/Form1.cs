@@ -25,5 +25,10 @@ namespace FichaTecnicaFacil
         {
             _control.OpenFormFichaTecnica();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            _control.OpenFormPedido();
+        }
     }
 }
