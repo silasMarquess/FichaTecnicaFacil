@@ -13,7 +13,7 @@ namespace FichaTecnicaFacil.Entidades
         public DateTime DataPedido { get; set; }
         public double Desconto { get; set; }
         public DateTime PrazoEntregada { get; set; }
-        public DateTime DataFechamento { get; set; }
+        public DateTime? DataFechamento { get; set; }
         public statusPedido Status { get; set; }
 
         public string NomeCLiente { get; set; }
@@ -27,7 +27,7 @@ namespace FichaTecnicaFacil.Entidades
 
         }
 
-        public Pedido(string codigoPedido, DateTime dataPedido, double desconto, DateTime prazoEntregada, DateTime dataFechamento, statusPedido status, string nomeCLiente, string telefoneCliente)
+        public Pedido(string codigoPedido, DateTime dataPedido, double desconto, DateTime prazoEntregada, DateTime? dataFechamento, statusPedido status, string nomeCLiente, string telefoneCliente)
         {
             CodigoPedido = codigoPedido;
             DataPedido = dataPedido;
@@ -44,17 +44,24 @@ namespace FichaTecnicaFacil.Entidades
             double total = 0;
             foreach (Receita r in ListaReceita)
             {
-             //   total += r.CalculaValorReceita();
+                total += r.CalcularTotalReceita(r.GastosGerais, r.ValorMaoObra, r.MargemLucro);
             }
-            return total + Desconto;
+            string totalS = total.ToString("F2");
+            return double.Parse(totalS);
         }
+
+        public double CalculaTotalLiquidoPedido(double desconto)
+        {
+            if (desconto > CalculaTotalPedido()) throw new DomainException("Erro: Desconto não pode ser maior do que valor total");
+            double valor = this.CalculaTotalPedido();
+            return this.CalculaTotalPedido() - desconto;
+        }
+
+
+
 
         public void AddReceita(Receita receita)
         {
-            if (ListaReceita.Contains(receita))
-            {
-                throw new DomainException("Receita ja Existe !");
-            }
             ListaReceita.Add(receita);
         }
 

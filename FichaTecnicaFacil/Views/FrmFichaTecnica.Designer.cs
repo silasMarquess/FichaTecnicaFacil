@@ -1198,7 +1198,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.771F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.22901F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 451F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 452F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1213,7 +1213,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(418, 1);
+            this.button2.Location = new System.Drawing.Point(417, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(178, 26);
@@ -1226,7 +1226,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(598, 1);
+            this.button3.Location = new System.Drawing.Point(597, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 26);
@@ -1354,7 +1354,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel22.ColumnCount = 2;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 352F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 354F));
             this.tableLayoutPanel22.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel22.Controls.Add(this.txtPrecoFinal, 1, 2);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 1, 1);
@@ -1381,7 +1381,7 @@ namespace FichaTecnicaFacil.Views
             this.label20.ForeColor = System.Drawing.Color.DarkRed;
             this.label20.Location = new System.Drawing.Point(5, 40);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(853, 30);
+            this.label20.Size = new System.Drawing.Size(851, 30);
             this.label20.TabIndex = 4;
             this.label20.Text = "D) MARGEM DE LUCRO(Ex: 50% ou R$ 7,30 Sobre o Custo de Receita):";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1393,12 +1393,12 @@ namespace FichaTecnicaFacil.Views
             this.txtPrecoFinal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoFinal.ForeColor = System.Drawing.Color.RosyBrown;
-            this.txtPrecoFinal.Location = new System.Drawing.Point(864, 73);
+            this.txtPrecoFinal.Location = new System.Drawing.Point(862, 73);
             this.txtPrecoFinal.Margin = new System.Windows.Forms.Padding(1);
             this.txtPrecoFinal.Multiline = true;
             this.txtPrecoFinal.Name = "txtPrecoFinal";
             this.txtPrecoFinal.ReadOnly = true;
-            this.txtPrecoFinal.Size = new System.Drawing.Size(350, 33);
+            this.txtPrecoFinal.Size = new System.Drawing.Size(352, 33);
             this.txtPrecoFinal.TabIndex = 5;
             this.txtPrecoFinal.Text = "R$ 0,00";
             this.txtPrecoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1412,12 +1412,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 0, 0);
             this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel29, 1, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(863, 40);
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(861, 40);
             this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(352, 30);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(354, 30);
             this.tableLayoutPanel23.TabIndex = 7;
             // 
             // tableLayoutPanel24
@@ -1480,12 +1480,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel29.Controls.Add(this.txtMargemLucroDinheiro, 1, 0);
             this.tableLayoutPanel29.Controls.Add(this.CboxMargemReal, 0, 0);
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(176, 0);
+            this.tableLayoutPanel29.Location = new System.Drawing.Point(177, 0);
             this.tableLayoutPanel29.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel29.Name = "tableLayoutPanel29";
             this.tableLayoutPanel29.RowCount = 1;
             this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(176, 30);
+            this.tableLayoutPanel29.Size = new System.Drawing.Size(177, 30);
             this.tableLayoutPanel29.TabIndex = 6;
             // 
             // txtMargemLucroDinheiro
@@ -1496,7 +1496,7 @@ namespace FichaTecnicaFacil.Views
             this.txtMargemLucroDinheiro.Enabled = false;
             this.txtMargemLucroDinheiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMargemLucroDinheiro.ForeColor = System.Drawing.Color.Red;
-            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(61, 1);
+            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(62, 1);
             this.txtMargemLucroDinheiro.Margin = new System.Windows.Forms.Padding(1);
             this.txtMargemLucroDinheiro.Multiline = true;
             this.txtMargemLucroDinheiro.Name = "txtMargemLucroDinheiro";
@@ -1511,7 +1511,7 @@ namespace FichaTecnicaFacil.Views
             this.CboxMargemReal.AutoSize = true;
             this.CboxMargemReal.Dock = System.Windows.Forms.DockStyle.Right;
             this.CboxMargemReal.ForeColor = System.Drawing.Color.Cyan;
-            this.CboxMargemReal.Location = new System.Drawing.Point(15, 3);
+            this.CboxMargemReal.Location = new System.Drawing.Point(16, 3);
             this.CboxMargemReal.Name = "CboxMargemReal";
             this.CboxMargemReal.Size = new System.Drawing.Size(42, 24);
             this.CboxMargemReal.TabIndex = 6;
@@ -1526,11 +1526,11 @@ namespace FichaTecnicaFacil.Views
             this.txtCustoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCustoReceita.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustoReceita.ForeColor = System.Drawing.Color.Yellow;
-            this.txtCustoReceita.Location = new System.Drawing.Point(866, 5);
+            this.txtCustoReceita.Location = new System.Drawing.Point(864, 5);
             this.txtCustoReceita.Multiline = true;
             this.txtCustoReceita.Name = "txtCustoReceita";
             this.txtCustoReceita.ReadOnly = true;
-            this.txtCustoReceita.Size = new System.Drawing.Size(346, 30);
+            this.txtCustoReceita.Size = new System.Drawing.Size(348, 30);
             this.txtCustoReceita.TabIndex = 8;
             this.txtCustoReceita.Text = "0,00";
             this.txtCustoReceita.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1543,7 +1543,7 @@ namespace FichaTecnicaFacil.Views
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(859, 36);
+            this.panel1.Size = new System.Drawing.Size(857, 36);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1554,7 +1554,7 @@ namespace FichaTecnicaFacil.Views
             this.btnCalcularCustoReceita.FlatAppearance.BorderSize = 0;
             this.btnCalcularCustoReceita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcularCustoReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(735, 0);
+            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(733, 0);
             this.btnCalcularCustoReceita.Name = "btnCalcularCustoReceita";
             this.btnCalcularCustoReceita.Size = new System.Drawing.Size(124, 36);
             this.btnCalcularCustoReceita.TabIndex = 2;
@@ -1569,7 +1569,7 @@ namespace FichaTecnicaFacil.Views
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(565, 8);
+            this.label19.Location = new System.Drawing.Point(563, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(156, 21);
             this.label19.TabIndex = 1;
@@ -1585,7 +1585,7 @@ namespace FichaTecnicaFacil.Views
             this.panel7.Location = new System.Drawing.Point(2, 72);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(859, 35);
+            this.panel7.Size = new System.Drawing.Size(857, 35);
             this.panel7.TabIndex = 10;
             // 
             // btnCalcularPrecoFinal
@@ -1595,7 +1595,7 @@ namespace FichaTecnicaFacil.Views
             this.btnCalcularPrecoFinal.FlatAppearance.BorderSize = 0;
             this.btnCalcularPrecoFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcularPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularPrecoFinal.Location = new System.Drawing.Point(735, 0);
+            this.btnCalcularPrecoFinal.Location = new System.Drawing.Point(733, 0);
             this.btnCalcularPrecoFinal.Name = "btnCalcularPrecoFinal";
             this.btnCalcularPrecoFinal.Size = new System.Drawing.Size(124, 35);
             this.btnCalcularPrecoFinal.TabIndex = 3;

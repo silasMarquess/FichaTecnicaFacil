@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using FichaTecnicaFacil.Controler;
 using FichaTecnicaFacil.Entidades;
 using FichaTecnicaFacil.DAO;
+using FichaTecnicaFacil.Entidades.enums;
 
 namespace FichaTecnicaFacil.Views
 {
@@ -17,9 +18,12 @@ namespace FichaTecnicaFacil.Views
     {
 
         private FrmPedidoControl _control;
+
+
         private Pedido _pedidoAtual;
         private Form1Controler _formControler;
         private List<Receita> listaReceitaFiltrada;
+        private List<Pedido> _ListaPedido;
         public FrmPedidos()
         {
             InitializeComponent();
@@ -29,7 +33,7 @@ namespace FichaTecnicaFacil.Views
         public FrmPedidos(Form1Controler formControl)
         {
             InitializeComponent();
-             _formControler = formControl;
+            _formControler = formControl;
             formControl._form.Visible = false;
             _control = new FrmPedidoControl(this);
         }
@@ -69,9 +73,11 @@ namespace FichaTecnicaFacil.Views
                 {
                     Receita r = listaReceitaFiltrada.Find(getReceitaPorNome);
                     _pedidoAtual.AddReceita(r);
+                    double desconto = double.Parse(txtDesconto.Text);
                     _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
+                    txtTotalBruto.Text = "R$ " + _pedidoAtual.CalculaTotalPedido().ToString("F2");
+                    txtTotalLiquido.Text = "R$ " + _pedidoAtual.CalculaTotalLiquidoPedido(desconto).ToString("F2");
                 }
-
             }
             catch (DomainException ex)
             {
@@ -82,7 +88,7 @@ namespace FichaTecnicaFacil.Views
         public bool getReceitaPorNome(Receita r)
         {
             string codigo = dgv_ListaReceitasCadastradas.CurrentRow.Cells[0].Value.ToString();
-            return (r.Id==codigo) ? true : false;
+            return (r.Id == codigo) ? true : false;
         }
 
         private void FrmPedidos_FormClosing(object sender, FormClosingEventArgs e)
@@ -104,7 +110,275 @@ namespace FichaTecnicaFacil.Views
 
         private void TabControlPedidos_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+            if (TabControlPedidos.SelectedIndex == 0)
+            {
+                _pedidoAtual = new Pedido();
+                _pedidoAtual.CodigoPedido = _control.GenerateCodigoReceita();
+                Gbox_CabecalhoPedido.Text = "PEDIDO NUMERO -" + _pedidoAtual.CodigoPedido;
+            }
+        }
+
+        private void txtDesconto_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDesconto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtDesconto.Text == string.Empty) txtDesconto.Text = "0,00";
+                txtTotalLiquido.Text = "R$ " + _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
+                _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
+            }
+        }
+
+        private void txtCadPedNomeReceita_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtCadPedNomeReceita.SelectAll();
+        }
+
+        private void txtNomeCliente_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtNomeCliente.SelectAll();
+        }
+
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.EnterSomenteDec(e);
+        }
+
+        private void txtDesconto_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtDesconto.Text)) txtDesconto.Text = "0,00";
+            txtTotalLiquido.Text = _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
+        }
+
+        private void txtContatoCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.EnterSomenteDec(e);
+        }
+
+        private void btnSalvarPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //validação de dados
+                if (txtNomeCliente.Text == string.Empty) throw new DomainException("Erro: Nome de cliente nãp pode ser vazio");
+                if (txtContatoCliente.Text == string.Empty) throw new DomainException("Erro: Telefone de cliente não pode ser vazio");
+                _pedidoAtual.NomeCLiente = txtNomeCliente.Text;
+                _pedidoAtual.TelefoneCliente = txtContatoCliente.Text;
+                _pedidoAtual.Status = statusPedido.PERDIDO_ABERTO;
+                _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
+
+                _pedidoAtual.PrazoEntregada = new DateTime(Dta_PrazoEntrega.Value.Year, Dta_PrazoEntrega.Value.Month, Dta_PrazoEntrega.Value.Day);
+                _pedidoAtual.DataPedido = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+                _control.ControlInsertPedido(_pedidoAtual);
+                MessageBox.Show("Dados de Pedidos Salvos com sucesso !");
+
+
+                //operações de controle de cadastro
+                _pedidoAtual = null;
+                _pedidoAtual = new Pedido();
+                _pedidoAtual.CodigoPedido = _control.GenerateCodigoReceita();
+                Gbox_CabecalhoPedido.Text = "PEDIDO NUMERO -" + _pedidoAtual.CodigoPedido;
+                dgv_ListaReceitasCadastradas.Rows.Clear();
+                txtCadPedNomeReceita.Text = string.Empty;
+                _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
+
+                _control.LimparCampos();
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAplicarFiltro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _ListaPedido = null;
+
+                if (rb_FiltraPorCliente.Checked)
+                {
+                    string nome = txtNomereceitaPesquisa.Text;
+                    _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos, nome);
+                }
+                else if (RbFiltroData.Checked)
+                {
+                    DateTime dataIn = new DateTime(dtaFiltroDataIn.Value.Year, dtaFiltroDataIn.Value.Month, dtaFiltroDataIn.Value.Day);
+                    DateTime dataOut = new DateTime(dtaFiltroDatraFinal.Value.Year, dtaFiltroDatraFinal.Value.Month, dtaFiltroDatraFinal.Value.Day);
+
+                    if (dataOut < dataIn) throw new DomainException("Erro: data final deve ser maior do que data inicial");
+                    _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos, dataIn, dataOut);
+                }
+                else if (RbFiltraDataEntrega.Checked)
+                {
+                    DateTime dataIn = new DateTime(dtaFiltroDataIn.Value.Year, dtaFiltroDataIn.Value.Month, dtaFiltroDataIn.Value.Day);
+                    DateTime dataOut = new DateTime(dtaFiltroDatraFinal.Value.Year, dtaFiltroDatraFinal.Value.Month, dtaFiltroDatraFinal.Value.Day);
+
+                    if (dataOut < dataIn) throw new DomainException("Erro: data final deve ser maior do que data inicial");
+                    _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidosPorPrazo, dataIn, dataOut);
+                }
+                else
+                {
+                    _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos, (statusPedido)CbFiltroStatus.SelectedIndex);
+                }
+                _control.MostrarListaPedidosFiltrada(_ListaPedido);
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvConsultaListaPedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                Pedido p = _ListaPedido.Find(getPedidoPorCodigo);
+                List<Receita> lista = DBConexao.getLisObjectOperation(PedidosDAO.GetListaReceitasPorPedido, p);
+
+                //buscarInformações de Ingredientes
+                foreach (Receita r in lista)
+                {
+                    List<Ingrediente> listaIngrediente = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaIngredientePorReceita, r);
+                    r.ListaIngrediente.Clear();
+                    r.ListaIngrediente.AddRange(listaIngrediente);
+                }
+                p.ListaReceita.Clear();
+                p.ListaReceita.AddRange(lista);
+                _control.MostraListaReceitasConsultada(lista);
+                txtConsultaNomeCliente.Text = p.NomeCLiente;
+                txtConsultaTotalPedido.Text = "R$ " + p.CalculaTotalPedido().ToString("F2");
+                txtDesconto.Text = "R$ " + p.Desconto.ToString("F2");
+                txtConsultaTelefone.Text = p.TelefoneCliente.ToString();
+                txtConsultaTotalLiquido.Text = "R$ " + p.CalculaTotalLiquidoPedido(p.Desconto).ToString("F2");
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void DesmarcaRbs()
+        {
+          
+
+        }
+
+        public bool getPedidoPorCodigo(Pedido p)
+        {
+            string codigo = dgvConsultaListaPedidos.CurrentRow.Cells[0].Value.ToString();
+            if (string.IsNullOrEmpty(codigo)) throw new DomainException("Erro: Nada selecionado");
+            return (codigo == p.CodigoPedido) ? true : false;
+        }
+
+        private void txtNomereceitaPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                _ListaPedido = null;
+
+                if (rb_FiltraPorCliente.Checked)
+                {
+                    string nome = txtNomereceitaPesquisa.Text;
+                    if (nome == string.Empty) throw new DomainException("Nemhum nome digitado");
+                    _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos, nome);
+                    _control.MostrarListaPedidosFiltrada(_ListaPedido);
+                }
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_ListaPedido is null) throw new DomainException("Nemhuma lista foi filtrada");
+                _control.CalculaTotalVendido(_ListaPedido);
+
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void dgvCadListaReceitasPedido_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvCadListaReceitasPedido.Columns[e.ColumnIndex].Index == 3)
+                {
+                    string codigoReceita = dgvCadListaReceitasPedido.CurrentRow.Cells[0].Value.ToString();
+                    foreach (Receita r in _pedidoAtual.ListaReceita)
+                    {
+                        if (r.Id == codigoReceita)
+                        {
+                            _pedidoAtual.ListaReceita.Remove(r);
+                            MessageBox.Show("item: " + r.Descricao + " Romovido da Lista !");
+                            break;
+                        }
+                    }
+                    _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
+                }
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+        }
+
+        private void btnRemoverFiltro_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _ListaPedido = null;
+                _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos);
+                _control.MostrarListaPedidosFiltrada(_ListaPedido);
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void groupBox5_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rb_FiltraPorCliente_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RbFiltroData_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RbFiltraDataEntrega_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RbFiltroStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            CbFiltroStatus.SelectedIndex = 0;
+        }
+
+        private void CbFiltroStatus_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,17 +22,15 @@ namespace FichaTecnicaFacil.Controler
             _form = form;
         }
 
-        private void ControlInsertPedido(Pedido p)
+        public void ControlInsertPedido(Pedido p)
         {
             Action<Pedido> acao = PedidosDAO.InsertPedido;
             DBConexao.ModifyOperation(acao, p);
-
             foreach (Receita r in p.ListaReceita)
             {
                 Venda v = new Venda(p, r);
                 DBConexao.ModifyOperation(PedidosDAO.InsertVenda, v);
             }
-            MessageBox.Show("Pedido Registrado com sucesso !");
         }
 
         public string GenerateCodigoReceita()
@@ -65,10 +63,19 @@ namespace FichaTecnicaFacil.Controler
                 linha.Cells[0].Value = lista[i].Id.ToString();
                 linha.Cells[1].Value = lista[i].Descricao.ToString();
 
-                linha.Cells[2].Value = lista[i].CalcularTotalReceita(lista[i].GastosGerais, lista[i].ValorMaoObra, lista[i].MargemLucro);
-                linha.Cells[3].Value = lista[i].Validade;
+                linha.Cells[2].Value = "R$ "+lista[i].CalcularTotalReceita(lista[i].GastosGerais, lista[i].ValorMaoObra, lista[i].MargemLucro).ToString("F2");
                 _form.dgvCadListaReceitasPedido.Rows.Add(linha);
             }
+        }
+
+        public void LimparCampos()
+        {
+            _form.txtTotalBruto.Text = "0,00";
+            _form.txtDesconto.Text = "0,00";
+            _form.txtTotalLiquido.Text = "0,00";
+            _form.txtNomeCliente.Text = string.Empty;
+            _form.Dta_PrazoEntrega.Value = DateTime.Now;
+            _form.txtContatoCliente.Text = "";
         }
 
         public void MostraListaReceita(List<Receita> listaFonte)
@@ -88,6 +95,68 @@ namespace FichaTecnicaFacil.Controler
                 linha.Cells[4].Value = listaFonte[i].Data.ToShortDateString();
 
                 _form.dgv_ListaReceitasCadastradas.Rows.Add(linha);
+            }
+        }
+
+        public void MostrarListaPedidosFiltrada(List<Pedido> listaFonte)
+        {
+            double soma = 0;
+            double totaldesconto = 0;
+
+            _form.dgvConsultaListaPedidos.Rows.Clear();
+            for (int i = 0; i < listaFonte.Count; i++)
+            {
+                totaldesconto += listaFonte[i].Desconto;
+                DataGridViewRow linha = (DataGridViewRow)_form.dgvConsultaListaPedidos.Rows[i].Clone();
+
+                linha.Cells[0].Value = listaFonte[i].CodigoPedido;
+                linha.Cells[1].Value = listaFonte[i].DataPedido.ToShortDateString();
+
+                linha.Cells[2].Value = listaFonte[i].NomeCLiente.ToUpper();
+                linha.Cells[3].Value = listaFonte[i].PrazoEntregada.ToShortDateString();
+
+                linha.Cells[4].Value = listaFonte[i].Status.ToString();
+                _form.dgvConsultaListaPedidos.Rows.Add(linha);
+            }
+
+            _form.txtQtdeFiltrados.Text = listaFonte.Count().ToString();
+            _form.txtConsultaTotaldesconto.Text = "R$ " + totaldesconto.ToString("F2");
+        }
+
+        public void CalculaTotalVendido(List<Pedido> listaFonte)
+        {
+            double soma = 0;
+            double totaldesconto = 0;
+
+            foreach (Pedido p in listaFonte)
+            {
+                List<Receita> lista = DBConexao.getLisObjectOperation(PedidosDAO.GetListaReceitasPorPedido, p);
+                p.ListaReceita.Clear();
+
+                foreach (Receita r in lista)
+                {
+                    List<Ingrediente> listaI = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaIngredientePorReceita, r);
+                    r.ListaIngrediente.Clear();
+                    r.ListaIngrediente.AddRange(listaI);
+                    p.AddReceita(r);
+                }
+
+                soma += p.CalculaTotalLiquidoPedido(p.Desconto);
+            }
+
+            _form.txtConsultaTotalVendido.Text = "R$ "+soma.ToString("F2");
+        }
+
+        public void MostraListaReceitasConsultada(List<Receita> listaFonte)
+        {
+            _form.dgvItensPedidos.Rows.Clear();
+            for (int i = 0; i < listaFonte.Count; i++)
+            {
+                DataGridViewRow linha = (DataGridViewRow)_form.dgvItensPedidos.Rows[i].Clone();
+                linha.Cells[0].Value = listaFonte[i].Id;
+                linha.Cells[1].Value = listaFonte[i].Descricao;
+                linha.Cells[2].Value = "R$ " + listaFonte[i].CalcularTotalReceita(listaFonte[i].GastosGerais, listaFonte[i].ValorMaoObra, listaFonte[i].MargemLucro).ToString("F2");
+                _form.dgvItensPedidos.Rows.Add(linha);
             }
         }
     }
