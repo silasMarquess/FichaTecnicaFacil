@@ -28,11 +28,11 @@ namespace FichaTecnicaFacil.DAO
             string sql = "insert into pedido(codigoPedido, dataPedido, statusPedido, Prazoentrega, desconto, dataFechamento, nomeCliente, whatsApp) " +
                 "values(@codigoPedido, @dataPedido, @statusPedido, @Prazoentrega, @desconto, @dataFechamento, @nomeCliente, @whatsApp)";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
-            cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido); 
+            cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido);
             cmd.Parameters.AddWithValue("@Prazoentrega", p.PrazoEntregada);
             cmd.Parameters.AddWithValue("@desconto", p.Desconto);
             cmd.Parameters.AddWithValue("@nomeCliente", p.NomeCLiente);
-            cmd.Parameters.AddWithValue("@whatsApp",p.TelefoneCliente);
+            cmd.Parameters.AddWithValue("@whatsApp", p.TelefoneCliente);
             cmd.Parameters.AddWithValue("@statusPedido", (int)p.Status);
             cmd.Parameters.AddWithValue("@dataFechamento", p.DataFechamento);
             cmd.Parameters.AddWithValue("@dataPedido", p.DataPedido);
@@ -59,7 +59,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidos(string nomeCliente)
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from pedido where nomeCliente LIKE '"+nomeCliente+"%'";
+            string query = "select * from pedido where nomeCliente LIKE '" + nomeCliente + "%'";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
 
@@ -69,7 +69,7 @@ namespace FichaTecnicaFacil.DAO
                 DateTime dataPedido = rd.GetDateTime("dataPedido");
                 statusPedido status = (statusPedido)rd.GetInt16("statusPedido");
                 double desconto = rd.GetDouble("desconto");
-                DateTime? dataFechamento = ValidadaDadosNull.ConverteData(rd["dataFechamento"],false);
+                DateTime? dataFechamento = ValidadaDadosNull.ConverteData(rd["dataFechamento"], false);
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
@@ -151,6 +151,15 @@ namespace FichaTecnicaFacil.DAO
                 lista.Add(p);
             }
             return lista;
+        }
+
+        public static void UpdateStatusPedido(Pedido p)
+        {
+            string query = "update pedido set statusPedido = @status where codigoPedido = @codigoPedido";
+            MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@status", (int)statusPedido.PERDIDO_FECHADO);
+            cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido);
+            cmd.ExecuteNonQuery();
         }
 
 

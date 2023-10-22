@@ -125,6 +125,24 @@ namespace FichaTecnicaFacil.DAO
             return lista;
         }
 
+        public static J getObjetc<T,J>(Func<T,J> acao,T chave1)
+        {
+            J obj = (default);
+            try
+            {
+                using (_conexao =new MySqlConnection(Resources.URL))
+                {
+                    OpenConexao();
+                    obj = acao(chave1);
+                }
+            }
+            catch (MySqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            return obj;
+        }
+
         public static List<J> getLisObjectOperation<T, H, L, J>(Func<T, H, L, List<J>> get, T chave, H chave2, L chave3)
         {
             List<J> lista = null;

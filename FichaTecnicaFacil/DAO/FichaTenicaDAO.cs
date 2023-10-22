@@ -96,7 +96,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Receita> getListaReceita(string nomeReceita)
         {
             List<Receita> lista = new List<Receita>();
-            string sql = "select * from receita where descricaoReceita LIKE '%"+nomeReceita+"%'";
+            string sql = "select * from receita where descricaoReceita LIKE '%" + nomeReceita + "%'";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
 
@@ -133,8 +133,24 @@ namespace FichaTecnicaFacil.DAO
             cmd.Parameters.AddWithValue("@validade", r.Validade);
             cmd.Parameters.AddWithValue("@descricao", r.Descricao);
             cmd.Parameters.AddWithValue("@rendimento", r.Rendimento);
-            cmd.Parameters.AddWithValue("@gastosGerais", r.GastosGerais) ;
+            cmd.Parameters.AddWithValue("@gastosGerais", r.GastosGerais);
             cmd.ExecuteNonQuery();
+
+        }
+
+        public static int getIdProdutoPorDescrica(string descricao)
+        {
+            int id = 0;
+            string sql = "select * from Produto where descricao = @descricao";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@descricao", descricao);
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            if (rd.Read())
+            {
+                id = rd.GetInt32("idProduto");
+            }
+            return id;
 
         }
 
@@ -174,6 +190,16 @@ namespace FichaTecnicaFacil.DAO
         }
 
 
+        public static bool VerificaSeIngredienteInDataBAse(Produto p)
+        {
+            string sql = "select * from Produto where descricao = @descricao ";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@descricao", p.Descricao);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            return (rd.Read()) ? true : false;
+        }
+
+
         public static void DeleteReceita(Receita r)
         {
             string sql = "delete from Receita where idReceita = @idReceita";
@@ -187,7 +213,7 @@ namespace FichaTecnicaFacil.DAO
         {
             string sql = "select * from receita where descricaoReceita = @descricaoReceita";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
-            cmd.Parameters.AddWithValue("@descricaoReceita",r.Descricao);
+            cmd.Parameters.AddWithValue("@descricaoReceita", r.Descricao);
             MySqlDataReader rd = cmd.ExecuteReader();
             return (rd.Read()) ? true : false;
         }

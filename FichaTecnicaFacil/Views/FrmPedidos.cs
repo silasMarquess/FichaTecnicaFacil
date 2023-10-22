@@ -239,6 +239,17 @@ namespace FichaTecnicaFacil.Views
             try
             {
                 Pedido p = _ListaPedido.Find(getPedidoPorCodigo);
+                if (dgvConsultaListaPedidos.Columns[e.ColumnIndex].Index == 5)
+                {
+                    DialogResult res = MessageBox.Show("Deseja realmente deletar o pedido selecionado", "Confirme", MessageBoxButtons.YesNo);
+                    if (res == DialogResult.No) throw new DomainException("Operação cancelada");
+                    _control.DeletePedidoControl(p);
+                    _ListaPedido = DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos);
+                    _control.MostrarListaPedidosFiltrada(DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos));
+                    dgvItensPedidos.Rows.Clear();
+                    throw new DomainException("Pedido deletado");
+                }
+
                 List<Receita> lista = DBConexao.getLisObjectOperation(PedidosDAO.GetListaReceitasPorPedido, p);
 
                 //buscarInformações de Ingredientes
@@ -253,7 +264,7 @@ namespace FichaTecnicaFacil.Views
                 _control.MostraListaReceitasConsultada(lista);
                 txtConsultaNomeCliente.Text = p.NomeCLiente;
                 txtConsultaTotalPedido.Text = "R$ " + p.CalculaTotalPedido().ToString("F2");
-                txtDesconto.Text = "R$ " + p.Desconto.ToString("F2");
+                txtConsultaDescontoPedido.Text = "R$ " + p.Desconto.ToString("F2");
                 txtConsultaTelefone.Text = p.TelefoneCliente.ToString();
                 txtConsultaTotalLiquido.Text = "R$ " + p.CalculaTotalLiquidoPedido(p.Desconto).ToString("F2");
             }
@@ -261,11 +272,15 @@ namespace FichaTecnicaFacil.Views
             {
                 MessageBox.Show(ex.Message);
             }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Erro: Nada selecionado. Voçê selecionou um espaço em branco d");
+            }
         }
 
         public void DesmarcaRbs()
         {
-          
+
 
         }
 
@@ -379,6 +394,70 @@ namespace FichaTecnicaFacil.Views
         private void CbFiltroStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFecharPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //validação de dados
+                DialogResult res = MessageBox.Show("Confirma o Faturamento(esta operação não pode ser desfeita)", "CONFIRME", MessageBoxButtons.YesNo);
+                if (res == DialogResult.No) throw new DomainException("Operação cancelada");
+
+                if (txtNomeCliente.Text == string.Empty) throw new DomainException("Erro: Nome de cliente nãp pode ser vazio");
+                if (txtContatoCliente.Text == string.Empty) throw new DomainException("Erro: Telefone de cliente não pode ser vazio");
+                _pedidoAtual.NomeCLiente = txtNomeCliente.Text;
+                _pedidoAtual.TelefoneCliente = txtContatoCliente.Text;
+                _pedidoAtual.Status = statusPedido.PERDIDO_FECHADO;
+                _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
+                _pedidoAtual.DataFechamento = DateTime.Now;
+                _pedidoAtual.PrazoEntregada = new DateTime(Dta_PrazoEntrega.Value.Year, Dta_PrazoEntrega.Value.Month, Dta_PrazoEntrega.Value.Day);
+                _pedidoAtual.DataPedido = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+                _control.ControlInsertPedido(_pedidoAtual);
+                MessageBox.Show("Dados de Pedidos Salvos com sucesso !");
+
+
+                //operações de controle de cadastro
+                _pedidoAtual = null;
+                _pedidoAtual = new Pedido();
+                _pedidoAtual.CodigoPedido = _control.GenerateCodigoReceita();
+                Gbox_CabecalhoPedido.Text = "PEDIDO NUMERO -" + _pedidoAtual.CodigoPedido;
+                dgv_ListaReceitasCadastradas.Rows.Clear();
+                txtCadPedNomeReceita.Text = string.Empty;
+                _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
+
+                _control.LimparCampos();
+
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnFaturarPedido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Pedido p = _ListaPedido.Find(getPedidoPorCodigo);
+                if (p.Status == statusPedido.PERDIDO_FECHADO) throw new DomainException("Erro: O pedido ja foi faturado na data: " + p.DataFechamento.ToString());
+
+                DialogResult res = MessageBox.Show("Deseja de fato faturar o pedido(esta operação não pode ser desfeita ta )", "confirme:", MessageBoxButtons.YesNo);
+                if (res == DialogResult.No) throw new DomainException("Operação cancelada");
+                _control.UpdateStatusPedido(p);
+                dgvItensPedidos.Rows.Clear();
+                _control.MostrarListaPedidosFiltrada(DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos));
+
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (NullReferenceException ex)
+            {
+                MessageBox.Show("Erro: Nada selecionado no Grid");
+            }
         }
     }
 }

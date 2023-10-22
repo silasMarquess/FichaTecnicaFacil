@@ -132,12 +132,27 @@ namespace FichaTecnicaFacil.Controler
         public void InsertReceitaControl(Receita receita)
         {
             bool teste = DBConexao.ValidateOperation(FichaTenicaDAO.VerificaSeReceitaExiste, receita);
+           
             if (teste) throw new DomainException("Erro: Receita ja existe");
+
+            foreach(Ingrediente i in receita.ListaIngrediente)
+            {
+                bool teste2 = DBConexao.ValidateOperation(ProdutoDAO.VerificaSeJaExiste, i.Produto);
+           
+                if (teste2 == false)
+                {
+                    DBConexao.ModifyOperation(ProdutoDAO.InsertProduto, i.Produto);
+
+                    int id = DBConexao.getObjetc(FichaTenicaDAO.getIdProdutoPorDescrica, i.Produto.Descricao);
+                    i.Produto.Id = id;
+                }
+            }
 
             Action<Receita> act = FichaTenicaDAO.InsertFicha;
             act += FichaTenicaDAO.InsertItemReceita;
 
             DBConexao.ModifyOperation(act, receita);
+
             MessageBox.Show("Receita Cadastrada com sucesso !");
         }
 

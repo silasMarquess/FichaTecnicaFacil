@@ -29,11 +29,11 @@ namespace FichaTecnicaFacil.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -393,6 +393,7 @@ namespace FichaTecnicaFacil.Views
             // txt_DescricaoReceita
             // 
             this.txt_DescricaoReceita.BackColor = System.Drawing.Color.Yellow;
+            this.txt_DescricaoReceita.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txt_DescricaoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txt_DescricaoReceita.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_DescricaoReceita.Location = new System.Drawing.Point(3, 28);
@@ -856,14 +857,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_RecListaIngredientes.BackgroundColor = System.Drawing.Color.White;
             this.dgv_RecListaIngredientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_RecListaIngredientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_RecListaIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_RecListaIngredientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgv_RecListaIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_RecListaIngredientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -1026,14 +1027,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaReceitasCadastradas.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ListaReceitasCadastradas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ListaReceitasCadastradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgv_ListaReceitasCadastradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ListaReceitasCadastradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idReceita,
@@ -1150,14 +1151,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ConsultaListaIngredienteRec.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ConsultaListaIngredienteRec.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ConsultaListaIngredienteRec.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ConsultaListaIngredienteRec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ConsultaListaIngredienteRec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgv_ConsultaListaIngredienteRec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ConsultaListaIngredienteRec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -1198,7 +1199,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.771F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.22901F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 452F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 453F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1213,7 +1214,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(417, 1);
+            this.button2.Location = new System.Drawing.Point(416, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(178, 26);
@@ -1226,7 +1227,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(597, 1);
+            this.button3.Location = new System.Drawing.Point(596, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 26);
@@ -1354,7 +1355,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel22.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Outset;
             this.tableLayoutPanel22.ColumnCount = 2;
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 354F));
+            this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 356F));
             this.tableLayoutPanel22.Controls.Add(this.label20, 0, 1);
             this.tableLayoutPanel22.Controls.Add(this.txtPrecoFinal, 1, 2);
             this.tableLayoutPanel22.Controls.Add(this.tableLayoutPanel23, 1, 1);
@@ -1381,7 +1382,7 @@ namespace FichaTecnicaFacil.Views
             this.label20.ForeColor = System.Drawing.Color.DarkRed;
             this.label20.Location = new System.Drawing.Point(5, 40);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(851, 30);
+            this.label20.Size = new System.Drawing.Size(849, 30);
             this.label20.TabIndex = 4;
             this.label20.Text = "D) MARGEM DE LUCRO(Ex: 50% ou R$ 7,30 Sobre o Custo de Receita):";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1393,12 +1394,12 @@ namespace FichaTecnicaFacil.Views
             this.txtPrecoFinal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoFinal.ForeColor = System.Drawing.Color.RosyBrown;
-            this.txtPrecoFinal.Location = new System.Drawing.Point(862, 73);
+            this.txtPrecoFinal.Location = new System.Drawing.Point(860, 73);
             this.txtPrecoFinal.Margin = new System.Windows.Forms.Padding(1);
             this.txtPrecoFinal.Multiline = true;
             this.txtPrecoFinal.Name = "txtPrecoFinal";
             this.txtPrecoFinal.ReadOnly = true;
-            this.txtPrecoFinal.Size = new System.Drawing.Size(352, 33);
+            this.txtPrecoFinal.Size = new System.Drawing.Size(354, 33);
             this.txtPrecoFinal.TabIndex = 5;
             this.txtPrecoFinal.Text = "R$ 0,00";
             this.txtPrecoFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1407,33 +1408,34 @@ namespace FichaTecnicaFacil.Views
             // tableLayoutPanel23
             // 
             this.tableLayoutPanel23.ColumnCount = 2;
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.5955F));
+            this.tableLayoutPanel23.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.4045F));
             this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel24, 0, 0);
             this.tableLayoutPanel23.Controls.Add(this.tableLayoutPanel29, 1, 0);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(861, 40);
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(859, 40);
             this.tableLayoutPanel23.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 1;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel23.Size = new System.Drawing.Size(354, 30);
+            this.tableLayoutPanel23.Size = new System.Drawing.Size(356, 30);
             this.tableLayoutPanel23.TabIndex = 7;
             // 
             // tableLayoutPanel24
             // 
             this.tableLayoutPanel24.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tableLayoutPanel24.ColumnCount = 2;
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 32.09877F));
-            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 67.90124F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.04651F));
+            this.tableLayoutPanel24.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.95349F));
             this.tableLayoutPanel24.Controls.Add(this.txtMargemLucroPerc, 1, 0);
             this.tableLayoutPanel24.Controls.Add(this.CBoxMargemLucroPerc, 0, 0);
+            this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel24.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel24.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 1;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel24.Size = new System.Drawing.Size(162, 30);
+            this.tableLayoutPanel24.Size = new System.Drawing.Size(172, 30);
             this.tableLayoutPanel24.TabIndex = 6;
             // 
             // txtMargemLucroPerc
@@ -1444,7 +1446,7 @@ namespace FichaTecnicaFacil.Views
             this.txtMargemLucroPerc.Enabled = false;
             this.txtMargemLucroPerc.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMargemLucroPerc.ForeColor = System.Drawing.Color.Red;
-            this.txtMargemLucroPerc.Location = new System.Drawing.Point(53, 1);
+            this.txtMargemLucroPerc.Location = new System.Drawing.Point(63, 1);
             this.txtMargemLucroPerc.Margin = new System.Windows.Forms.Padding(1);
             this.txtMargemLucroPerc.Multiline = true;
             this.txtMargemLucroPerc.Name = "txtMargemLucroPerc";
@@ -1461,7 +1463,7 @@ namespace FichaTecnicaFacil.Views
             this.CBoxMargemLucroPerc.Dock = System.Windows.Forms.DockStyle.Right;
             this.CBoxMargemLucroPerc.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBoxMargemLucroPerc.ForeColor = System.Drawing.Color.Cyan;
-            this.CBoxMargemLucroPerc.Location = new System.Drawing.Point(3, 3);
+            this.CBoxMargemLucroPerc.Location = new System.Drawing.Point(13, 3);
             this.CBoxMargemLucroPerc.Name = "CBoxMargemLucroPerc";
             this.CBoxMargemLucroPerc.Size = new System.Drawing.Size(46, 24);
             this.CBoxMargemLucroPerc.TabIndex = 6;
@@ -1475,17 +1477,17 @@ namespace FichaTecnicaFacil.Views
             // 
             this.tableLayoutPanel29.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.tableLayoutPanel29.ColumnCount = 2;
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.5679F));
-            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.4321F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.95652F));
+            this.tableLayoutPanel29.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.04348F));
             this.tableLayoutPanel29.Controls.Add(this.txtMargemLucroDinheiro, 1, 0);
             this.tableLayoutPanel29.Controls.Add(this.CboxMargemReal, 0, 0);
             this.tableLayoutPanel29.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel29.Location = new System.Drawing.Point(177, 0);
+            this.tableLayoutPanel29.Location = new System.Drawing.Point(172, 0);
             this.tableLayoutPanel29.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel29.Name = "tableLayoutPanel29";
             this.tableLayoutPanel29.RowCount = 1;
             this.tableLayoutPanel29.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel29.Size = new System.Drawing.Size(177, 30);
+            this.tableLayoutPanel29.Size = new System.Drawing.Size(184, 30);
             this.tableLayoutPanel29.TabIndex = 6;
             // 
             // txtMargemLucroDinheiro
@@ -1496,11 +1498,11 @@ namespace FichaTecnicaFacil.Views
             this.txtMargemLucroDinheiro.Enabled = false;
             this.txtMargemLucroDinheiro.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMargemLucroDinheiro.ForeColor = System.Drawing.Color.Red;
-            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(62, 1);
+            this.txtMargemLucroDinheiro.Location = new System.Drawing.Point(68, 1);
             this.txtMargemLucroDinheiro.Margin = new System.Windows.Forms.Padding(1);
             this.txtMargemLucroDinheiro.Multiline = true;
             this.txtMargemLucroDinheiro.Name = "txtMargemLucroDinheiro";
-            this.txtMargemLucroDinheiro.Size = new System.Drawing.Size(114, 28);
+            this.txtMargemLucroDinheiro.Size = new System.Drawing.Size(115, 28);
             this.txtMargemLucroDinheiro.TabIndex = 5;
             this.txtMargemLucroDinheiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtMargemLucroDinheiro.TextChanged += new System.EventHandler(this.txtMargemLucro_TextChanged);
@@ -1511,7 +1513,7 @@ namespace FichaTecnicaFacil.Views
             this.CboxMargemReal.AutoSize = true;
             this.CboxMargemReal.Dock = System.Windows.Forms.DockStyle.Right;
             this.CboxMargemReal.ForeColor = System.Drawing.Color.Cyan;
-            this.CboxMargemReal.Location = new System.Drawing.Point(16, 3);
+            this.CboxMargemReal.Location = new System.Drawing.Point(22, 3);
             this.CboxMargemReal.Name = "CboxMargemReal";
             this.CboxMargemReal.Size = new System.Drawing.Size(42, 24);
             this.CboxMargemReal.TabIndex = 6;
@@ -1526,11 +1528,11 @@ namespace FichaTecnicaFacil.Views
             this.txtCustoReceita.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtCustoReceita.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCustoReceita.ForeColor = System.Drawing.Color.Yellow;
-            this.txtCustoReceita.Location = new System.Drawing.Point(864, 5);
+            this.txtCustoReceita.Location = new System.Drawing.Point(862, 5);
             this.txtCustoReceita.Multiline = true;
             this.txtCustoReceita.Name = "txtCustoReceita";
             this.txtCustoReceita.ReadOnly = true;
-            this.txtCustoReceita.Size = new System.Drawing.Size(348, 30);
+            this.txtCustoReceita.Size = new System.Drawing.Size(350, 30);
             this.txtCustoReceita.TabIndex = 8;
             this.txtCustoReceita.Text = "0,00";
             this.txtCustoReceita.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1543,7 +1545,7 @@ namespace FichaTecnicaFacil.Views
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(857, 36);
+            this.panel1.Size = new System.Drawing.Size(855, 36);
             this.panel1.TabIndex = 9;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -1554,7 +1556,7 @@ namespace FichaTecnicaFacil.Views
             this.btnCalcularCustoReceita.FlatAppearance.BorderSize = 0;
             this.btnCalcularCustoReceita.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcularCustoReceita.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(733, 0);
+            this.btnCalcularCustoReceita.Location = new System.Drawing.Point(731, 0);
             this.btnCalcularCustoReceita.Name = "btnCalcularCustoReceita";
             this.btnCalcularCustoReceita.Size = new System.Drawing.Size(124, 36);
             this.btnCalcularCustoReceita.TabIndex = 2;
@@ -1569,7 +1571,7 @@ namespace FichaTecnicaFacil.Views
             this.label19.AutoSize = true;
             this.label19.BackColor = System.Drawing.Color.White;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(563, 8);
+            this.label19.Location = new System.Drawing.Point(561, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(156, 21);
             this.label19.TabIndex = 1;
@@ -1585,7 +1587,7 @@ namespace FichaTecnicaFacil.Views
             this.panel7.Location = new System.Drawing.Point(2, 72);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(857, 35);
+            this.panel7.Size = new System.Drawing.Size(855, 35);
             this.panel7.TabIndex = 10;
             // 
             // btnCalcularPrecoFinal
@@ -1595,7 +1597,7 @@ namespace FichaTecnicaFacil.Views
             this.btnCalcularPrecoFinal.FlatAppearance.BorderSize = 0;
             this.btnCalcularPrecoFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalcularPrecoFinal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcularPrecoFinal.Location = new System.Drawing.Point(733, 0);
+            this.btnCalcularPrecoFinal.Location = new System.Drawing.Point(731, 0);
             this.btnCalcularPrecoFinal.Name = "btnCalcularPrecoFinal";
             this.btnCalcularPrecoFinal.Size = new System.Drawing.Size(124, 35);
             this.btnCalcularPrecoFinal.TabIndex = 3;
@@ -1608,10 +1610,10 @@ namespace FichaTecnicaFacil.Views
             // 
             this.label18.AutoSize = true;
             this.label18.BackColor = System.Drawing.Color.White;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(482, 7);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(460, 8);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(270, 24);
+            this.label18.Size = new System.Drawing.Size(257, 20);
             this.label18.TabIndex = 6;
             this.label18.Text = "PREÇO FINAL (A + B + C + D):";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -1696,14 +1698,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaProdutos.BackgroundColor = System.Drawing.Color.White;
             this.dgv_ListaProdutos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ListaProdutos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgv_ListaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ListaProdutos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -1713,14 +1715,14 @@ namespace FichaTecnicaFacil.Views
             this.un,
             this.delete,
             this.editar});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Cornsilk;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ListaProdutos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle25.BackColor = System.Drawing.Color.Cornsilk;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ListaProdutos.DefaultCellStyle = dataGridViewCellStyle25;
             this.dgv_ListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ListaProdutos.Location = new System.Drawing.Point(0, 100);
             this.dgv_ListaProdutos.Margin = new System.Windows.Forms.Padding(0);

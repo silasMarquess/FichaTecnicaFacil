@@ -123,6 +123,16 @@ namespace FichaTecnicaFacil.Controler
             _form.txtConsultaTotaldesconto.Text = "R$ " + totaldesconto.ToString("F2");
         }
 
+        public void DeletePedidoControl(Pedido p)
+        {
+            DBConexao.ModifyOperation(PedidosDAO.deletePedido, p);
+        }
+
+        public void UpdateStatusPedido(Pedido p)
+        {
+            DBConexao.ModifyOperation(PedidosDAO.UpdateStatusPedido, p);
+        }
+
         public void CalculaTotalVendido(List<Pedido> listaFonte)
         {
             double soma = 0;
