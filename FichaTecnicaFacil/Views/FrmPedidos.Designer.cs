@@ -95,6 +95,12 @@ namespace FichaTecnicaFacil.Views
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvConsultaListaPedidos = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete_pedido = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvItensPedidos = new System.Windows.Forms.DataGridView();
@@ -122,12 +128,6 @@ namespace FichaTecnicaFacil.Views
             this.txtConsultaTotaldesconto = new System.Windows.Forms.TextBox();
             this.txtConsultaTotalVendido = new System.Windows.Forms.TextBox();
             this.txtQtdeFiltrados = new System.Windows.Forms.TextBox();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete_pedido = new System.Windows.Forms.DataGridViewButtonColumn();
             this.TabControlPedidos.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -208,11 +208,11 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel3.Controls.Add(this.groupBox2, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.ForeColor = System.Drawing.Color.Azure;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 317);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 316);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1246, 390);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1246, 391);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // panel2
@@ -223,7 +223,7 @@ namespace FichaTecnicaFacil.Views
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(142, 384);
+            this.panel2.Size = new System.Drawing.Size(143, 385);
             this.panel2.TabIndex = 2;
             // 
             // label3
@@ -254,9 +254,9 @@ namespace FichaTecnicaFacil.Views
             this.groupBox2.Controls.Add(this.tableLayoutPanel4);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
-            this.groupBox2.Location = new System.Drawing.Point(151, 3);
+            this.groupBox2.Location = new System.Drawing.Point(152, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1092, 384);
+            this.groupBox2.Size = new System.Drawing.Size(1091, 385);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Items";
@@ -273,7 +273,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 53.61111F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 46.38889F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1086, 360);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1085, 361);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // dgvCadListaReceitasPedido
@@ -300,8 +300,9 @@ namespace FichaTecnicaFacil.Views
             this.dgvCadListaReceitasPedido.Location = new System.Drawing.Point(0, 0);
             this.dgvCadListaReceitasPedido.Margin = new System.Windows.Forms.Padding(0);
             this.dgvCadListaReceitasPedido.Name = "dgvCadListaReceitasPedido";
+            this.dgvCadListaReceitasPedido.ReadOnly = true;
             this.dgvCadListaReceitasPedido.RowHeadersVisible = false;
-            this.dgvCadListaReceitasPedido.Size = new System.Drawing.Size(1086, 192);
+            this.dgvCadListaReceitasPedido.Size = new System.Drawing.Size(1085, 193);
             this.dgvCadListaReceitasPedido.TabIndex = 1;
             this.dgvCadListaReceitasPedido.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCadListaReceitasPedido_CellClick);
             // 
@@ -309,6 +310,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 60;
             // 
             // dataGridViewTextBoxColumn2
@@ -316,18 +318,21 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn3.HeaderText = "Preço/Receita";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 170;
             // 
             // Delete
             // 
             this.Delete.HeaderText = "delete";
             this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Delete.Text = "Delete(-)";
@@ -350,9 +355,9 @@ namespace FichaTecnicaFacil.Views
             this.groupBox3.Controls.Add(this.txtDesconto);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 195);
+            this.groupBox3.Location = new System.Drawing.Point(3, 196);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1080, 162);
+            this.groupBox3.Size = new System.Drawing.Size(1079, 162);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Dados Adicionais:";
@@ -528,7 +533,7 @@ namespace FichaTecnicaFacil.Views
             this.Gbox_CabecalhoPedido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Gbox_CabecalhoPedido.Location = new System.Drawing.Point(3, 3);
             this.Gbox_CabecalhoPedido.Name = "Gbox_CabecalhoPedido";
-            this.Gbox_CabecalhoPedido.Size = new System.Drawing.Size(1246, 308);
+            this.Gbox_CabecalhoPedido.Size = new System.Drawing.Size(1246, 307);
             this.Gbox_CabecalhoPedido.TabIndex = 0;
             this.Gbox_CabecalhoPedido.TabStop = false;
             this.Gbox_CabecalhoPedido.Text = "Receitas";
@@ -545,7 +550,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1240, 284);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1240, 283);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // panel1
@@ -557,7 +562,7 @@ namespace FichaTecnicaFacil.Views
             this.panel1.ForeColor = System.Drawing.Color.Coral;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(143, 278);
+            this.panel1.Size = new System.Drawing.Size(143, 277);
             this.panel1.TabIndex = 2;
             // 
             // label2
@@ -594,7 +599,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel5.RowCount = 2;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.02662F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.97338F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1085, 278);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1085, 277);
             this.tableLayoutPanel5.TabIndex = 3;
             // 
             // dgv_ListaReceitasCadastradas
@@ -623,8 +628,9 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaReceitasCadastradas.Location = new System.Drawing.Point(0, 30);
             this.dgv_ListaReceitasCadastradas.Margin = new System.Windows.Forms.Padding(0);
             this.dgv_ListaReceitasCadastradas.Name = "dgv_ListaReceitasCadastradas";
+            this.dgv_ListaReceitasCadastradas.ReadOnly = true;
             this.dgv_ListaReceitasCadastradas.RowHeadersVisible = false;
-            this.dgv_ListaReceitasCadastradas.Size = new System.Drawing.Size(1085, 248);
+            this.dgv_ListaReceitasCadastradas.Size = new System.Drawing.Size(1085, 247);
             this.dgv_ListaReceitasCadastradas.TabIndex = 1;
             this.dgv_ListaReceitasCadastradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaReceitasCadastradas_CellClick);
             // 
@@ -632,6 +638,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.idReceita.HeaderText = "ID";
             this.idReceita.Name = "idReceita";
+            this.idReceita.ReadOnly = true;
             this.idReceita.Width = 60;
             // 
             // desc
@@ -639,12 +646,14 @@ namespace FichaTecnicaFacil.Views
             this.desc.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.desc.HeaderText = "Descrição";
             this.desc.Name = "desc";
+            this.desc.ReadOnly = true;
             // 
             // Rendimento
             // 
             this.Rendimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Rendimento.HeaderText = "Rendimento";
             this.Rendimento.Name = "Rendimento";
+            this.Rendimento.ReadOnly = true;
             this.Rendimento.Width = 150;
             // 
             // Validade
@@ -652,6 +661,7 @@ namespace FichaTecnicaFacil.Views
             this.Validade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Validade.HeaderText = "Validade";
             this.Validade.Name = "Validade";
+            this.Validade.ReadOnly = true;
             this.Validade.Width = 160;
             // 
             // Data
@@ -659,11 +669,13 @@ namespace FichaTecnicaFacil.Views
             this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Data.HeaderText = "Data";
             this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
             // 
             // add
             // 
             this.add.HeaderText = "Adicionar";
             this.add.Name = "add";
+            this.add.ReadOnly = true;
             this.add.Text = "Adicionar";
             this.add.UseColumnTextForButtonValue = true;
             // 
@@ -705,7 +717,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel6.RowCount = 3;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.17572F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.82428F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 89F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(1252, 710);
             this.tableLayoutPanel6.TabIndex = 0;
             this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
@@ -880,7 +892,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 97);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(1246, 520);
+            this.groupBox4.Size = new System.Drawing.Size(1246, 522);
             this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tabela de Pedidos";
@@ -897,7 +909,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 93.03371F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1240, 496);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1240, 498);
             this.tableLayoutPanel7.TabIndex = 0;
             // 
             // dgvConsultaListaPedidos
@@ -926,10 +938,57 @@ namespace FichaTecnicaFacil.Views
             this.dgvConsultaListaPedidos.Location = new System.Drawing.Point(0, 0);
             this.dgvConsultaListaPedidos.Margin = new System.Windows.Forms.Padding(0);
             this.dgvConsultaListaPedidos.Name = "dgvConsultaListaPedidos";
+            this.dgvConsultaListaPedidos.ReadOnly = true;
             this.dgvConsultaListaPedidos.RowHeadersVisible = false;
-            this.dgvConsultaListaPedidos.Size = new System.Drawing.Size(666, 496);
+            this.dgvConsultaListaPedidos.Size = new System.Drawing.Size(666, 498);
             this.dgvConsultaListaPedidos.TabIndex = 2;
             this.dgvConsultaListaPedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvConsultaListaPedidos_CellClick);
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Cod:";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 56;
+            // 
+            // dataPedido
+            // 
+            this.dataPedido.HeaderText = "Data:";
+            this.dataPedido.Name = "dataPedido";
+            this.dataPedido.ReadOnly = true;
+            this.dataPedido.Width = 80;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Cliente:";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn9.HeaderText = "Dta/Entrega:";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn10.HeaderText = "Status:";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Width = 140;
+            // 
+            // delete_pedido
+            // 
+            this.delete_pedido.HeaderText = "delete";
+            this.delete_pedido.Name = "delete_pedido";
+            this.delete_pedido.ReadOnly = true;
+            this.delete_pedido.Text = "delete";
+            this.delete_pedido.UseColumnTextForButtonValue = true;
+            this.delete_pedido.Width = 50;
             // 
             // groupBox6
             // 
@@ -937,7 +996,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox6.Location = new System.Drawing.Point(669, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(568, 490);
+            this.groupBox6.Size = new System.Drawing.Size(568, 492);
             this.groupBox6.TabIndex = 3;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Items de Pedido";
@@ -954,7 +1013,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.29185F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.70815F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(562, 466);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(562, 468);
             this.tableLayoutPanel8.TabIndex = 0;
             // 
             // dgvItensPedidos
@@ -980,14 +1039,16 @@ namespace FichaTecnicaFacil.Views
             this.dgvItensPedidos.Location = new System.Drawing.Point(0, 0);
             this.dgvItensPedidos.Margin = new System.Windows.Forms.Padding(0);
             this.dgvItensPedidos.Name = "dgvItensPedidos";
+            this.dgvItensPedidos.ReadOnly = true;
             this.dgvItensPedidos.RowHeadersVisible = false;
-            this.dgvItensPedidos.Size = new System.Drawing.Size(562, 253);
+            this.dgvItensPedidos.Size = new System.Drawing.Size(562, 254);
             this.dgvItensPedidos.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 60;
             // 
             // dataGridViewTextBoxColumn11
@@ -995,12 +1056,14 @@ namespace FichaTecnicaFacil.Views
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn11.HeaderText = "Descrição";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.dataGridViewTextBoxColumn12.HeaderText = "Val/Un";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // groupBox7
             // 
@@ -1016,9 +1079,9 @@ namespace FichaTecnicaFacil.Views
             this.groupBox7.Controls.Add(this.txtConsultaTelefone);
             this.groupBox7.Controls.Add(this.txtConsultaNomeCliente);
             this.groupBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox7.Location = new System.Drawing.Point(3, 256);
+            this.groupBox7.Location = new System.Drawing.Point(3, 257);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(556, 207);
+            this.groupBox7.Size = new System.Drawing.Size(556, 208);
             this.groupBox7.TabIndex = 3;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Dados de Pedido";
@@ -1138,9 +1201,9 @@ namespace FichaTecnicaFacil.Views
             this.panel4.Controls.Add(this.groupBox5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(3, 623);
+            this.panel4.Location = new System.Drawing.Point(3, 625);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1246, 84);
+            this.panel4.Size = new System.Drawing.Size(1246, 82);
             this.panel4.TabIndex = 2;
             // 
             // groupBox5
@@ -1155,7 +1218,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(0, 0);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(1246, 84);
+            this.groupBox5.Size = new System.Drawing.Size(1246, 82);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dados Gerais";
@@ -1239,46 +1302,6 @@ namespace FichaTecnicaFacil.Views
             this.txtQtdeFiltrados.TabIndex = 21;
             this.txtQtdeFiltrados.Text = "0,00";
             this.txtQtdeFiltrados.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Cod:";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 56;
-            // 
-            // dataPedido
-            // 
-            this.dataPedido.HeaderText = "Data:";
-            this.dataPedido.Name = "dataPedido";
-            this.dataPedido.Width = 80;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Cliente:";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn9.HeaderText = "Dta/Entrega:";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn10.HeaderText = "Status:";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 140;
-            // 
-            // delete_pedido
-            // 
-            this.delete_pedido.HeaderText = "delete";
-            this.delete_pedido.Name = "delete_pedido";
-            this.delete_pedido.Text = "delete";
-            this.delete_pedido.UseColumnTextForButtonValue = true;
-            this.delete_pedido.Width = 50;
             // 
             // FrmPedidos
             // 

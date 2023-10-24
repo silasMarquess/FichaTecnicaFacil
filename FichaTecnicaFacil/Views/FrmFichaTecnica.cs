@@ -129,6 +129,10 @@ namespace FichaTecnicaFacil.Views
                 _control.ConsultaListaGeralProduto();
                 txt_descricaoIngrediente.Select();
             }
+            else
+            {
+
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -713,6 +717,11 @@ namespace FichaTecnicaFacil.Views
             dgv_RecListaIngredientes.Rows.Clear();
             this.MostraItensReceita();
 
+        }
+
+        private void txt_PesquisaReceitaPeloNome_MouseDown(object sender, MouseEventArgs e)
+        {
+            txt_PesquisaReceitaPeloNome.SelectAll();
         }
     }
 }

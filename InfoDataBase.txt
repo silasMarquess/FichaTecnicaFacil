@@ -1,0 +1,15 @@
+Connection Details 
+Name:  Local instance MySQL80 
+Host: localhost 
+Port: 3306 
+Login User: root 
+Current User: root@localhost 
+SSL cipher: SSL not used 
+Server 
+Product: MySQL Community Server - GPL 
+Version: 8.0.34 
+Connector 
+Version: C++ 8.1.0
+
+usuario: root
+password: 182520

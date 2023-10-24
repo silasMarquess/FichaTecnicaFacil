@@ -111,7 +111,7 @@ namespace FichaTecnicaFacil.Controler
 
         public void ValidaInsercao()
         {
-            if (string.IsNullOrEmpty(_form.txt_DescricaoReceita.Text)) throw new DomainException("Campo de descrição não pode ser vazio");
+            if (string.IsNullOrEmpty(_form.txt_descricaoIngrediente.Text)) throw new DomainException("Campo de descrição não pode ser vazio");
             if (string.IsNullOrEmpty(_form.txt_PrecoEmbalagem.Text)) throw new DomainException("Campo de Preco da embalagem nao pode ser vazio");
             if (string.IsNullOrEmpty(_form.Cb_UNIngrediente.Text)) throw new DomainException("UN é orbrigatorio");
             if (string.IsNullOrEmpty(_form.txt_ConteudoEmbalagem.Text)) throw new DomainException("Conteudo total da embalagem é orbrigatorio");
