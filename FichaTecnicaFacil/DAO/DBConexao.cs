@@ -12,7 +12,7 @@ namespace FichaTecnicaFacil.DAO
     class DBConexao
     {
         public static MySqlConnection _conexao;
-        string query = "server=localhost;userid=root;password=182520;database=dbnffacil ; port=3306";
+        string query = "server=db-fichatec.mysql.uhserver.com;userid=silasadmin;password=S1i2l3a4s5@;database=db_fichatec ; port=3306";
 
 
 
