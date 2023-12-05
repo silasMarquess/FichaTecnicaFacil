@@ -42,7 +42,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static void DeleteProduto(Produto p)
         {
-            string sql = "delete from produto where idProduto = @id";
+            string sql = "delete from Produto where idProduto = @id";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@id", p.Id);
             cmd.ExecuteNonQuery();
@@ -51,7 +51,7 @@ namespace FichaTecnicaFacil.DAO
         public  static List<Produto> getListaProdutos()
         {
             List<Produto> lista = new List<Produto>();
-            string sql = "select * from  produto";
+            string sql = "select * from  Produto";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
@@ -70,7 +70,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Produto> getListaProdutos(string descricao)
         {
             List<Produto> lista = new List<Produto>();
-            string sql = "select * from  produto  where descricao LIKE '"+descricao+"%'";
+            string sql = "select * from  Produto  where descricao LIKE '"+descricao+"%'";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())

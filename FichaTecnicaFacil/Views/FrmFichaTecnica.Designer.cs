@@ -145,6 +145,13 @@ namespace FichaTecnicaFacil.Views
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgv_ListaProdutos = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ingrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preco_embalagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.conteudo_embalagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.un = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -166,13 +173,6 @@ namespace FichaTecnicaFacil.Views
             this.txt_NumProdutosCadastrados = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ingrediente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preco_embalagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.conteudo_embalagem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.un = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.editar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -458,13 +458,13 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel11.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.txt_ValidadeReceita, 0, 1);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(138, 0);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(137, 0);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 2;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel11.Size = new System.Drawing.Size(494, 69);
+            this.tableLayoutPanel11.Size = new System.Drawing.Size(495, 69);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
             // label10
@@ -485,7 +485,7 @@ namespace FichaTecnicaFacil.Views
             this.txt_ValidadeReceita.Location = new System.Drawing.Point(0, 29);
             this.txt_ValidadeReceita.Margin = new System.Windows.Forms.Padding(0);
             this.txt_ValidadeReceita.Name = "txt_ValidadeReceita";
-            this.txt_ValidadeReceita.Size = new System.Drawing.Size(494, 25);
+            this.txt_ValidadeReceita.Size = new System.Drawing.Size(495, 25);
             this.txt_ValidadeReceita.TabIndex = 1;
             // 
             // tableLayoutPanel9
@@ -502,7 +502,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel9.RowCount = 2;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 43.39622F));
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 56.60378F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(136, 67);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(135, 67);
             this.tableLayoutPanel9.TabIndex = 0;
             // 
             // label8
@@ -524,7 +524,7 @@ namespace FichaTecnicaFacil.Views
             this.txt_IdReceita.Location = new System.Drawing.Point(0, 29);
             this.txt_IdReceita.Margin = new System.Windows.Forms.Padding(0);
             this.txt_IdReceita.Name = "txt_IdReceita";
-            this.txt_IdReceita.Size = new System.Drawing.Size(136, 25);
+            this.txt_IdReceita.Size = new System.Drawing.Size(135, 25);
             this.txt_IdReceita.TabIndex = 1;
             // 
             // tableLayoutPanel8
@@ -651,12 +651,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel26.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel26.Controls.Add(this.groupBox2, 0, 1);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 24);
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(3, 23);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 2;
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.87097F));
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.12904F));
-            this.tableLayoutPanel26.Size = new System.Drawing.Size(553, 155);
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(553, 156);
             this.tableLayoutPanel26.TabIndex = 1;
             // 
             // panel3
@@ -697,7 +697,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox2.Location = new System.Drawing.Point(3, 57);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(547, 95);
+            this.groupBox2.Size = new System.Drawing.Size(547, 96);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dados de Ingredientes";
@@ -1214,7 +1214,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.771F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.22901F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 170F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 454F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 455F));
             this.tableLayoutPanel21.Controls.Add(this.button2, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.button3, 2, 0);
             this.tableLayoutPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1229,7 +1229,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(416, 1);
+            this.button2.Location = new System.Drawing.Point(415, 1);
             this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(177, 26);
@@ -1242,7 +1242,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(595, 1);
+            this.button3.Location = new System.Drawing.Point(594, 1);
             this.button3.Margin = new System.Windows.Forms.Padding(1);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(168, 26);
@@ -1750,6 +1750,66 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaProdutos.TabIndex = 2;
             this.dgv_ListaProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaProdutos_CellClick);
             // 
+            // id
+            // 
+            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.id.HeaderText = "Id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 35;
+            // 
+            // Ingrediente
+            // 
+            this.Ingrediente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            this.Ingrediente.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Ingrediente.HeaderText = "Ingredientes";
+            this.Ingrediente.Name = "Ingrediente";
+            this.Ingrediente.ReadOnly = true;
+            // 
+            // preco_embalagem
+            // 
+            this.preco_embalagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.preco_embalagem.HeaderText = "Preço de Embalagem(Fechada)";
+            this.preco_embalagem.Name = "preco_embalagem";
+            this.preco_embalagem.ReadOnly = true;
+            this.preco_embalagem.Width = 199;
+            // 
+            // conteudo_embalagem
+            // 
+            this.conteudo_embalagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.conteudo_embalagem.HeaderText = "Conteudo/Embalagem";
+            this.conteudo_embalagem.Name = "conteudo_embalagem";
+            this.conteudo_embalagem.ReadOnly = true;
+            this.conteudo_embalagem.Width = 169;
+            // 
+            // un
+            // 
+            this.un.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.un.HeaderText = "UN";
+            this.un.Name = "un";
+            this.un.ReadOnly = true;
+            this.un.Width = 52;
+            // 
+            // delete
+            // 
+            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.delete.HeaderText = "DEL";
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Text = "Delete";
+            this.delete.UseColumnTextForButtonValue = true;
+            this.delete.Width = 60;
+            // 
+            // editar
+            // 
+            this.editar.HeaderText = "EDIT";
+            this.editar.Name = "editar";
+            this.editar.ReadOnly = true;
+            this.editar.Text = "Editar";
+            this.editar.UseColumnTextForButtonValue = true;
+            this.editar.Width = 60;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.label25);
@@ -2014,66 +2074,6 @@ namespace FichaTecnicaFacil.Views
             this.label1.TabIndex = 2;
             this.label1.Text = "Ficha Técnica";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // id
-            // 
-            this.id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.id.HeaderText = "Id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 35;
-            // 
-            // Ingrediente
-            // 
-            this.Ingrediente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            this.Ingrediente.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Ingrediente.HeaderText = "Ingredientes";
-            this.Ingrediente.Name = "Ingrediente";
-            this.Ingrediente.ReadOnly = true;
-            // 
-            // preco_embalagem
-            // 
-            this.preco_embalagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.preco_embalagem.HeaderText = "Preço de Embalagem(Fechada)";
-            this.preco_embalagem.Name = "preco_embalagem";
-            this.preco_embalagem.ReadOnly = true;
-            this.preco_embalagem.Width = 199;
-            // 
-            // conteudo_embalagem
-            // 
-            this.conteudo_embalagem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.conteudo_embalagem.HeaderText = "Conteudo/Embalagem";
-            this.conteudo_embalagem.Name = "conteudo_embalagem";
-            this.conteudo_embalagem.ReadOnly = true;
-            this.conteudo_embalagem.Width = 169;
-            // 
-            // un
-            // 
-            this.un.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.un.HeaderText = "UN";
-            this.un.Name = "un";
-            this.un.ReadOnly = true;
-            this.un.Width = 52;
-            // 
-            // delete
-            // 
-            this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.delete.HeaderText = "DEL";
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Text = "Delete";
-            this.delete.UseColumnTextForButtonValue = true;
-            this.delete.Width = 60;
-            // 
-            // editar
-            // 
-            this.editar.HeaderText = "EDIT";
-            this.editar.Name = "editar";
-            this.editar.ReadOnly = true;
-            this.editar.Text = "Editar";
-            this.editar.UseColumnTextForButtonValue = true;
-            this.editar.Width = 60;
             // 
             // FrmFichaTecnica
             // 

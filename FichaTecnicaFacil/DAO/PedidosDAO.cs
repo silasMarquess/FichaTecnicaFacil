@@ -16,7 +16,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static void InsertVenda(Venda v)
         {
-            string query = "insert into venda(fk_receita_idReceita, fk_pedido_codigoPedido) values(@receita,@pedido)";
+            string query = "insert into Venda(fk_receita_idReceita, fk_pedido_codigoPedido) values(@receita,@pedido)";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@receita", v.Receita.Id);
             cmd.Parameters.AddWithValue("@pedido", v.Pedido.CodigoPedido);
@@ -25,7 +25,7 @@ namespace FichaTecnicaFacil.DAO
         }
         public static void InsertPedido(Pedido p)
         {
-            string sql = "insert into pedido(codigoPedido, dataPedido, statusPedido, Prazoentrega, desconto, dataFechamento, nomeCliente, whatsApp) " +
+            string sql = "insert into Pedido(codigoPedido, dataPedido, statusPedido, Prazoentrega, desconto, dataFechamento, nomeCliente, whatsApp) " +
                 "values(@codigoPedido, @dataPedido, @statusPedido, @Prazoentrega, @desconto, @dataFechamento, @nomeCliente, @whatsApp)";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido);
@@ -41,7 +41,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static void deletePedido(Pedido p)
         {
-            string query = "delete from pedido where codigoPedido = @codigo";
+            string query = "delete from Pedido where codigoPedido = @codigo";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@codigo", p.CodigoPedido);
             cmd.ExecuteNonQuery();
@@ -49,7 +49,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static bool VerificaCodigo(string codigo)
         {
-            string query = "select codigoPedido from pedido where codigopedido = @codigo";
+            string query = "select codigoPedido from Pedido where codigopedido = @codigo";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@codigo", codigo);
             MySqlDataReader rd = cmd.ExecuteReader();
@@ -59,7 +59,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidos(string nomeCliente)
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from pedido where nomeCliente LIKE '" + nomeCliente + "%'";
+            string query = "select * from Pedido where nomeCliente LIKE '" + nomeCliente + "%'";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
 
@@ -82,7 +82,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidos()
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from pedido";
+            string query = "select * from Pedido";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
 
@@ -105,7 +105,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidos(DateTime dataIn, DateTime dataOut)
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from pedido where dataPedido>=@dataIn and datapedido <= @dataOut";
+            string query = "select * from Pedido where dataPedido>=@dataIn and datapedido <= @dataOut";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@dataIn", dataIn);
             cmd.Parameters.AddWithValue("@dataOut", dataOut);
@@ -131,7 +131,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidosPorPrazo(DateTime dataIn, DateTime dataOut)
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from pedido where PrazoEntrega>=@dataIn and PrazoEntrega <= @dataOut";
+            string query = "select * from Pedido where PrazoEntrega>=@dataIn and PrazoEntrega <= @dataOut";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@dataIn", dataIn);
             cmd.Parameters.AddWithValue("@dataOut", dataOut);
@@ -155,7 +155,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static void UpdateStatusPedido(Pedido p)
         {
-            string query = "update pedido set statusPedido = @status where codigoPedido = @codigoPedido";
+            string query = "update Pedido set statusPedido = @status where codigoPedido = @codigoPedido";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@status", (int)statusPedido.PERDIDO_FECHADO);
             cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido);
@@ -166,7 +166,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidos(statusPedido status)
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from pedido where statusPedido = @status";
+            string query = "select * from Pedido where statusPedido = @status";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@status", (int)status);
             MySqlDataReader rd = cmd.ExecuteReader();

@@ -33,7 +33,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static void InsertItemReceita(Receita r)
         {
-            string sql = "insert into ingrediente(qtde, fk_Receita_idReceita, fk_Produto_idProduto) " +
+            string sql = "insert into Ingrediente(qtde, fk_Receita_idReceita, fk_Produto_idProduto) " +
                 "values (@qtde,@fk_Receita_idReceita, @fk_Produto_idProduto)";
 
             foreach (Ingrediente i in r.ListaIngrediente)
@@ -71,7 +71,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Receita> getListaReceita()
         {
             List<Receita> lista = new List<Receita>();
-            string sql = "select * from receita";
+            string sql = "select * from Receita";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
 
@@ -96,7 +96,7 @@ namespace FichaTecnicaFacil.DAO
         public static List<Receita> getListaReceita(string nomeReceita)
         {
             List<Receita> lista = new List<Receita>();
-            string sql = "select * from receita where descricaoReceita LIKE '%" + nomeReceita + "%'";
+            string sql = "select * from Receita where descricaoReceita LIKE '%" + nomeReceita + "%'";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             MySqlDataReader rd = cmd.ExecuteReader();
 
@@ -211,7 +211,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static bool VerificaSeReceitaExiste(Receita r)
         {
-            string sql = "select * from receita where descricaoReceita = @descricaoReceita";
+            string sql = "select * from Receita where descricaoReceita = @descricaoReceita";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@descricaoReceita", r.Descricao);
             MySqlDataReader rd = cmd.ExecuteReader();
@@ -220,7 +220,7 @@ namespace FichaTecnicaFacil.DAO
 
         public static bool VerificaSeIdReceitaExiste(string IdReceita)
         {
-            string sql = "select * from receita where idReceita =@IdReceita";
+            string sql = "select * from Receita where idReceita =@IdReceita";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@IdReceita", IdReceita);
             MySqlDataReader rd = cmd.ExecuteReader();

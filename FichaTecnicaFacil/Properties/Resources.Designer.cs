@@ -151,7 +151,7 @@ namespace FichaTecnicaFacil.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a server=localhost;userid=root;password=182520;database=dbnffacil ; port=3306.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a server=db-fichatec.mysql.uhserver.com;userid=silasadmin;password=S1i2l3a4s5@; database=db_fichatec.
         /// </summary>
         internal static string URL {
             get {
