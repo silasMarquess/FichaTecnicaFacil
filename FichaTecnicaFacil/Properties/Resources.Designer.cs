@@ -83,6 +83,16 @@ namespace FichaTecnicaFacil.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cashflow_money_dollar_bill_icon_205115 {
+            get {
+                object obj = ResourceManager.GetObject("cashflow_money_dollar_bill_icon_205115", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fecharJanela32px {
             get {
                 object obj = ResourceManager.GetObject("fecharJanela32px", resourceCulture);
@@ -136,6 +146,16 @@ namespace FichaTecnicaFacil.Properties {
         internal static System.Drawing.Bitmap MODULO_LOJA {
             get {
                 object obj = ResourceManager.GetObject("MODULO_LOJA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap money {
+            get {
+                object obj = ResourceManager.GetObject("money", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

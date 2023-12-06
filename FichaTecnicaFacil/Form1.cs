@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FichaTecnicaFacil.Views; 
 using FichaTecnicaFacil.Controler;
 
 namespace FichaTecnicaFacil
@@ -24,11 +25,17 @@ namespace FichaTecnicaFacil
         private void button2_Click(object sender, EventArgs e)
         {
             _control.OpenFormFichaTecnica();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             _control.OpenFormPedido();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
