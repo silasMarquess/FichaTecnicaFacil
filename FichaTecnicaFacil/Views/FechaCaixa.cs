@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace FichaTecnicaFacil.Views
 {
-    public partial class Caixa : Form
+    public partial class FechaCaixa : Form
     {
-        public Caixa()
+        public FechaCaixa()
         {
             InitializeComponent();
         }
 
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void menuStrip_OpcoesMovimentacao_Opening(object sender, CancelEventArgs e)
+        private void FechaCaixa_Load(object sender, EventArgs e)
         {
 
         }
