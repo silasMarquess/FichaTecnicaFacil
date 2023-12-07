@@ -58,3 +58,6 @@ E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTe
 E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTecnicaFacil.exe
 E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTecnicaFacil.pdb
 E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTecnicaFacil.csproj.AssemblyReference.cache
+E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTecnicaFacil.Views.AbriCaixa.resources
+E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTecnicaFacil.Views.FrmCaixa.resources
+E:\dev\Projetos Locais\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Debug\FichaTecnicaFacil.Views.FechaCaixa.resources

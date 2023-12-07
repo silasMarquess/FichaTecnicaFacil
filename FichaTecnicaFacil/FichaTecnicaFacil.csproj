@@ -144,6 +144,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controler\caixaCadControl.cs" />
+    <Compile Include="Controler\caixaControler.cs" />
     <Compile Include="Controler\FichaTecnicaControl.cs" />
     <Compile Include="Controler\Form1Controler.cs" />
     <Compile Include="Controler\FrmPedidoControl.cs" />
@@ -181,11 +183,11 @@
     <Compile Include="Views\AbriCaixa.Designer.cs">
       <DependentUpon>AbriCaixa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Caixa.cs">
+    <Compile Include="Views\FrmCaixa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Caixa.Designer.cs">
-      <DependentUpon>Caixa.cs</DependentUpon>
+    <Compile Include="Views\FrmCaixa.Designer.cs">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\FechaCaixa.cs">
       <SubType>Form</SubType>
@@ -221,8 +223,8 @@
     <EmbeddedResource Include="Views\AbriCaixa.resx">
       <DependentUpon>AbriCaixa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Caixa.resx">
-      <DependentUpon>Caixa.cs</DependentUpon>
+    <EmbeddedResource Include="Views\FrmCaixa.resx">
+      <DependentUpon>FrmCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FechaCaixa.resx">
       <DependentUpon>FechaCaixa.cs</DependentUpon>

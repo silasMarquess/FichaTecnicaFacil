@@ -24,7 +24,7 @@ namespace FichaTecnicaFacil
 
         private void button2_Click(object sender, EventArgs e)
         {
-            _control.OpenFormFichaTecnica();
+            _control.OpenFormCaixa();
            
         }
 
@@ -35,7 +35,7 @@ namespace FichaTecnicaFacil
 
         private void button3_Click(object sender, EventArgs e)
         {
-            
+            _control.OpenFormFichaTecnica();
         }
     }
 }

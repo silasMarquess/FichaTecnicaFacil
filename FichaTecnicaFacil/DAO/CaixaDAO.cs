@@ -104,6 +104,33 @@ namespace FichaTecnicaFacil.DAO
             return lista;
         }
 
+        public static List<Caixa> getListaCaixaAberto()
+        {
+            List<Caixa> lista = new List<Caixa>();
+            string sql = "select * from Caixa where status = @statusCaixa";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@statusCaixa", (int)statusCaixa.CAIXA_ABERTO);
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                Caixa c = new Caixa();
+                c.codigoCaixa = rd.GetString("codigoCaixa");
+                c.HoraAbert = rd.GetDateTime("horaAbert");
+                c.HoraFechamento = rd.GetDateTime("horaFechamento");
+                if (rd["valorInicio"] != null) c.ValorInicio = rd.GetDouble("valorInicio");
+                c.TotalEntrada = rd.GetDouble("totalEntrada");
+                c.TotalSaida = rd.GetDouble("totalSaida");
+                c.ValorFechamento = rd.GetDouble("ValorFechamento");
+                c.ValorQuebra = rd.GetDouble("ValorQuebra");
+                c.statusCaixa = (statusCaixa)rd.GetInt16("status");
+                DateTime dataIN = new DateTime(c.HoraAbert.Year, c.HoraAbert.Month, c.HoraAbert.Day);
+                lista.Add(c);
+
+            }
+            return lista;
+        }
+
 
         public static void Insertfluxo(Fluxo f)
         {
@@ -146,5 +173,9 @@ namespace FichaTecnicaFacil.DAO
                 c.AddFluxo(f);
             }
         }
+
+
+
+
     }
 }

@@ -6,15 +6,22 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FichaTecnicaFacil.Controler;
+using FichaTecnicaFacil.Entidades;
 using System.Windows.Forms;
 
 namespace FichaTecnicaFacil.Views
 {
+   
     public partial class AbriCaixa : Form
     {
+        private caixaCadControl _control;
         public AbriCaixa()
         {
             InitializeComponent();
+            _control = new caixaCadControl(this);
+            txtDataAberturaCaixa.Text = DateTime.Now.ToShortDateString();
+            timer1.Start();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -25,6 +32,27 @@ namespace FichaTecnicaFacil.Views
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime dataNow = DateTime.Now;
+            txtHorarioAberturaCaixa.Text = dataNow.ToLongTimeString();
+        }
+
+        private void btnAbriCaixa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //construir caixa
+                Caixa c = new Caixa();
+
+                _control.CadastradaCaixa(c);
+
+            }catch(DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

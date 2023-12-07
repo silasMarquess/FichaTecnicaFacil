@@ -16,6 +16,7 @@ namespace FichaTecnicaFacil.Entidades
         public DateTime Horario { get; set; }
         public DateTime data { get; set; }
 
+        public TipoPag Natureza { get; set; }
         public Caixa Caixa { get; set; }
 
         public Fluxo()
@@ -31,6 +32,18 @@ namespace FichaTecnicaFacil.Entidades
             Tipo = tipo;
             Horario = horario;
             this.data = data;
+            Caixa = caixa;
+        }
+
+        public Fluxo(int id, string descricao, double valor, tipoFluxo tipo, DateTime horario, DateTime data, TipoPag natureza, Caixa caixa)
+        {
+            Id = id;
+            Descricao = descricao;
+            Valor = valor;
+            Tipo = tipo;
+            Horario = horario;
+            this.data = data;
+            Natureza = natureza;
             Caixa = caixa;
         }
     }

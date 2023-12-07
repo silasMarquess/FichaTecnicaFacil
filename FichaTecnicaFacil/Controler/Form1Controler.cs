@@ -34,6 +34,12 @@ namespace FichaTecnicaFacil.Controler
             form.ShowDialog();
         }
 
+        public void OpenFormCaixa()
+        {
+            FrmCaixa form = new FrmCaixa(this);
+            form.ShowDialog();
+        }
+
 
 
     }

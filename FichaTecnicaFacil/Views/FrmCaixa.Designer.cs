@@ -1,7 +1,7 @@
 ﻿
 namespace FichaTecnicaFacil.Views
 {
-    partial class Caixa
+    partial class FrmCaixa
     {
         /// <summary>
         /// Required designer variable.
@@ -102,6 +102,11 @@ namespace FichaTecnicaFacil.Views
             this.horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Natureza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
@@ -139,12 +144,11 @@ namespace FichaTecnicaFacil.Views
             this.dELETECAIXAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip_OpcoesMov = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label50 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label51 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label52 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label53 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -168,6 +172,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel10.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
@@ -183,7 +188,6 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28.SuspendLayout();
             this.menuStrip_OpcoesCaixa.SuspendLayout();
             this.menuStrip_OpcoesMov.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -199,7 +203,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 72F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1020, 694);
@@ -207,6 +211,7 @@ namespace FichaTecnicaFacil.Views
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.comboBox1);
@@ -219,6 +224,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.ForeColor = System.Drawing.Color.Cornsilk;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1014, 57);
@@ -228,7 +234,8 @@ namespace FichaTecnicaFacil.Views
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(877, 24);
+            this.button1.ForeColor = System.Drawing.Color.DarkBlue;
+            this.button1.Location = new System.Drawing.Point(877, 22);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 23);
             this.button1.TabIndex = 3;
@@ -241,7 +248,10 @@ namespace FichaTecnicaFacil.Views
             this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(766, 24);
+            this.comboBox2.Items.AddRange(new object[] {
+            "ENTRADA",
+            "SAÍDA"});
+            this.comboBox2.Location = new System.Drawing.Point(766, 21);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(105, 24);
             this.comboBox2.TabIndex = 2;
@@ -252,7 +262,13 @@ namespace FichaTecnicaFacil.Views
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(606, 25);
+            this.comboBox1.Items.AddRange(new object[] {
+            "DINHEIRO",
+            "PIX",
+            "PRAZO",
+            "CRÉDITO",
+            "DÉBITO"});
+            this.comboBox1.Location = new System.Drawing.Point(606, 21);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 2;
@@ -260,7 +276,7 @@ namespace FichaTecnicaFacil.Views
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(731, 31);
+            this.label5.Location = new System.Drawing.Point(731, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 0;
@@ -269,7 +285,7 @@ namespace FichaTecnicaFacil.Views
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(536, 30);
+            this.label4.Location = new System.Drawing.Point(536, 27);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 0;
@@ -279,7 +295,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.textBox3.BackColor = System.Drawing.Color.Yellow;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(470, 25);
+            this.textBox3.Location = new System.Drawing.Point(470, 22);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(62, 23);
             this.textBox3.TabIndex = 1;
@@ -288,7 +304,7 @@ namespace FichaTecnicaFacil.Views
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(404, 31);
+            this.label3.Location = new System.Drawing.Point(404, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 0;
@@ -298,7 +314,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.textBox2.BackColor = System.Drawing.Color.Yellow;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(154, 26);
+            this.textBox2.Location = new System.Drawing.Point(154, 22);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(248, 23);
             this.textBox2.TabIndex = 1;
@@ -306,7 +322,7 @@ namespace FichaTecnicaFacil.Views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 31);
+            this.label2.Location = new System.Drawing.Point(81, 27);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 13);
             this.label2.TabIndex = 0;
@@ -316,7 +332,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.textBox1.BackColor = System.Drawing.Color.Yellow;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(31, 26);
+            this.textBox1.Location = new System.Drawing.Point(31, 22);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(44, 23);
             this.textBox1.TabIndex = 1;
@@ -324,7 +340,7 @@ namespace FichaTecnicaFacil.Views
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 31);
+            this.label1.Location = new System.Drawing.Point(9, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 0;
@@ -332,6 +348,10 @@ namespace FichaTecnicaFacil.Views
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.label52);
+            this.groupBox2.Controls.Add(this.button4);
+            this.groupBox2.Controls.Add(this.button3);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.label7);
@@ -340,14 +360,14 @@ namespace FichaTecnicaFacil.Views
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(3, 66);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1014, 48);
+            this.groupBox2.Size = new System.Drawing.Size(1014, 49);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "FILTRAR CAIXAS:";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(337, 20);
+            this.button2.Location = new System.Drawing.Point(893, 18);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 2;
@@ -357,7 +377,7 @@ namespace FichaTecnicaFacil.Views
             // dateTimePicker2
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(243, 22);
+            this.dateTimePicker2.Location = new System.Drawing.Point(799, 19);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(88, 20);
             this.dateTimePicker2.TabIndex = 1;
@@ -365,7 +385,7 @@ namespace FichaTecnicaFacil.Views
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(185, 26);
+            this.label7.Location = new System.Drawing.Point(741, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 13);
             this.label7.TabIndex = 0;
@@ -374,7 +394,7 @@ namespace FichaTecnicaFacil.Views
             // dateTimePicker1
             // 
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(89, 23);
+            this.dateTimePicker1.Location = new System.Drawing.Point(645, 19);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(88, 20);
             this.dateTimePicker1.TabIndex = 1;
@@ -382,7 +402,7 @@ namespace FichaTecnicaFacil.Views
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(19, 26);
+            this.label6.Location = new System.Drawing.Point(575, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(69, 13);
             this.label6.TabIndex = 0;
@@ -396,11 +416,11 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel2.Controls.Add(this.groupBox4, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.groupBox3, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 120);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 121);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1014, 499);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1014, 498);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // groupBox4
@@ -409,7 +429,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(248, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(763, 493);
+            this.groupBox4.Size = new System.Drawing.Size(763, 492);
             this.groupBox4.TabIndex = 1;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "MOVIMENTAÇÕES REGISTRADAS:";
@@ -431,7 +451,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 61F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(757, 474);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(757, 473);
             this.tableLayoutPanel3.TabIndex = 0;
             // 
             // tableLayoutPanel13
@@ -443,7 +463,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel16, 2, 0);
@@ -452,7 +472,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel19, 5, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel20, 6, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 416);
+            this.tableLayoutPanel13.Location = new System.Drawing.Point(3, 415);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
             this.tableLayoutPanel13.RowCount = 1;
             this.tableLayoutPanel13.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -471,7 +491,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(103, 49);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(102, 49);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // label22
@@ -483,7 +503,7 @@ namespace FichaTecnicaFacil.Views
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(3, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(97, 24);
+            this.label22.Size = new System.Drawing.Size(96, 24);
             this.label22.TabIndex = 0;
             this.label22.Text = "ENTRADA:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -496,7 +516,7 @@ namespace FichaTecnicaFacil.Views
             this.label23.ForeColor = System.Drawing.Color.Blue;
             this.label23.Location = new System.Drawing.Point(3, 24);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(97, 25);
+            this.label23.Size = new System.Drawing.Size(96, 25);
             this.label23.TabIndex = 1;
             this.label23.Text = "0,00 R$";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -509,7 +529,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel15.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.label25, 0, 1);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(112, 3);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(111, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -551,7 +571,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel16.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.label27, 0, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(224, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(223, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -593,7 +613,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.label29, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(332, 3);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(331, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -635,7 +655,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel18.Controls.Add(this.label30, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.label31, 0, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(464, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(463, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -677,7 +697,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.Controls.Add(this.label32, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.label33, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(586, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(585, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -719,12 +739,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel20.Controls.Add(this.label34, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.label35, 0, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(670, 3);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(669, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(78, 49);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(79, 49);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
             // label34
@@ -736,7 +756,7 @@ namespace FichaTecnicaFacil.Views
             this.label34.ForeColor = System.Drawing.Color.White;
             this.label34.Location = new System.Drawing.Point(3, 0);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(72, 24);
+            this.label34.Size = new System.Drawing.Size(73, 24);
             this.label34.TabIndex = 0;
             this.label34.Text = "Valor/Queb.";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -749,7 +769,7 @@ namespace FichaTecnicaFacil.Views
             this.label35.ForeColor = System.Drawing.Color.Blue;
             this.label35.Location = new System.Drawing.Point(3, 24);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(72, 25);
+            this.label35.Size = new System.Drawing.Size(73, 25);
             this.label35.TabIndex = 1;
             this.label35.Text = "00:00";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -758,7 +778,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.groupBox6.Controls.Add(this.tableLayoutPanel5);
             this.groupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox6.Location = new System.Drawing.Point(3, 343);
+            this.groupBox6.Location = new System.Drawing.Point(3, 342);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(751, 67);
             this.groupBox6.TabIndex = 0;
@@ -1056,7 +1076,7 @@ namespace FichaTecnicaFacil.Views
             this.dataGridView2.Location = new System.Drawing.Point(3, 42);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(751, 295);
+            this.dataGridView2.Size = new System.Drawing.Size(751, 294);
             this.dataGridView2.TabIndex = 1;
             // 
             // ID
@@ -1102,13 +1122,76 @@ namespace FichaTecnicaFacil.Views
             this.Natureza.HeaderText = "Natureza";
             this.Natureza.Name = "Natureza";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label53);
+            this.panel1.Controls.Add(this.label51);
+            this.panel1.Controls.Add(this.label50);
+            this.panel1.Controls.Add(this.comboBox4);
+            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Margin = new System.Windows.Forms.Padding(1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(755, 37);
+            this.panel1.TabIndex = 2;
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(562, 12);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(69, 13);
+            this.label51.TabIndex = 0;
+            this.label51.Text = "NATUREZA:";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(411, 12);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(35, 13);
+            this.label50.TabIndex = 0;
+            this.label50.Text = "TIPO:";
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.Color.Yellow;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "DINHEIRO",
+            "PIX",
+            "PRAZO",
+            "CRÉDITO",
+            "DÉBITO"});
+            this.comboBox4.Location = new System.Drawing.Point(635, 6);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(105, 24);
+            this.comboBox4.TabIndex = 2;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.Yellow;
+            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "ENTRADAS",
+            "SAÍDAS"});
+            this.comboBox3.Location = new System.Drawing.Point(448, 6);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(105, 24);
+            this.comboBox3.TabIndex = 2;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.tableLayoutPanel4);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(239, 493);
+            this.groupBox3.Size = new System.Drawing.Size(239, 492);
             this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "LISTA DE CAIXAS:";
@@ -1125,7 +1208,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 89.02953F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.97046F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(233, 474);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(233, 473);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // tableLayoutPanel12
@@ -1135,7 +1218,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel12.Controls.Add(this.label20, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.label21, 0, 1);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 425);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 424);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 2;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1181,7 +1264,7 @@ namespace FichaTecnicaFacil.Views
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(227, 416);
+            this.dataGridView1.Size = new System.Drawing.Size(227, 415);
             this.dataGridView1.TabIndex = 0;
             // 
             // Codigo
@@ -1224,7 +1307,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 149F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 87F));
             this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
-            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100F));
+            this.tableLayoutPanel21.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 101F));
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel22, 0, 0);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel23, 1, 0);
             this.tableLayoutPanel21.Controls.Add(this.tableLayoutPanel24, 2, 0);
@@ -1252,7 +1335,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel22.RowCount = 2;
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel22.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel22.Size = new System.Drawing.Size(161, 41);
+            this.tableLayoutPanel22.Size = new System.Drawing.Size(160, 41);
             this.tableLayoutPanel22.TabIndex = 0;
             // 
             // label36
@@ -1264,7 +1347,7 @@ namespace FichaTecnicaFacil.Views
             this.label36.ForeColor = System.Drawing.Color.Black;
             this.label36.Location = new System.Drawing.Point(3, 0);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(155, 20);
+            this.label36.Size = new System.Drawing.Size(154, 20);
             this.label36.TabIndex = 0;
             this.label36.Text = "ENTRADA/GERAL:";
             this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1277,7 +1360,7 @@ namespace FichaTecnicaFacil.Views
             this.label37.ForeColor = System.Drawing.Color.Blue;
             this.label37.Location = new System.Drawing.Point(3, 20);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(155, 21);
+            this.label37.Size = new System.Drawing.Size(154, 21);
             this.label37.TabIndex = 1;
             this.label37.Text = "0,00 R$";
             this.label37.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1290,7 +1373,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel23.Controls.Add(this.label38, 0, 0);
             this.tableLayoutPanel23.Controls.Add(this.label39, 0, 1);
             this.tableLayoutPanel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel23.Location = new System.Drawing.Point(170, 3);
+            this.tableLayoutPanel23.Location = new System.Drawing.Point(169, 3);
             this.tableLayoutPanel23.Name = "tableLayoutPanel23";
             this.tableLayoutPanel23.RowCount = 2;
             this.tableLayoutPanel23.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1332,7 +1415,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel24.Controls.Add(this.label40, 0, 0);
             this.tableLayoutPanel24.Controls.Add(this.label41, 0, 1);
             this.tableLayoutPanel24.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel24.Location = new System.Drawing.Point(357, 3);
+            this.tableLayoutPanel24.Location = new System.Drawing.Point(356, 3);
             this.tableLayoutPanel24.Name = "tableLayoutPanel24";
             this.tableLayoutPanel24.RowCount = 2;
             this.tableLayoutPanel24.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1374,7 +1457,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel25.Controls.Add(this.label42, 0, 0);
             this.tableLayoutPanel25.Controls.Add(this.label43, 0, 1);
             this.tableLayoutPanel25.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel25.Location = new System.Drawing.Point(543, 3);
+            this.tableLayoutPanel25.Location = new System.Drawing.Point(542, 3);
             this.tableLayoutPanel25.Name = "tableLayoutPanel25";
             this.tableLayoutPanel25.RowCount = 2;
             this.tableLayoutPanel25.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1416,7 +1499,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel26.Controls.Add(this.label44, 0, 0);
             this.tableLayoutPanel26.Controls.Add(this.label45, 0, 1);
             this.tableLayoutPanel26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel26.Location = new System.Drawing.Point(692, 3);
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(691, 3);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 2;
             this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1458,7 +1541,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel27.Controls.Add(this.label46, 0, 0);
             this.tableLayoutPanel27.Controls.Add(this.label47, 0, 1);
             this.tableLayoutPanel27.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel27.Location = new System.Drawing.Point(779, 3);
+            this.tableLayoutPanel27.Location = new System.Drawing.Point(778, 3);
             this.tableLayoutPanel27.Name = "tableLayoutPanel27";
             this.tableLayoutPanel27.RowCount = 2;
             this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -1500,12 +1583,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28.Controls.Add(this.label48, 0, 0);
             this.tableLayoutPanel28.Controls.Add(this.label49, 0, 1);
             this.tableLayoutPanel28.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel28.Location = new System.Drawing.Point(910, 3);
+            this.tableLayoutPanel28.Location = new System.Drawing.Point(909, 3);
             this.tableLayoutPanel28.Name = "tableLayoutPanel28";
             this.tableLayoutPanel28.RowCount = 2;
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel28.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel28.Size = new System.Drawing.Size(95, 41);
+            this.tableLayoutPanel28.Size = new System.Drawing.Size(96, 41);
             this.tableLayoutPanel28.TabIndex = 0;
             // 
             // label48
@@ -1517,7 +1600,7 @@ namespace FichaTecnicaFacil.Views
             this.label48.ForeColor = System.Drawing.Color.Black;
             this.label48.Location = new System.Drawing.Point(3, 0);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(89, 20);
+            this.label48.Size = new System.Drawing.Size(90, 20);
             this.label48.TabIndex = 0;
             this.label48.Text = "Valor/Quebra";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1530,7 +1613,7 @@ namespace FichaTecnicaFacil.Views
             this.label49.ForeColor = System.Drawing.Color.Blue;
             this.label49.Location = new System.Drawing.Point(3, 20);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(89, 21);
+            this.label49.Size = new System.Drawing.Size(90, 21);
             this.label49.TabIndex = 1;
             this.label49.Text = "00:00";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1568,77 +1651,64 @@ namespace FichaTecnicaFacil.Views
             this.deletarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.deletarToolStripMenuItem.Text = "1- Deletar";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.label51);
-            this.panel1.Controls.Add(this.label50);
-            this.panel1.Controls.Add(this.comboBox4);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(1, 1);
-            this.panel1.Margin = new System.Windows.Forms.Padding(1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(755, 37);
-            this.panel1.TabIndex = 2;
-            // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(11, 13);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(31, 13);
-            this.label50.TabIndex = 0;
-            this.label50.Text = "Tipo:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.Yellow;
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(45, 7);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(105, 24);
-            this.comboBox3.TabIndex = 2;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.Yellow;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(223, 7);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(105, 24);
-            this.comboBox4.TabIndex = 2;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(167, 12);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(53, 13);
-            this.label51.TabIndex = 0;
-            this.label51.Text = "Natureza:";
-            // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(340, 8);
+            this.button3.Location = new System.Drawing.Point(313, 18);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(85, 23);
             this.button3.TabIndex = 2;
-            this.button3.Text = "Aplicar Filtro:";
+            this.button3.Text = "Abrir Novo";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Caixa
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(404, 18);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(128, 23);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "Fecha Caixa Atual";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(8, 23);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(117, 13);
+            this.label52.TabIndex = 4;
+            this.label52.Text = "Nº CAIXAS ABERTOS:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.ForeColor = System.Drawing.Color.Red;
+            this.textBox4.Location = new System.Drawing.Point(131, 21);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 16);
+            this.textBox4.TabIndex = 5;
+            this.textBox4.Text = "0";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(253, 12);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(152, 13);
+            this.label53.TabIndex = 3;
+            this.label53.Text = "FILTRAR MOVIMENTAÇÕES:";
+            // 
+            // FrmCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 694);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Caixa";
+            this.Name = "FrmCaixa";
             this.Text = "Caixa";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCaixa_FormClosed);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -1677,6 +1747,8 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel12.ResumeLayout(false);
@@ -1700,8 +1772,6 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28.PerformLayout();
             this.menuStrip_OpcoesCaixa.ResumeLayout(false);
             this.menuStrip_OpcoesMov.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1816,12 +1886,16 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.ToolStripMenuItem fECHACAIXAToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dELETECAIXAToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
         public System.Windows.Forms.ContextMenuStrip menuStrip_OpcoesMov;
         private System.Windows.Forms.ToolStripMenuItem deletarToolStripMenuItem;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label53;
     }
 }

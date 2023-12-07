@@ -29,15 +29,17 @@ namespace FichaTecnicaFacil.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtHorarioAberturaCaixa = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtValorIncicoCaixa = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDataAberturaCaixa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAbriCaixa = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -50,15 +52,17 @@ namespace FichaTecnicaFacil.Views
             this.label1.Text = "HORÁRIO ABERTURA:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtHorarioAberturaCaixa
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Yellow;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(140, 80);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 23);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtHorarioAberturaCaixa.BackColor = System.Drawing.SystemColors.Control;
+            this.txtHorarioAberturaCaixa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtHorarioAberturaCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHorarioAberturaCaixa.Location = new System.Drawing.Point(140, 78);
+            this.txtHorarioAberturaCaixa.Name = "txtHorarioAberturaCaixa";
+            this.txtHorarioAberturaCaixa.Size = new System.Drawing.Size(176, 16);
+            this.txtHorarioAberturaCaixa.TabIndex = 1;
+            this.txtHorarioAberturaCaixa.Text = "00:00:00";
+            this.txtHorarioAberturaCaixa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -74,25 +78,25 @@ namespace FichaTecnicaFacil.Views
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(165, 115);
+            this.label3.Location = new System.Drawing.Point(12, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 17);
             this.label3.TabIndex = 0;
             this.label3.Text = "VALOR INÍCIO R$:";
             this.label3.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox2
+            // txtValorIncicoCaixa
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Yellow;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.Blue;
-            this.textBox2.Location = new System.Drawing.Point(140, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 32);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.Text = "0,00";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtValorIncicoCaixa.BackColor = System.Drawing.Color.Yellow;
+            this.txtValorIncicoCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorIncicoCaixa.ForeColor = System.Drawing.Color.Blue;
+            this.txtValorIncicoCaixa.Location = new System.Drawing.Point(140, 135);
+            this.txtValorIncicoCaixa.Name = "txtValorIncicoCaixa";
+            this.txtValorIncicoCaixa.Size = new System.Drawing.Size(176, 32);
+            this.txtValorIncicoCaixa.TabIndex = 1;
+            this.txtValorIncicoCaixa.Text = "0,00";
+            this.txtValorIncicoCaixa.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtValorIncicoCaixa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -105,15 +109,17 @@ namespace FichaTecnicaFacil.Views
             this.label5.Text = "ABERTURA DE CAIXA";
             this.label5.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox4
+            // txtDataAberturaCaixa
             // 
-            this.textBox4.BackColor = System.Drawing.Color.Yellow;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(140, 48);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 23);
-            this.textBox4.TabIndex = 1;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtDataAberturaCaixa.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDataAberturaCaixa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDataAberturaCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataAberturaCaixa.Location = new System.Drawing.Point(140, 51);
+            this.txtDataAberturaCaixa.Name = "txtDataAberturaCaixa";
+            this.txtDataAberturaCaixa.Size = new System.Drawing.Size(176, 16);
+            this.txtDataAberturaCaixa.TabIndex = 1;
+            this.txtDataAberturaCaixa.Text = "08/12/2000";
+            this.txtDataAberturaCaixa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label6
             // 
@@ -125,24 +131,30 @@ namespace FichaTecnicaFacil.Views
             this.label6.Text = "DATA:";
             this.label6.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
+            // btnAbriCaixa
             // 
-            this.button1.Location = new System.Drawing.Point(140, 191);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Abrir Caixa";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAbriCaixa.Location = new System.Drawing.Point(140, 173);
+            this.btnAbriCaixa.Name = "btnAbriCaixa";
+            this.btnAbriCaixa.Size = new System.Drawing.Size(129, 31);
+            this.btnAbriCaixa.TabIndex = 2;
+            this.btnAbriCaixa.Text = "Abrir Caixa";
+            this.btnAbriCaixa.UseVisualStyleBackColor = true;
+            this.btnAbriCaixa.Click += new System.EventHandler(this.btnAbriCaixa_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // AbriCaixa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 246);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAbriCaixa);
+            this.Controls.Add(this.txtValorIncicoCaixa);
+            this.Controls.Add(this.txtDataAberturaCaixa);
+            this.Controls.Add(this.txtHorarioAberturaCaixa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
@@ -158,13 +170,14 @@ namespace FichaTecnicaFacil.Views
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.TextBox txtDataAberturaCaixa;
+        public System.Windows.Forms.TextBox txtHorarioAberturaCaixa;
+        public System.Windows.Forms.TextBox txtValorIncicoCaixa;
+        public System.Windows.Forms.Button btnAbriCaixa;
+        private System.Windows.Forms.Timer timer1;
     }
 }
