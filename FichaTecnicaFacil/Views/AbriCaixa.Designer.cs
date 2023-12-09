@@ -162,6 +162,7 @@ namespace FichaTecnicaFacil.Views
             this.Controls.Add(this.label1);
             this.Name = "AbriCaixa";
             this.Text = "AbriCaixa";
+            this.Load += new System.EventHandler(this.AbriCaixa_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

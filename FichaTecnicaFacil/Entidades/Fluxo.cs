@@ -7,7 +7,7 @@ using FichaTecnicaFacil.Entidades.enums;
 
 namespace FichaTecnicaFacil.Entidades
 {
-    class Fluxo
+   public class Fluxo
     {
         public int Id { get; set; }
         public string Descricao { get; set; }

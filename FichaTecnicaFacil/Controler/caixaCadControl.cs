@@ -23,7 +23,6 @@ namespace FichaTecnicaFacil.Controler
         {
             ValidaAberturaCaixa();
             List<Caixa> caixasAberto = DBConexao.getLisObjectOperation(CaixaDAO.getListaCaixaAberto);
-            if (caixasAberto.Count > 0) throw new DomainException("Ja existe um caixa aberto. Feche o primeiro, depois abra um novo");
             DBConexao.ModifyOperation(CaixaDAO.InsertCaixa, c);
             
         }
@@ -33,6 +32,20 @@ namespace FichaTecnicaFacil.Controler
             if (_form.txtValorIncicoCaixa.Text == string.Empty) throw new DomainException("Valor não pode ser vazio");
         }
 
-       
+        public string GenerateCodigoReceita()
+        {
+            Random rd = new Random();
+            int numeros = rd.Next();
+            string codigo = "CA" + numeros.ToString().Substring(0, 4);
+            bool teste = DBConexao.ValidateOperation(CaixaDAO.VerificaCodigoCaixa, codigo);
+
+            while (teste)
+            {
+                numeros = rd.Next();
+                codigo = numeros.ToString().Substring(0, 4);
+            }
+            return codigo;
+        }
+
     }
 }

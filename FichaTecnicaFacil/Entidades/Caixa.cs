@@ -7,7 +7,7 @@ using FichaTecnicaFacil.Entidades.enums;
 
 namespace FichaTecnicaFacil.Entidades
 {
-    class Caixa
+   public class Caixa
     {
         public string codigoCaixa { get; set; }
         public DateTime HoraAbert { get; set; }

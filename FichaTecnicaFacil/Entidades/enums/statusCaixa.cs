@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FichaTecnicaFacil.Entidades.enums
 {
-    enum statusCaixa:int
+    public enum statusCaixa:int
     {
         CAIXA_ABERTO=0,
         CAIXA_FECHADO=1

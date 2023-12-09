@@ -30,27 +30,27 @@ namespace FichaTecnicaFacil.Views
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCodigoCaixa = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDataAbertura = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDataFechamento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtValorInicio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDuracao = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtTotalEntrada = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtTotalSaida = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtValorFechamento = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtValorQuebra = new System.Windows.Forms.TextBox();
+            this.btnFechaCaixa = new System.Windows.Forms.Button();
+            this.txtCancelarCaixa = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -64,15 +64,15 @@ namespace FichaTecnicaFacil.Views
             this.label2.TabIndex = 1;
             this.label2.Text = "CODIGO CAIXA:";
             // 
-            // textBox4
+            // txtCodigoCaixa
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(129, 35);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(176, 16);
-            this.textBox4.TabIndex = 2;
+            this.txtCodigoCaixa.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCodigoCaixa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodigoCaixa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoCaixa.Location = new System.Drawing.Point(129, 35);
+            this.txtCodigoCaixa.Name = "txtCodigoCaixa";
+            this.txtCodigoCaixa.Size = new System.Drawing.Size(176, 16);
+            this.txtCodigoCaixa.TabIndex = 2;
             // 
             // label3
             // 
@@ -83,15 +83,15 @@ namespace FichaTecnicaFacil.Views
             this.label3.TabIndex = 1;
             this.label3.Text = "DATA/ABERTURA:";
             // 
-            // textBox1
+            // txtDataAbertura
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(129, 68);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 16);
-            this.textBox1.TabIndex = 2;
+            this.txtDataAbertura.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDataAbertura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDataAbertura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataAbertura.Location = new System.Drawing.Point(129, 68);
+            this.txtDataAbertura.Name = "txtDataAbertura";
+            this.txtDataAbertura.Size = new System.Drawing.Size(176, 16);
+            this.txtDataAbertura.TabIndex = 2;
             // 
             // label4
             // 
@@ -102,15 +102,15 @@ namespace FichaTecnicaFacil.Views
             this.label4.TabIndex = 1;
             this.label4.Text = "DATA/FECHAMENTO:";
             // 
-            // textBox2
+            // txtDataFechamento
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(129, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(176, 16);
-            this.textBox2.TabIndex = 2;
+            this.txtDataFechamento.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDataFechamento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDataFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDataFechamento.Location = new System.Drawing.Point(129, 100);
+            this.txtDataFechamento.Name = "txtDataFechamento";
+            this.txtDataFechamento.Size = new System.Drawing.Size(176, 16);
+            this.txtDataFechamento.TabIndex = 2;
             // 
             // label5
             // 
@@ -121,17 +121,17 @@ namespace FichaTecnicaFacil.Views
             this.label5.TabIndex = 1;
             this.label5.Text = "VALOR INÍCIO R$:";
             // 
-            // textBox3
+            // txtValorInicio
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.textBox3.Location = new System.Drawing.Point(129, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(176, 16);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "0,00 R$";
+            this.txtValorInicio.BackColor = System.Drawing.SystemColors.Control;
+            this.txtValorInicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorInicio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtValorInicio.Location = new System.Drawing.Point(129, 165);
+            this.txtValorInicio.Name = "txtValorInicio";
+            this.txtValorInicio.Size = new System.Drawing.Size(176, 16);
+            this.txtValorInicio.TabIndex = 2;
+            this.txtValorInicio.Text = "0,00 R$";
             // 
             // label6
             // 
@@ -142,15 +142,16 @@ namespace FichaTecnicaFacil.Views
             this.label6.TabIndex = 1;
             this.label6.Text = "DURAÇÃO:";
             // 
-            // textBox5
+            // txtDuracao
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(129, 132);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(176, 16);
-            this.textBox5.TabIndex = 2;
+            this.txtDuracao.BackColor = System.Drawing.SystemColors.Control;
+            this.txtDuracao.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDuracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracao.Location = new System.Drawing.Point(129, 132);
+            this.txtDuracao.Name = "txtDuracao";
+            this.txtDuracao.Size = new System.Drawing.Size(176, 16);
+            this.txtDuracao.TabIndex = 2;
+            this.txtDuracao.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label7
             // 
@@ -161,17 +162,17 @@ namespace FichaTecnicaFacil.Views
             this.label7.TabIndex = 1;
             this.label7.Text = "TOTAL/ENTRADA:";
             // 
-            // textBox6
+            // txtTotalEntrada
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.ForeColor = System.Drawing.Color.Blue;
-            this.textBox6.Location = new System.Drawing.Point(129, 193);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(176, 19);
-            this.textBox6.TabIndex = 2;
-            this.textBox6.Text = "0,00 R$";
+            this.txtTotalEntrada.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTotalEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalEntrada.ForeColor = System.Drawing.Color.Blue;
+            this.txtTotalEntrada.Location = new System.Drawing.Point(129, 193);
+            this.txtTotalEntrada.Name = "txtTotalEntrada";
+            this.txtTotalEntrada.Size = new System.Drawing.Size(176, 19);
+            this.txtTotalEntrada.TabIndex = 2;
+            this.txtTotalEntrada.Text = "0,00 R$";
             // 
             // label8
             // 
@@ -182,17 +183,17 @@ namespace FichaTecnicaFacil.Views
             this.label8.TabIndex = 1;
             this.label8.Text = "TOTAL/SAÍDA:";
             // 
-            // textBox7
+            // txtTotalSaida
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.ForeColor = System.Drawing.Color.Red;
-            this.textBox7.Location = new System.Drawing.Point(129, 225);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(176, 16);
-            this.textBox7.TabIndex = 2;
-            this.textBox7.Text = "0,00 R$";
+            this.txtTotalSaida.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTotalSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTotalSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalSaida.ForeColor = System.Drawing.Color.Red;
+            this.txtTotalSaida.Location = new System.Drawing.Point(129, 225);
+            this.txtTotalSaida.Name = "txtTotalSaida";
+            this.txtTotalSaida.Size = new System.Drawing.Size(176, 16);
+            this.txtTotalSaida.TabIndex = 2;
+            this.txtTotalSaida.Text = "0,00 R$";
             // 
             // label9
             // 
@@ -203,15 +204,16 @@ namespace FichaTecnicaFacil.Views
             this.label9.TabIndex = 1;
             this.label9.Text = "VALOR/FECHAMENTO:";
             // 
-            // textBox8
+            // txtValorFechamento
             // 
-            this.textBox8.BackColor = System.Drawing.Color.Yellow;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(128, 254);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(122, 24);
-            this.textBox8.TabIndex = 2;
-            this.textBox8.Text = "0,00";
+            this.txtValorFechamento.BackColor = System.Drawing.Color.Yellow;
+            this.txtValorFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorFechamento.Location = new System.Drawing.Point(128, 254);
+            this.txtValorFechamento.Name = "txtValorFechamento";
+            this.txtValorFechamento.Size = new System.Drawing.Size(122, 24);
+            this.txtValorFechamento.TabIndex = 2;
+            this.txtValorFechamento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFechamento_KeyDown);
+            this.txtValorFechamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorFechamento_KeyPress);
             // 
             // label10
             // 
@@ -222,34 +224,35 @@ namespace FichaTecnicaFacil.Views
             this.label10.TabIndex = 1;
             this.label10.Text = "VALOR/QUEBRA:";
             // 
-            // textBox9
+            // txtValorQuebra
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(129, 297);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(176, 16);
-            this.textBox9.TabIndex = 2;
-            this.textBox9.Text = "0,00 R$";
+            this.txtValorQuebra.BackColor = System.Drawing.SystemColors.Control;
+            this.txtValorQuebra.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorQuebra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorQuebra.Location = new System.Drawing.Point(129, 297);
+            this.txtValorQuebra.Name = "txtValorQuebra";
+            this.txtValorQuebra.Size = new System.Drawing.Size(176, 16);
+            this.txtValorQuebra.TabIndex = 2;
+            this.txtValorQuebra.Text = "0,00 R$";
             // 
-            // button1
+            // btnFechaCaixa
             // 
-            this.button1.Location = new System.Drawing.Point(15, 402);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "FECHAR CAIXA";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFechaCaixa.Location = new System.Drawing.Point(15, 402);
+            this.btnFechaCaixa.Name = "btnFechaCaixa";
+            this.btnFechaCaixa.Size = new System.Drawing.Size(75, 23);
+            this.btnFechaCaixa.TabIndex = 3;
+            this.btnFechaCaixa.Text = "FECHAR CAIXA";
+            this.btnFechaCaixa.UseVisualStyleBackColor = true;
+            this.btnFechaCaixa.Click += new System.EventHandler(this.btnFechaCaixa_Click);
             // 
-            // button2
+            // txtCancelarCaixa
             // 
-            this.button2.Location = new System.Drawing.Point(91, 402);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txtCancelarCaixa.Location = new System.Drawing.Point(91, 402);
+            this.txtCancelarCaixa.Name = "txtCancelarCaixa";
+            this.txtCancelarCaixa.Size = new System.Drawing.Size(75, 23);
+            this.txtCancelarCaixa.TabIndex = 3;
+            this.txtCancelarCaixa.Text = "CANCELAR";
+            this.txtCancelarCaixa.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -260,37 +263,37 @@ namespace FichaTecnicaFacil.Views
             this.label11.TabIndex = 1;
             this.label11.Text = "STATUS:";
             // 
-            // textBox10
+            // txtStatus
             // 
-            this.textBox10.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(129, 322);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(176, 16);
-            this.textBox10.TabIndex = 2;
-            this.textBox10.Text = "0,00 R$";
+            this.txtStatus.BackColor = System.Drawing.SystemColors.Control;
+            this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStatus.Location = new System.Drawing.Point(129, 322);
+            this.txtStatus.Name = "txtStatus";
+            this.txtStatus.Size = new System.Drawing.Size(176, 16);
+            this.txtStatus.TabIndex = 2;
+            this.txtStatus.Text = "0,00 R$";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtValorFechamento);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtDuracao);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox9);
+            this.groupBox1.Controls.Add(this.txtStatus);
+            this.groupBox1.Controls.Add(this.txtCodigoCaixa);
+            this.groupBox1.Controls.Add(this.txtValorQuebra);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.txtTotalSaida);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtTotalEntrada);
             this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtValorInicio);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtDataFechamento);
+            this.groupBox1.Controls.Add(this.txtDataAbertura);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Location = new System.Drawing.Point(15, 12);
@@ -304,10 +307,10 @@ namespace FichaTecnicaFacil.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 443);
+            this.ClientSize = new System.Drawing.Size(347, 434);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txtCancelarCaixa);
+            this.Controls.Add(this.btnFechaCaixa);
             this.Name = "FechaCaixa";
             this.Text = "FechaCaixa";
             this.Load += new System.EventHandler(this.FechaCaixa_Load);
@@ -319,27 +322,27 @@ namespace FichaTecnicaFacil.Views
 
         #endregion
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCodigoCaixa;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDataFechamento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDuracao;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtValorFechamento;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtValorQuebra;
+        private System.Windows.Forms.Button txtCancelarCaixa;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtStatus;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.TextBox txtDataAbertura;
+        public System.Windows.Forms.TextBox txtValorInicio;
+        public System.Windows.Forms.TextBox txtTotalEntrada;
+        public System.Windows.Forms.TextBox txtTotalSaida;
+        public System.Windows.Forms.Button btnFechaCaixa;
     }
 }

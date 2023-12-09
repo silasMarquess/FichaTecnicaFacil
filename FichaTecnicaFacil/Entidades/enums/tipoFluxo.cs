@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FichaTecnicaFacil.Entidades.enums
 {
-    enum tipoFluxo:int
+   public  enum tipoFluxo:int
     {
         FLUXO_ENTRADA=0,
         FLUXO_SAIDA=1

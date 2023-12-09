@@ -19,6 +19,7 @@ namespace FichaTecnicaFacil.Views
         public AbriCaixa()
         {
             InitializeComponent();
+            txtHorarioAberturaCaixa.Text = DateTime.Now.ToShortTimeString();
             _control = new caixaCadControl(this);
             txtDataAberturaCaixa.Text = DateTime.Now.ToShortDateString();
             timer1.Start();
@@ -46,13 +47,22 @@ namespace FichaTecnicaFacil.Views
             {
                 //construir caixa
                 Caixa c = new Caixa();
-
+                c.codigoCaixa = _control.GenerateCodigoReceita();
+                c.HoraAbert = DateTime.Now;
+                c.ValorInicio = double.Parse(txtValorIncicoCaixa.Text);
+                c.statusCaixa = Entidades.enums.statusCaixa.CAIXA_ABERTO;
                 _control.CadastradaCaixa(c);
+                MessageBox.Show("Caixa Cadastrado Aberto com sucesso !");
 
             }catch(DomainException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void AbriCaixa_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

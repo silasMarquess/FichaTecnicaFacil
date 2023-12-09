@@ -13,8 +13,8 @@ namespace FichaTecnicaFacil.DAO
     {
         public static void InsertCaixa(Caixa c)
         {
-            string sql = "insert into Caixa(codigoCaixa, horaAberto, horaFechamento, valorInicio, totalEntrada,totalSaida," +
-                "valorFechamento,valorQuebra,status) values(@codigoCaixa, @horaAberto, @horaFechamento, @valorInicio, @totalEntrada,@totalSaida," +
+            string sql = "insert into Caixa(codigoCaixa, horaAbert, horaFechamento, valorInicio, totalEntrada,totalSaida," +
+                "valorFechamento,valorQuebra,status) values(@codigoCaixa, @horaAbert, @horaFechamento, @valorInicio, @totalEntrada,@totalSaida," +
                 "@valorFechamento,@valorQuebra,@status)";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@codigoCaixa", c.codigoCaixa);
@@ -26,7 +26,6 @@ namespace FichaTecnicaFacil.DAO
             cmd.Parameters.AddWithValue("@valorFechamento", c.ValorFechamento);
             cmd.Parameters.AddWithValue("@valorQuebra", c.ValorQuebra);
             cmd.Parameters.AddWithValue("@status", (int)c.statusCaixa);
-
             cmd.ExecuteNonQuery();
         }
 
@@ -69,6 +68,7 @@ namespace FichaTecnicaFacil.DAO
                 c.statusCaixa = (statusCaixa)rd.GetInt16("status");
 
                 DateTime dataIN = new DateTime(c.HoraAbert.Year, c.HoraAbert.Month, c.HoraAbert.Day);
+
                 if (dataInicio <= dataIN && dataIN <= dataFim)
                 {
                     lista.Add(c);
@@ -102,6 +102,15 @@ namespace FichaTecnicaFacil.DAO
 
             }
             return lista;
+        }
+
+        public static bool VerificaCodigoCaixa(string codigo)
+        {
+            string sql = "select * from Caixa where codigoCaixa = @codigoCaixa";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@codigoCaixa",codigo);
+            MySqlDataReader rd = cmd.ExecuteReader();
+            return (rd.Read()) ? true : false;
         }
 
         public static List<Caixa> getListaCaixaAberto()
