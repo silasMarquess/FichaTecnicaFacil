@@ -16,9 +16,20 @@ namespace FichaTecnicaFacil.Views
     public partial class AbriCaixa : Form
     {
         private caixaCadControl _control;
+        private caixaControler _paiControl;
         public AbriCaixa()
         {
             InitializeComponent();
+            txtHorarioAberturaCaixa.Text = DateTime.Now.ToShortTimeString();
+            _control = new caixaCadControl(this);
+            txtDataAberturaCaixa.Text = DateTime.Now.ToShortDateString();
+            timer1.Start();
+        }
+
+        public AbriCaixa(caixaControler paiControl)
+        {
+            InitializeComponent();
+            _paiControl = paiControl;
             txtHorarioAberturaCaixa.Text = DateTime.Now.ToShortTimeString();
             _control = new caixaCadControl(this);
             txtDataAberturaCaixa.Text = DateTime.Now.ToShortDateString();
@@ -52,6 +63,7 @@ namespace FichaTecnicaFacil.Views
                 c.ValorInicio = double.Parse(txtValorIncicoCaixa.Text);
                 c.statusCaixa = Entidades.enums.statusCaixa.CAIXA_ABERTO;
                 _control.CadastradaCaixa(c);
+                _paiControl.getNumCaixasAbertos();
                 MessageBox.Show("Caixa Cadastrado Aberto com sucesso !");
 
             }catch(DomainException ex)

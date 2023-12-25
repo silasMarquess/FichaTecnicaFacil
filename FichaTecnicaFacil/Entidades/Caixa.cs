@@ -44,5 +44,136 @@ namespace FichaTecnicaFacil.Entidades
         {
             ListaFluxo.Add(f);
         }
+
+        public List<Fluxo> getListaMovimentacoes()
+        {
+            return this.ListaFluxo;
+        }
+
+        public double getTotalEntradaPix()
+        {
+            double soma = 0;
+            foreach(Fluxo f in ListaFluxo)
+            {
+                if(f.Tipo==tipoFluxo.FLUXO_ENTRADA && f.Natureza == TipoPag.PIX)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+
+        public double getEntradaGeral()
+        {
+            double soma = 0;
+            soma = getTotalEntradaPix() + getTotalEntradaEspecie() + getTotalEntradaCartaoCredito() + getTotalEntradaCartaoDebito();
+            return soma;
+        }
+
+        public double getTotalSaida()
+        {
+            double soma = 0;
+            soma = getTotalSaidaPix() + getTotalSaidaEspecie() + getTotalSaidaCartaoCredito() + getTotalSaidaCartaoDebito();
+            return soma;
+        }
+
+        public double getDiferenca()
+        {
+            double dif = getEntradaGeral() - getTotalSaida();
+            return dif;
+        }
+
+        public double getTotalEntradaCartaoCredito()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_ENTRADA && f.Natureza == TipoPag.C_CRÉDITO)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+        public double getTotalEntradaCartaoDebito()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_ENTRADA && f.Natureza == TipoPag.C_CRÉDITO)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+        public double getTotalEntradaEspecie()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_ENTRADA && f.Natureza == TipoPag.DINHEIRO)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+
+        public double getTotalSaidaPix()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_SAIDA && f.Natureza == TipoPag.PIX)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+        public double getTotalSaidaCartaoCredito()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_SAIDA && f.Natureza == TipoPag.C_CRÉDITO)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+        public double getTotalSaidaCartaoDebito()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_SAIDA && f.Natureza == TipoPag.C_CRÉDITO)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
+
+        public double getTotalSaidaEspecie()
+        {
+            double soma = 0;
+            foreach (Fluxo f in ListaFluxo)
+            {
+                if (f.Tipo == tipoFluxo.FLUXO_SAIDA && f.Natureza == TipoPag.DINHEIRO)
+                {
+                    soma += f.Valor;
+                }
+            }
+            return soma;
+        }
     }
 }

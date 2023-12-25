@@ -11,7 +11,7 @@ namespace FichaTecnicaFacil.Entidades.enums
         DINHEIRO = 0,
         PIX = 1,
         Á_PRAZO = 2,
-        CART_CRÉDITO = 3,
-        CART_DÉBITO = 4
+        C_CRÉDITO = 3,
+        C_DÉBITO = 4
     }
 }

@@ -52,6 +52,8 @@ namespace FichaTecnicaFacil.Views
             this.label11 = new System.Windows.Forms.Label();
             this.txtStatus = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSaldoLiquido = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,11 +127,11 @@ namespace FichaTecnicaFacil.Views
             // 
             this.txtValorInicio.BackColor = System.Drawing.SystemColors.Control;
             this.txtValorInicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtValorInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorInicio.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtValorInicio.Location = new System.Drawing.Point(129, 165);
             this.txtValorInicio.Name = "txtValorInicio";
-            this.txtValorInicio.Size = new System.Drawing.Size(176, 16);
+            this.txtValorInicio.Size = new System.Drawing.Size(176, 15);
             this.txtValorInicio.TabIndex = 2;
             this.txtValorInicio.Text = "0,00 R$";
             // 
@@ -166,11 +168,11 @@ namespace FichaTecnicaFacil.Views
             // 
             this.txtTotalEntrada.BackColor = System.Drawing.SystemColors.Control;
             this.txtTotalEntrada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalEntrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalEntrada.ForeColor = System.Drawing.Color.Blue;
             this.txtTotalEntrada.Location = new System.Drawing.Point(129, 193);
             this.txtTotalEntrada.Name = "txtTotalEntrada";
-            this.txtTotalEntrada.Size = new System.Drawing.Size(176, 19);
+            this.txtTotalEntrada.Size = new System.Drawing.Size(176, 15);
             this.txtTotalEntrada.TabIndex = 2;
             this.txtTotalEntrada.Text = "0,00 R$";
             // 
@@ -187,18 +189,18 @@ namespace FichaTecnicaFacil.Views
             // 
             this.txtTotalSaida.BackColor = System.Drawing.SystemColors.Control;
             this.txtTotalSaida.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTotalSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalSaida.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalSaida.ForeColor = System.Drawing.Color.Red;
             this.txtTotalSaida.Location = new System.Drawing.Point(129, 225);
             this.txtTotalSaida.Name = "txtTotalSaida";
-            this.txtTotalSaida.Size = new System.Drawing.Size(176, 16);
+            this.txtTotalSaida.Size = new System.Drawing.Size(176, 15);
             this.txtTotalSaida.TabIndex = 2;
             this.txtTotalSaida.Text = "0,00 R$";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 261);
+            this.label9.Location = new System.Drawing.Point(5, 287);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 13);
             this.label9.TabIndex = 1;
@@ -206,19 +208,21 @@ namespace FichaTecnicaFacil.Views
             // 
             // txtValorFechamento
             // 
-            this.txtValorFechamento.BackColor = System.Drawing.Color.Yellow;
-            this.txtValorFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorFechamento.Location = new System.Drawing.Point(128, 254);
+            this.txtValorFechamento.BackColor = System.Drawing.SystemColors.Control;
+            this.txtValorFechamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorFechamento.Location = new System.Drawing.Point(129, 280);
             this.txtValorFechamento.Name = "txtValorFechamento";
             this.txtValorFechamento.Size = new System.Drawing.Size(122, 24);
             this.txtValorFechamento.TabIndex = 2;
+            this.txtValorFechamento.Text = "0,00";
             this.txtValorFechamento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtValorFechamento_KeyDown);
             this.txtValorFechamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorFechamento_KeyPress);
+            this.txtValorFechamento.MouseDown += new System.Windows.Forms.MouseEventHandler(this.txtValorFechamento_MouseDown);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(25, 299);
+            this.label10.Location = new System.Drawing.Point(25, 320);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(96, 13);
             this.label10.TabIndex = 1;
@@ -229,7 +233,7 @@ namespace FichaTecnicaFacil.Views
             this.txtValorQuebra.BackColor = System.Drawing.SystemColors.Control;
             this.txtValorQuebra.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtValorQuebra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValorQuebra.Location = new System.Drawing.Point(129, 297);
+            this.txtValorQuebra.Location = new System.Drawing.Point(129, 318);
             this.txtValorQuebra.Name = "txtValorQuebra";
             this.txtValorQuebra.Size = new System.Drawing.Size(176, 16);
             this.txtValorQuebra.TabIndex = 2;
@@ -253,11 +257,12 @@ namespace FichaTecnicaFacil.Views
             this.txtCancelarCaixa.TabIndex = 3;
             this.txtCancelarCaixa.Text = "CANCELAR";
             this.txtCancelarCaixa.UseVisualStyleBackColor = true;
+            this.txtCancelarCaixa.Click += new System.EventHandler(this.txtCancelarCaixa_Click);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(67, 324);
+            this.label11.Location = new System.Drawing.Point(67, 345);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(53, 13);
             this.label11.TabIndex = 1;
@@ -268,7 +273,7 @@ namespace FichaTecnicaFacil.Views
             this.txtStatus.BackColor = System.Drawing.SystemColors.Control;
             this.txtStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStatus.Location = new System.Drawing.Point(129, 322);
+            this.txtStatus.Location = new System.Drawing.Point(129, 343);
             this.txtStatus.Name = "txtStatus";
             this.txtStatus.Size = new System.Drawing.Size(176, 16);
             this.txtStatus.TabIndex = 2;
@@ -286,7 +291,9 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.Controls.Add(this.txtValorQuebra);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.txtSaldoLiquido);
             this.groupBox1.Controls.Add(this.txtTotalSaida);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.txtTotalEntrada);
             this.groupBox1.Controls.Add(this.label9);
@@ -302,6 +309,27 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "FECHAMENTO DE CAIXA:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 256);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "SALDO LÍQUIDO:";
+            // 
+            // txtSaldoLiquido
+            // 
+            this.txtSaldoLiquido.BackColor = System.Drawing.SystemColors.Control;
+            this.txtSaldoLiquido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSaldoLiquido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldoLiquido.ForeColor = System.Drawing.Color.Green;
+            this.txtSaldoLiquido.Location = new System.Drawing.Point(129, 254);
+            this.txtSaldoLiquido.Name = "txtSaldoLiquido";
+            this.txtSaldoLiquido.Size = new System.Drawing.Size(176, 15);
+            this.txtSaldoLiquido.TabIndex = 2;
+            this.txtSaldoLiquido.Text = "0,00 R$";
             // 
             // FechaCaixa
             // 
@@ -344,5 +372,7 @@ namespace FichaTecnicaFacil.Views
         public System.Windows.Forms.TextBox txtTotalEntrada;
         public System.Windows.Forms.TextBox txtTotalSaida;
         public System.Windows.Forms.Button btnFechaCaixa;
+        public System.Windows.Forms.TextBox txtSaldoLiquido;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -40,10 +40,17 @@ namespace FichaTecnicaFacil.DAO
 
         public static void UpdateStatusCaixa(Caixa c, statusCaixa status)
         {
-            string sql = "update Caixa set status = @status where codigoCaixa = @caixa";
-            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            string sql = "update Caixa set status = @status,HoraFechamento = @dataFechamento, valorFechamento =@valorFech, " +
+                "valorQuebra=@valorQuebra, totalEntrada = @totalEntrada, totalSaida = @totalSaida where codigoCaixa = @caixa";
+            MySqlCommand cmd = new MySqlCommand(sql,_conexao);
             cmd.Parameters.AddWithValue("@status", (int)status);
             cmd.Parameters.AddWithValue("@caixa", c.codigoCaixa);
+            cmd.Parameters.AddWithValue("@dataFechamento", c.HoraFechamento);
+            cmd.Parameters.AddWithValue("@valorFech", c.ValorFechamento);
+            cmd.Parameters.AddWithValue("@valorQuebra", c.ValorQuebra);
+            cmd.Parameters.AddWithValue("@totalEntrada", c.TotalEntrada) ;
+            cmd.Parameters.AddWithValue("@totalSaida", c.TotalSaida);
+
             cmd.ExecuteNonQuery();
         }
 
@@ -143,22 +150,24 @@ namespace FichaTecnicaFacil.DAO
 
         public static void Insertfluxo(Fluxo f)
         {
-            string sql = "insert into Fluxo(descricao, valor, tipo, horario, data)" +
-                "values(@descricao,@valor, @tipo, @horario, @data)";
+            string sql = "insert into Fluxo(descricao, valor, tipo, horario, data,fk_Caixa_codigoCaixa, natureza)" +
+                "values(@descricao,@valor, @tipo, @horario, @data,@fk_Caixa_codigoCaixa, @natureza)";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("descricao", f.Descricao);
             cmd.Parameters.AddWithValue("@valor", f.Valor);
             cmd.Parameters.AddWithValue("@tipo", (int)f.Tipo);
             cmd.Parameters.AddWithValue("@horario", f.Horario);
             cmd.Parameters.AddWithValue("@data", f.data);
+            cmd.Parameters.AddWithValue("@natureza", f.Natureza);
+            cmd.Parameters.AddWithValue("@fk_Caixa_codigoCaixa", f.Caixa.codigoCaixa);
             cmd.ExecuteNonQuery();
         }
 
         public static void DeleteFluxo(Fluxo f)
         {
-            string sql = "delete from Fluxo where id = @id";
+            string sql = "delete from Fluxo where idFluxo = @id";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
-            cmd.Parameters.AddWithValue("idFluxo", f.Id);
+            cmd.Parameters.AddWithValue("@id", f.Id);
             cmd.ExecuteNonQuery();
         }
 
@@ -177,13 +186,37 @@ namespace FichaTecnicaFacil.DAO
                 f.Descricao = rd.GetString("descricao");
                 f.Valor = rd.GetDouble("valor");
                 f.Tipo = (tipoFluxo)rd.GetInt32("tipo");
+                f.Natureza = (TipoPag)rd.GetInt16("natureza");
                 f.Horario = rd.GetDateTime("horario");
                 f.data = rd.GetDateTime("data");
+                f.Caixa = c;
                 c.AddFluxo(f);
             }
         }
 
+        public static List<Fluxo> BuscaListaFluxoPorCaixa(Caixa c)
+        {
+            List<Fluxo> lista = new List<Fluxo>();
+            string sql = "select * from Fluxo where fk_Caixa_codigoCaixa = @codigoCaixa";
+            MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
+            cmd.Parameters.AddWithValue("@codigoCaixa", c.codigoCaixa);
 
+            MySqlDataReader rd = cmd.ExecuteReader();
+
+            while (rd.Read())
+            {
+                Fluxo f = new Fluxo();
+                f.Id = rd.GetInt32("idFluxo");
+                f.Descricao = rd.GetString("descricao");
+                f.Valor = rd.GetDouble("valor");
+                f.Tipo = (tipoFluxo)rd.GetInt32("tipo");
+                f.Natureza =(TipoPag)rd.GetInt16("natureza");
+                f.Horario = rd.GetDateTime("horario");
+                f.data = rd.GetDateTime("data");
+                lista.Add(f);
+            }
+            return lista;
+        }
 
 
     }
