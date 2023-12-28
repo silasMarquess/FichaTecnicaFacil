@@ -79,6 +79,7 @@ namespace FichaTecnicaFacil.Views
             {
                 DateTime dataiN = new DateTime(dta_In.Value.Year, dta_In.Value.Month, dta_In.Value.Day);
                 DateTime dataOut = new DateTime(dta_Out.Value.Year, dta_Out.Value.Month, dta_Out.Value.Day);
+                if (dataOut < dataiN) throw new DomainException("Data final deve ser maior ou igual a data inicial !");
                 _control.MostraListaCaixas(dataiN,dataOut);
             }
             catch(DomainException ex)
