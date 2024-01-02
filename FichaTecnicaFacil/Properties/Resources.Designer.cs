@@ -123,6 +123,16 @@ namespace FichaTecnicaFacil.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_calcular_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_calcular_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Limpeza {
             get {
                 object obj = ResourceManager.GetObject("Limpeza", resourceCulture);

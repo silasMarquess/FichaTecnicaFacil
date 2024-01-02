@@ -442,7 +442,6 @@ namespace FichaTecnicaFacil.Views
             {
                 Pedido p = _ListaPedido.Find(getPedidoPorCodigo);
                 if (p.Status == statusPedido.PERDIDO_FECHADO) throw new DomainException("Erro: O pedido ja foi faturado na data: " + p.DataFechamento.ToString());
-
                 DialogResult res = MessageBox.Show("Deseja de fato faturar o pedido(esta operação não pode ser desfeita ta )", "confirme:", MessageBoxButtons.YesNo);
                 if (res == DialogResult.No) throw new DomainException("Operação cancelada");
                 _control.UpdateStatusPedido(p);

@@ -195,6 +195,8 @@ namespace FichaTecnicaFacil.Views
                 txtRecContEmb.Text = "0,00";
                 txtRecIngredPrecoEmbalagem.Enabled = false;
                 txtRecIngredPrecoEmbalagem.Text = "0,00";
+                txt_PesquisaReceitaPeloNome.Select();
+                txt_PesquisaReceitaPeloNome.SelectAll();
             }
             catch (DomainException ex)
             {
@@ -368,6 +370,10 @@ namespace FichaTecnicaFacil.Views
                     btn_AddIngrediente.Enabled = true;
                     txtReceitaIngQtde.Enabled = true;
                 }
+                txtReceitaIngQtde.Select();
+                txtReceitaIngQtde.SelectAll();
+
+
             }
 
         }
@@ -568,6 +574,7 @@ namespace FichaTecnicaFacil.Views
                 _receitaAtual.Id = txt_IdReceita.Text;
                 txt_DescricaoReceita.Select();
                 txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
+
                 this.MostraItensReceita();
             }
             catch (DomainException ex)
@@ -722,6 +729,53 @@ namespace FichaTecnicaFacil.Views
         private void txt_PesquisaReceitaPeloNome_MouseDown(object sender, MouseEventArgs e)
         {
             txt_PesquisaReceitaPeloNome.SelectAll();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_DescricaoReceita_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_DescricaoReceita_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txt_ValidadeReceita.Select();
+                txt_ValidadeReceita.SelectAll();
+            }
+        }
+
+        private void txt_ValidadeReceita_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txt_RendimentoReceita.Select();
+                txt_RendimentoReceita.SelectAll();
+            }
+        }
+
+        private void txt_RendimentoReceita_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txt_ReceitaNomeIngrediente.Select();
+                txt_ReceitaNomeIngrediente.SelectAll();
+            }
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
