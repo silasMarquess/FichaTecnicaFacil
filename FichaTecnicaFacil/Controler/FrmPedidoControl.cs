@@ -133,8 +133,8 @@ namespace FichaTecnicaFacil.Controler
             double totalDesconto = double.Parse(_form.txtDesconto.Text);
             List<Caixa> listaCaixa = DBConexao.getLisObjectOperation(CaixaDAO.getListaCaixaAberto);
 
+            if (listaCaixa.Count==0) throw new DomainException("Erro: Nemhum caixa aberto. Impossivel faturar pedido");
             Caixa c = listaCaixa[0];
-            if (c is null) throw new DomainException("Erro: Nemhum caixxa aberto. Impossivel faturar pedido");
             Fluxo f = new Fluxo();
             f.Caixa = c;
             f.data = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);

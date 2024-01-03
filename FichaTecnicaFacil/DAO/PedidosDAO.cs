@@ -192,7 +192,7 @@ namespace FichaTecnicaFacil.DAO
             List<Receita> lista = new List<Receita>();
 
             string query = "select r.*, v.* from Venda as v " +
-                "inner join receita as r " +
+                "inner join Receita as r " +
                 "on fk_Receita_idReceita = r.idReceita " +
                 "where fk_Pedido_codigoPedido = @pedido";
 
