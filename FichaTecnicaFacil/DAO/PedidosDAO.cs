@@ -25,8 +25,8 @@ namespace FichaTecnicaFacil.DAO
         }
         public static void InsertPedido(Pedido p)
         {
-            string sql = "insert into Pedido(codigoPedido, dataPedido, statusPedido, Prazoentrega, desconto, dataFechamento, nomeCliente, whatsApp) " +
-                "values(@codigoPedido, @dataPedido, @statusPedido, @Prazoentrega, @desconto, @dataFechamento, @nomeCliente, @whatsApp)";
+            string sql = "insert into Pedido(codigoPedido, dataPedido, statusPedido, Prazoentrega, desconto, dataFechamento, nomeCliente, whatsApp, f_pagamento) " +
+                "values(@codigoPedido, @dataPedido, @statusPedido, @Prazoentrega, @desconto, @dataFechamento, @nomeCliente, @whatsApp, @pagamento)";
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido);
             cmd.Parameters.AddWithValue("@Prazoentrega", p.PrazoEntregada);
@@ -36,6 +36,7 @@ namespace FichaTecnicaFacil.DAO
             cmd.Parameters.AddWithValue("@statusPedido", (int)p.Status);
             cmd.Parameters.AddWithValue("@dataFechamento", p.DataFechamento);
             cmd.Parameters.AddWithValue("@dataPedido", p.DataPedido);
+            cmd.Parameters.AddWithValue("@pagamento",(int)p.Pagamento);
             cmd.ExecuteNonQuery();
         }
 
@@ -73,7 +74,18 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone);
+                TipoPag pag;
+
+                if (rd["f_pagamento"] == null || status==statusPedido.PERDIDO_ABERTO)
+                {
+                    pag = TipoPag.NÃO_PAGO;
+                }
+                else
+                {
+                    pag = (TipoPag)rd.GetInt16("f_pagamento");
+                }
+
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
                 lista.Add(p);
             }
             return lista;
@@ -96,7 +108,18 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone);
+                TipoPag pag;
+
+                if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
+                {
+                    pag = TipoPag.NÃO_PAGO;
+                }
+                else
+                {
+                    pag = (TipoPag)rd.GetInt16("f_pagamento");
+                }
+
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
                 lista.Add(p);
             }
             return lista;
@@ -121,7 +144,18 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone);
+                TipoPag pag;
+
+                if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
+                {
+                    pag = TipoPag.NÃO_PAGO;
+                }
+                else
+                {
+                    pag = (TipoPag)rd.GetInt16("f_pagamento");
+                }
+
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
                 lista.Add(p);
             }
             return lista;
@@ -147,7 +181,18 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone);
+                TipoPag pag;
+
+                if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
+                {
+                    pag = TipoPag.NÃO_PAGO;
+                }
+                else
+                {
+                    pag = (TipoPag)rd.GetInt16("f_pagamento");
+                }
+
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
                 lista.Add(p);
             }
             return lista;
@@ -155,10 +200,11 @@ namespace FichaTecnicaFacil.DAO
 
         public static void UpdateStatusPedido(Pedido p)
         {
-            string query = "update Pedido set statusPedido = @status where codigoPedido = @codigoPedido";
+            string query = "update Pedido set statusPedido = @status, f_pagamento = @pag where codigoPedido = @codigoPedido";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@status", (int)statusPedido.PERDIDO_FECHADO);
             cmd.Parameters.AddWithValue("@codigoPedido", p.CodigoPedido);
+            cmd.Parameters.AddWithValue("@pag",(int) p.Pagamento);
             cmd.ExecuteNonQuery();
         }
 
@@ -181,7 +227,18 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status2, nomeCliente2, telefone);
+                TipoPag pag;
+
+                if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
+                {
+                    pag = TipoPag.NÃO_PAGO;
+                }
+                else
+                {
+                    pag = (TipoPag)rd.GetInt16("f_pagamento");
+                }
+
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status2, nomeCliente2, telefone,pag);
                 lista.Add(p);
             }
             return lista;

@@ -141,7 +141,7 @@ namespace FichaTecnicaFacil.Controler
             f.Descricao = "Venda Realizada - " + p.NomeCLiente;
             f.Horario = DateTime.Now;
             f.Tipo = tipoFluxo.FLUXO_ENTRADA;
-            f.Natureza = p.ListaPagamento[0].Tipo;
+            f.Natureza = p.Pagamento;
             f.Valor = p.CalculaTotalLiquidoPedido(totalDesconto);
             DBConexao.ModifyOperation(CaixaDAO.Insertfluxo, f);
             DBConexao.ModifyOperation(PedidosDAO.UpdateStatusPedido, p);

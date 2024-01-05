@@ -170,7 +170,7 @@ namespace FichaTecnicaFacil.Views
                 _pedidoAtual.TelefoneCliente = txtContatoCliente.Text;
                 _pedidoAtual.Status = statusPedido.PERDIDO_ABERTO;
                 _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
-
+                _pedidoAtual.Pagamento = TipoPag.NÃO_PAGO;
                 _pedidoAtual.PrazoEntregada = new DateTime(Dta_PrazoEntrega.Value.Year, Dta_PrazoEntrega.Value.Month, Dta_PrazoEntrega.Value.Day);
                 _pedidoAtual.DataPedido = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
 
@@ -261,6 +261,10 @@ namespace FichaTecnicaFacil.Views
                 }
                 p.ListaReceita.Clear();
                 p.ListaReceita.AddRange(lista);
+                if (p.Status == statusPedido.PERDIDO_FECHADO)
+                {
+                    CbFormaPag2.SelectedIndex = (int)p.Pagamento;
+                }
                 _control.MostraListaReceitasConsultada(lista);
                 txtConsultaNomeCliente.Text = p.NomeCLiente;
                 txtConsultaTotalPedido.Text = "R$ " + p.CalculaTotalPedido().ToString("F2");
@@ -398,15 +402,28 @@ namespace FichaTecnicaFacil.Views
 
         private void btnFecharPedido_Click(object sender, EventArgs e)
         {
+            lbFormaPag.Visible = true;
+            CbFormaPag1.Visible = true;
+            btnConfirma.Visible = true;
+        }
+
+        private void btnFaturarPedido_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnConfirma_Click(object sender, EventArgs e)
+        {
+
             try
             {
                 //validação de dados
                 DialogResult res = MessageBox.Show("Confirma o Faturamento(esta operação não pode ser desfeita)", "CONFIRME", MessageBoxButtons.YesNo);
                 if (res == DialogResult.No) throw new DomainException("Operação cancelada");
-
+                if (CbFormaPag1.Text == string.Empty) throw new DomainException("Erro: Nemhuma forma de pagamento selecionada");
                 if (txtNomeCliente.Text == string.Empty) throw new DomainException("Erro: Nome de cliente nãp pode ser vazio");
                 if (txtContatoCliente.Text == string.Empty) throw new DomainException("Erro: Telefone de cliente não pode ser vazio");
                 _pedidoAtual.NomeCLiente = txtNomeCliente.Text;
+                _pedidoAtual.Pagamento = (TipoPag)CbFormaPag1.SelectedIndex;
                 _pedidoAtual.TelefoneCliente = txtContatoCliente.Text;
                 _pedidoAtual.Status = statusPedido.PERDIDO_FECHADO;
                 _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
@@ -428,6 +445,9 @@ namespace FichaTecnicaFacil.Views
                 _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
 
                 _control.LimparCampos();
+                lbFormaPag.Visible = false;
+                CbFormaPag1.Visible = false;
+                btnConfirma.Visible = false;
 
             }
             catch (DomainException ex)
@@ -436,14 +456,18 @@ namespace FichaTecnicaFacil.Views
             }
         }
 
-        private void btnFaturarPedido_Click(object sender, EventArgs e)
+        private void btnFaturar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 Pedido p = _ListaPedido.Find(getPedidoPorCodigo);
                 if (p.Status == statusPedido.PERDIDO_FECHADO) throw new DomainException("Erro: O pedido ja foi faturado na data: " + p.DataFechamento.ToString());
                 DialogResult res = MessageBox.Show("Deseja de fato faturar o pedido(esta operação não pode ser desfeita ta )", "confirme:", MessageBoxButtons.YesNo);
                 if (res == DialogResult.No) throw new DomainException("Operação cancelada");
+                if (CbFormaPag2.Text == string.Empty) throw new DomainException("Erro:  nemhuma forma de pagamento selecionada");
+                p.Pagamento = (TipoPag)CbFormaPag2.SelectedIndex;
+
                 _control.UpdateStatusPedido(p);
                 dgvItensPedidos.Rows.Clear();
                 _control.MostrarListaPedidosFiltrada(DBConexao.getLisObjectOperation(PedidosDAO.getListaPedidos));
