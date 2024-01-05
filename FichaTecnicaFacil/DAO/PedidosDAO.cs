@@ -74,6 +74,7 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
+                double total = rd.GetDouble("total");
                 TipoPag pag;
 
                 if (rd["f_pagamento"] == null || status==statusPedido.PERDIDO_ABERTO)
@@ -85,7 +86,7 @@ namespace FichaTecnicaFacil.DAO
                     pag = (TipoPag)rd.GetInt16("f_pagamento");
                 }
 
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag, total);
                 lista.Add(p);
             }
             return lista;
@@ -108,6 +109,7 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
+                double total = rd.GetDouble("total");
                 TipoPag pag;
 
                 if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
@@ -119,7 +121,7 @@ namespace FichaTecnicaFacil.DAO
                     pag = (TipoPag)rd.GetInt16("f_pagamento");
                 }
 
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag, total);
                 lista.Add(p);
             }
             return lista;
@@ -144,6 +146,7 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
+                double total = rd.GetDouble("total");
                 TipoPag pag;
 
                 if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
@@ -155,7 +158,7 @@ namespace FichaTecnicaFacil.DAO
                     pag = (TipoPag)rd.GetInt16("f_pagamento");
                 }
 
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag, total);
                 lista.Add(p);
             }
             return lista;
@@ -181,6 +184,7 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
+                double total = rd.GetDouble("total");
                 TipoPag pag;
 
                 if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
@@ -192,7 +196,7 @@ namespace FichaTecnicaFacil.DAO
                     pag = (TipoPag)rd.GetInt16("f_pagamento");
                 }
 
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag);
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status, nomeCliente2, telefone, pag, total);
                 lista.Add(p);
             }
             return lista;
@@ -227,6 +231,7 @@ namespace FichaTecnicaFacil.DAO
                 string nomeCliente2 = rd.GetString("nomeCliente");
                 DateTime prazo = rd.GetDateTime("PrazoEntrega");
                 string telefone = rd.GetString("whatsApp");
+                double total = rd.GetDouble("total");
                 TipoPag pag;
 
                 if (rd["f_pagamento"] == null || status == statusPedido.PERDIDO_ABERTO)
@@ -238,7 +243,7 @@ namespace FichaTecnicaFacil.DAO
                     pag = (TipoPag)rd.GetInt16("f_pagamento");
                 }
 
-                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status2, nomeCliente2, telefone,pag);
+                Pedido p = new Pedido(codigo, dataPedido, desconto, prazo, dataFechamento, status2, nomeCliente2, telefone,pag, total);
                 lista.Add(p);
             }
             return lista;

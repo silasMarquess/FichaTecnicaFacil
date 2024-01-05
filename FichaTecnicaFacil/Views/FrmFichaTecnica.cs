@@ -476,19 +476,24 @@ namespace FichaTecnicaFacil.Views
 
                 double gastosGerais = double.Parse(txtGastosAdicionais.Text);
                 double MaodeObra = double.Parse(txtCustoMaoObra.Text);
+                double total = 0;
 
                 if (CboxMargemReal.Checked)
                 {
                     if (txtMargemLucroDinheiro.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
                     double real = double.Parse(txtMargemLucroDinheiro.Text);
                     txtPrecoFinal.Text = _receitaAtual.CalcularTotalReceitaValorReal(gastosGerais, MaodeObra, real).ToString("F2");
+                    total = _receitaAtual.CalcularTotalReceitaValorReal(gastosGerais, MaodeObra, real);
                 }
                 else
                 {
                     if (txtMargemLucroPerc.Text == string.Empty) throw new DomainException("Campo de Margem de Lucro não pode ser vazio");
                     double perc = double.Parse(txtMargemLucroPerc.Text);
                     txtPrecoFinal.Text = _receitaAtual.CalcularTotalReceita(gastosGerais, MaodeObra, perc).ToString("F2");
+                    total = _receitaAtual.CalcularTotalReceita(gastosGerais, MaodeObra, perc);
                 }
+                _receitaAtual.Total = total;             
+
             }
             catch (DomainException ex)
             {
@@ -574,7 +579,6 @@ namespace FichaTecnicaFacil.Views
                 _receitaAtual.Id = txt_IdReceita.Text;
                 txt_DescricaoReceita.Select();
                 txt_dataCadastro.Text = DateTime.Now.ToShortDateString();
-
                 this.MostraItensReceita();
             }
             catch (DomainException ex)

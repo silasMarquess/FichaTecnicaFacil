@@ -14,8 +14,8 @@ namespace FichaTecnicaFacil.DAO
     {
         public static void InsertFicha(Receita r)
         {
-            string sql = "insert into Receita(idReceita,data, MargemLucro, ValorMaoObra, validade, descricaoReceita, rendimento,gastosGerais) " +
-                 "values(@idReceita,@data, @MargemLucro, @ValorMaoObra, @validade, @descricaoReceita, @rendimento, @gastosGerais)";
+            string sql = "insert into Receita(idReceita,data, MargemLucro, ValorMaoObra, validade, descricaoReceita, rendimento,gastosGerais, vl_total) " +
+                 "values(@idReceita,@data, @MargemLucro, @ValorMaoObra, @validade, @descricaoReceita, @rendimento, @gastosGerais, @total)";
 
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@idReceita", r.Id);
@@ -28,6 +28,7 @@ namespace FichaTecnicaFacil.DAO
             cmd.Parameters.AddWithValue("@descricaoReceita", r.Descricao);
             cmd.Parameters.AddWithValue("@rendimento", r.Rendimento);
             cmd.Parameters.AddWithValue("@gastosGerais", r.GastosGerais);
+            cmd.Parameters.AddWithValue("@total", r.Total);
             cmd.ExecuteNonQuery();
         }
 
@@ -85,8 +86,9 @@ namespace FichaTecnicaFacil.DAO
                 string descricao = rd.GetString("descricaoReceita");
                 string redimento = rd.GetString("rendimento");
                 double gastosGerais = rd.GetDouble("gastosGerais");
+                double total = rd.GetDouble("vl_total");
 
-                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais);
+                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais,total);
                 lista.Add(receita);
             }
             return lista;
@@ -110,8 +112,9 @@ namespace FichaTecnicaFacil.DAO
                 string descricao = rd.GetString("descricaoReceita");
                 string redimento = rd.GetString("rendimento");
                 double gastosGerais = rd.GetDouble("gastosGerais");
+                double total = rd.GetDouble("vl_total");
 
-                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais);
+                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais, total);
                 lista.Add(receita);
             }
             return lista;
@@ -122,7 +125,7 @@ namespace FichaTecnicaFacil.DAO
         public static void UpdateReceita(Receita r)
         {
             string sql = "update Receita set MargemLucro =@margemLucro, valorMaoObra=@valorMaoObra, validade =@validade, descricaoReceita = @descricao, " +
-                "rendimento = @rendimento, gastosGerais = @gastosGerais  where idReceita = @idReceita";
+                "rendimento = @rendimento, gastosGerais = @gastosGerais, vl_total = @total  where idReceita = @idReceita";
 
             MySqlCommand cmd = new MySqlCommand(sql, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@idReceita", r.Id);
@@ -134,6 +137,7 @@ namespace FichaTecnicaFacil.DAO
             cmd.Parameters.AddWithValue("@descricao", r.Descricao);
             cmd.Parameters.AddWithValue("@rendimento", r.Rendimento);
             cmd.Parameters.AddWithValue("@gastosGerais", r.GastosGerais);
+            cmd.Parameters.AddWithValue("@total", r.Total);
             cmd.ExecuteNonQuery();
 
         }

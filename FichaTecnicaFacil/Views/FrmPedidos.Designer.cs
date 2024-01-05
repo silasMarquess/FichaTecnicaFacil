@@ -29,12 +29,10 @@ namespace FichaTecnicaFacil.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControlPedidos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -288,14 +286,14 @@ namespace FichaTecnicaFacil.Views
             this.dgvCadListaReceitasPedido.BackgroundColor = System.Drawing.Color.Chocolate;
             this.dgvCadListaReceitasPedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCadListaReceitasPedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCadListaReceitasPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCadListaReceitasPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCadListaReceitasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCadListaReceitasPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -656,14 +654,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaReceitasCadastradas.BackgroundColor = System.Drawing.Color.Wheat;
             this.dgv_ListaReceitasCadastradas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ListaReceitasCadastradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_ListaReceitasCadastradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ListaReceitasCadastradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idReceita,
@@ -700,7 +698,7 @@ namespace FichaTecnicaFacil.Views
             // Rendimento
             // 
             this.Rendimento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Rendimento.HeaderText = "Rendimento";
+            this.Rendimento.HeaderText = "Valor R$";
             this.Rendimento.Name = "Rendimento";
             this.Rendimento.ReadOnly = true;
             this.Rendimento.Width = 150;
@@ -810,26 +808,30 @@ namespace FichaTecnicaFacil.Views
             // 
             // btnRemoverFiltro
             // 
+            this.btnRemoverFiltro.BackColor = System.Drawing.Color.Blue;
+            this.btnRemoverFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRemoverFiltro.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemoverFiltro.ForeColor = System.Drawing.Color.Black;
-            this.btnRemoverFiltro.Location = new System.Drawing.Point(597, 34);
+            this.btnRemoverFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnRemoverFiltro.Location = new System.Drawing.Point(705, 25);
             this.btnRemoverFiltro.Name = "btnRemoverFiltro";
             this.btnRemoverFiltro.Size = new System.Drawing.Size(86, 28);
             this.btnRemoverFiltro.TabIndex = 24;
             this.btnRemoverFiltro.Text = "Exibir Todos";
-            this.btnRemoverFiltro.UseVisualStyleBackColor = true;
+            this.btnRemoverFiltro.UseVisualStyleBackColor = false;
             this.btnRemoverFiltro.Click += new System.EventHandler(this.btnRemoverFiltro_Click);
             // 
             // btnAplicarFiltro
             // 
+            this.btnAplicarFiltro.BackColor = System.Drawing.Color.Blue;
+            this.btnAplicarFiltro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAplicarFiltro.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAplicarFiltro.ForeColor = System.Drawing.Color.Black;
-            this.btnAplicarFiltro.Location = new System.Drawing.Point(597, 4);
+            this.btnAplicarFiltro.ForeColor = System.Drawing.Color.White;
+            this.btnAplicarFiltro.Location = new System.Drawing.Point(613, 25);
             this.btnAplicarFiltro.Name = "btnAplicarFiltro";
             this.btnAplicarFiltro.Size = new System.Drawing.Size(86, 28);
             this.btnAplicarFiltro.TabIndex = 23;
             this.btnAplicarFiltro.Text = "Aplicar Filtro";
-            this.btnAplicarFiltro.UseVisualStyleBackColor = true;
+            this.btnAplicarFiltro.UseVisualStyleBackColor = false;
             this.btnAplicarFiltro.Click += new System.EventHandler(this.btnAplicarFiltro_Click);
             // 
             // rb_FiltraPorCliente
@@ -857,14 +859,14 @@ namespace FichaTecnicaFacil.Views
             // CbFiltroStatus
             // 
             this.CbFiltroStatus.BackColor = System.Drawing.Color.Yellow;
-            this.CbFiltroStatus.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbFiltroStatus.Font = new System.Drawing.Font("Segoe UI Black", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbFiltroStatus.FormattingEnabled = true;
             this.CbFiltroStatus.Items.AddRange(new object[] {
             "PEDIDO_ABERTO",
             "PEDIDO_FECHADO"});
-            this.CbFiltroStatus.Location = new System.Drawing.Point(471, 35);
+            this.CbFiltroStatus.Location = new System.Drawing.Point(471, 37);
             this.CbFiltroStatus.Name = "CbFiltroStatus";
-            this.CbFiltroStatus.Size = new System.Drawing.Size(121, 25);
+            this.CbFiltroStatus.Size = new System.Drawing.Size(121, 21);
             this.CbFiltroStatus.TabIndex = 11;
             this.CbFiltroStatus.SelectedIndexChanged += new System.EventHandler(this.CbFiltroStatus_SelectedIndexChanged);
             // 
@@ -967,14 +969,14 @@ namespace FichaTecnicaFacil.Views
             this.dgvConsultaListaPedidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvConsultaListaPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvConsultaListaPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConsultaListaPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultaListaPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvConsultaListaPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultaListaPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -989,14 +991,6 @@ namespace FichaTecnicaFacil.Views
             this.dgvConsultaListaPedidos.Margin = new System.Windows.Forms.Padding(0);
             this.dgvConsultaListaPedidos.Name = "dgvConsultaListaPedidos";
             this.dgvConsultaListaPedidos.ReadOnly = true;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConsultaListaPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvConsultaListaPedidos.RowHeadersVisible = false;
             this.dgvConsultaListaPedidos.Size = new System.Drawing.Size(666, 498);
             this.dgvConsultaListaPedidos.TabIndex = 2;
@@ -1079,14 +1073,14 @@ namespace FichaTecnicaFacil.Views
             this.dgvItensPedidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvItensPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItensPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItensPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItensPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItensPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItensPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,
@@ -1098,14 +1092,6 @@ namespace FichaTecnicaFacil.Views
             this.dgvItensPedidos.Margin = new System.Windows.Forms.Padding(0);
             this.dgvItensPedidos.Name = "dgvItensPedidos";
             this.dgvItensPedidos.ReadOnly = true;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItensPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvItensPedidos.RowHeadersVisible = false;
             this.dgvItensPedidos.Size = new System.Drawing.Size(562, 254);
             this.dgvItensPedidos.TabIndex = 2;
@@ -1206,7 +1192,7 @@ namespace FichaTecnicaFacil.Views
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(232, 85);
+            this.label15.Location = new System.Drawing.Point(246, 82);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(94, 17);
             this.label15.TabIndex = 20;
@@ -1215,7 +1201,7 @@ namespace FichaTecnicaFacil.Views
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(120, 85);
+            this.label14.Location = new System.Drawing.Point(117, 83);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(70, 17);
             this.label14.TabIndex = 19;
@@ -1248,7 +1234,7 @@ namespace FichaTecnicaFacil.Views
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 85);
+            this.label10.Location = new System.Drawing.Point(5, 82);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(43, 17);
             this.label10.TabIndex = 1;
@@ -1257,7 +1243,7 @@ namespace FichaTecnicaFacil.Views
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(9, 139);
+            this.label13.Location = new System.Drawing.Point(5, 139);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 17);
             this.label13.TabIndex = 0;
@@ -1276,7 +1262,7 @@ namespace FichaTecnicaFacil.Views
             // 
             this.txtConsultaTelefone.BackColor = System.Drawing.Color.Yellow;
             this.txtConsultaTelefone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtConsultaTelefone.Location = new System.Drawing.Point(9, 160);
+            this.txtConsultaTelefone.Location = new System.Drawing.Point(7, 160);
             this.txtConsultaTelefone.Name = "txtConsultaTelefone";
             this.txtConsultaTelefone.Size = new System.Drawing.Size(170, 25);
             this.txtConsultaTelefone.TabIndex = 16;
@@ -1287,7 +1273,7 @@ namespace FichaTecnicaFacil.Views
             this.txtConsultaNomeCliente.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConsultaNomeCliente.Location = new System.Drawing.Point(6, 51);
             this.txtConsultaNomeCliente.Name = "txtConsultaNomeCliente";
-            this.txtConsultaNomeCliente.Size = new System.Drawing.Size(344, 22);
+            this.txtConsultaNomeCliente.Size = new System.Drawing.Size(382, 22);
             this.txtConsultaNomeCliente.TabIndex = 16;
             // 
             // panel4
@@ -1508,12 +1494,6 @@ namespace FichaTecnicaFacil.Views
         public System.Windows.Forms.TextBox txtQtdeFiltrados;
         public System.Windows.Forms.Button btnSalvarPedido;
         public System.Windows.Forms.Button btnFecharPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idReceita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn desc;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rendimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Validade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
-        private System.Windows.Forms.DataGridViewButtonColumn add;
         public System.Windows.Forms.GroupBox Gbox_CabecalhoPedido;
         public System.Windows.Forms.TabControl TabControlPedidos;
         public System.Windows.Forms.DateTimePicker Dta_PrazoEntrega;
@@ -1551,5 +1531,11 @@ namespace FichaTecnicaFacil.Views
         public System.Windows.Forms.Label label17;
         public System.Windows.Forms.Button btnFaturar;
         public System.Windows.Forms.ComboBox CbFormaPag2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idReceita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn desc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rendimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Validade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Data;
+        private System.Windows.Forms.DataGridViewButtonColumn add;
     }
 }

@@ -173,10 +173,9 @@ namespace FichaTecnicaFacil.Views
                 _pedidoAtual.Pagamento = TipoPag.NÃO_PAGO;
                 _pedidoAtual.PrazoEntregada = new DateTime(Dta_PrazoEntrega.Value.Year, Dta_PrazoEntrega.Value.Month, Dta_PrazoEntrega.Value.Day);
                 _pedidoAtual.DataPedido = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-
+                _pedidoAtual.Total = double.Parse(txtTotalLiquido.Text);
                 _control.ControlInsertPedido(_pedidoAtual);
                 MessageBox.Show("Dados de Pedidos Salvos com sucesso !");
-
 
                 //operações de controle de cadastro
                 _pedidoAtual = null;
@@ -430,7 +429,7 @@ namespace FichaTecnicaFacil.Views
                 _pedidoAtual.DataFechamento = DateTime.Now;
                 _pedidoAtual.PrazoEntregada = new DateTime(Dta_PrazoEntrega.Value.Year, Dta_PrazoEntrega.Value.Month, Dta_PrazoEntrega.Value.Day);
                 _pedidoAtual.DataPedido = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
-
+                _pedidoAtual.Total = double.Parse(txtTotalLiquido.Text);
                 _control.ControlInsertPedido(_pedidoAtual);
                 MessageBox.Show("Dados de Pedidos Salvos com sucesso !");
 

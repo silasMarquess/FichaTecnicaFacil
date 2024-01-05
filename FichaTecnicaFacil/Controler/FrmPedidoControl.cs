@@ -89,7 +89,7 @@ namespace FichaTecnicaFacil.Controler
                 linha.Cells[0].Value = listaFonte[i].Id.ToString();
                 linha.Cells[1].Value = listaFonte[i].Descricao.ToString();
 
-                linha.Cells[2].Value = listaFonte[i].Rendimento;
+                linha.Cells[2].Value = listaFonte[i].Total.ToString("F2");
                 linha.Cells[3].Value = listaFonte[i].Validade;
 
                 linha.Cells[4].Value = listaFonte[i].Data.ToShortDateString();
@@ -107,6 +107,7 @@ namespace FichaTecnicaFacil.Controler
             for (int i = 0; i < listaFonte.Count; i++)
             {
                 totaldesconto += listaFonte[i].Desconto;
+                soma += listaFonte[i].Total;
                 DataGridViewRow linha = (DataGridViewRow)_form.dgvConsultaListaPedidos.Rows[i].Clone();
 
                 linha.Cells[0].Value = listaFonte[i].CodigoPedido;
@@ -121,6 +122,7 @@ namespace FichaTecnicaFacil.Controler
 
             _form.txtQtdeFiltrados.Text = listaFonte.Count().ToString();
             _form.txtConsultaTotaldesconto.Text = "R$ " + totaldesconto.ToString("F2");
+            _form.txtConsultaTotalVendido.Text = "R$ " + soma.ToString("F2");
         }
 
         public void DeletePedidoControl(Pedido p)

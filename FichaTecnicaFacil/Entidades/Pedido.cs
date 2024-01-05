@@ -21,6 +21,8 @@ namespace FichaTecnicaFacil.Entidades
         public string NomeCLiente { get; set; }
         public string TelefoneCliente { get; set; }
 
+        public double Total { get; set; }
+
         public List<Pagamento> ListaPagamento { get; private set; } = new List<Pagamento>();
 
         public List<Receita> ListaReceita { get; private set; } = new List<Receita>();
@@ -41,7 +43,7 @@ namespace FichaTecnicaFacil.Entidades
             TelefoneCliente = telefoneCliente;
         }
 
-        public Pedido(string codigoPedido, DateTime dataPedido, double desconto, DateTime prazoEntregada, DateTime? dataFechamento, statusPedido status, string nomeCLiente, string telefoneCliente, TipoPag pagamento)
+        public Pedido(string codigoPedido, DateTime dataPedido, double desconto, DateTime prazoEntregada, DateTime? dataFechamento, statusPedido status, string nomeCLiente, string telefoneCliente, TipoPag pagamento, double total)
         {
             CodigoPedido = codigoPedido;
             DataPedido = dataPedido;
@@ -52,6 +54,7 @@ namespace FichaTecnicaFacil.Entidades
             NomeCLiente = nomeCLiente;
             TelefoneCliente = telefoneCliente;
             Pagamento = pagamento;
+            Total = total;
         }
 
         public double CalculaTotalPedido()

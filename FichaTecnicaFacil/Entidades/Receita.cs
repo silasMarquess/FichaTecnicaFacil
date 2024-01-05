@@ -17,6 +17,8 @@ namespace FichaTecnicaFacil.Entidades
         public DateTime Data { get; set; }
         public double GastosGerais { get; set; }
 
+        public double Total { get; set; }
+
         public List<Ingrediente> ListaIngrediente { get; private set; } = new List<Ingrediente>();
 
         public Receita(string id, string rendimento, double margemLucro, double valorMaoObra, string validade, string descricao, DateTime data, double gastosGerais)
@@ -29,6 +31,19 @@ namespace FichaTecnicaFacil.Entidades
             Descricao = descricao;
             Data = data;
             GastosGerais = gastosGerais;
+        }
+
+        public Receita(string id, string rendimento, double margemLucro, double valorMaoObra, string validade, string descricao, DateTime data, double gastosGerais, double total)
+        {
+            Id = id;
+            Rendimento = rendimento;
+            MargemLucro = margemLucro;
+            ValorMaoObra = valorMaoObra;
+            Validade = validade;
+            Descricao = descricao;
+            Data = data;
+            GastosGerais = gastosGerais;
+            Total = total;
         }
 
         public Receita()
