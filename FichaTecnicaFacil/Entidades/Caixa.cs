@@ -102,7 +102,7 @@ namespace FichaTecnicaFacil.Entidades
             double soma = 0;
             foreach (Fluxo f in ListaFluxo)
             {
-                if (f.Tipo == tipoFluxo.FLUXO_ENTRADA && f.Natureza == TipoPag.C_CRÉDITO)
+                if (f.Tipo == tipoFluxo.FLUXO_ENTRADA && f.Natureza == TipoPag.C_DÉBITO)
                 {
                     soma += f.Valor;
                 }

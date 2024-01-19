@@ -26,6 +26,7 @@ namespace FichaTecnicaFacil.Controler
         {
             Action<Pedido> acao = PedidosDAO.InsertPedido;
             DBConexao.ModifyOperation(acao, p);
+
             foreach (Receita r in p.ListaReceita)
             {
                 Venda v = new Venda(p, r);

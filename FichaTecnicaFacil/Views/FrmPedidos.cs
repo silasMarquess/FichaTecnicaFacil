@@ -76,7 +76,7 @@ namespace FichaTecnicaFacil.Views
                     double desconto = double.Parse(txtDesconto.Text);
                     _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
                     txtTotalBruto.Text = "R$ " + _pedidoAtual.CalculaTotalPedido().ToString("F2");
-                    txtTotalLiquido.Text = "R$ " + _pedidoAtual.CalculaTotalLiquidoPedido(desconto).ToString("F2");
+                    txtTotalLiquido.Text =  _pedidoAtual.CalculaTotalLiquidoPedido(desconto).ToString("F2");
                 }
             }
             catch (DomainException ex)
@@ -118,17 +118,12 @@ namespace FichaTecnicaFacil.Views
             }
         }
 
-        private void txtDesconto_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtDesconto_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (txtDesconto.Text == string.Empty) txtDesconto.Text = "0,00";
-                txtTotalLiquido.Text = "R$ " + _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
+                txtTotalLiquido.Text = _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
                 _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
             }
         }
@@ -146,12 +141,6 @@ namespace FichaTecnicaFacil.Views
         private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
         {
             Program.EnterSomenteDec(e);
-        }
-
-        private void txtDesconto_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtDesconto.Text)) txtDesconto.Text = "0,00";
-            txtTotalLiquido.Text = _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
         }
 
         private void txtContatoCliente_KeyPress(object sender, KeyPressEventArgs e)
@@ -260,10 +249,10 @@ namespace FichaTecnicaFacil.Views
                 }
                 p.ListaReceita.Clear();
                 p.ListaReceita.AddRange(lista);
-                if (p.Status == statusPedido.PERDIDO_FECHADO)
-                {
-                    CbFormaPag2.SelectedIndex = (int)p.Pagamento;
-                }
+
+            
+                CbFormaPag2.SelectedIndex = (int)p.Pagamento;
+               
                 _control.MostraListaReceitasConsultada(lista);
                 txtConsultaNomeCliente.Text = p.NomeCLiente;
                 txtConsultaTotalPedido.Text = "R$ " + p.CalculaTotalPedido().ToString("F2");
@@ -406,10 +395,6 @@ namespace FichaTecnicaFacil.Views
             btnConfirma.Visible = true;
         }
 
-        private void btnFaturarPedido_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnConfirma_Click(object sender, EventArgs e)
         {
 
@@ -480,6 +465,15 @@ namespace FichaTecnicaFacil.Views
             {
                 MessageBox.Show("Erro: Nada selecionado no Grid");
             }
+        }
+
+        private void txtDesconto_KeyDown(object sender, EventArgs e)
+        {
+            
+                if (txtDesconto.Text == string.Empty) txtDesconto.Text = "0,00";
+                txtTotalLiquido.Text = _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
+               _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
+          
         }
     }
 }

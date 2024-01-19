@@ -100,9 +100,17 @@ namespace FichaTecnicaFacil.Views
             this.label18 = new System.Windows.Forms.Label();
             this.lbSaiCartaoes = new System.Windows.Forms.Label();
             this.dgvFluxoDados = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Natureza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip_OpcoesMov = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deletarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lbCodCaixa = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
@@ -116,6 +124,11 @@ namespace FichaTecnicaFacil.Views
             this.label20 = new System.Windows.Forms.Label();
             this.lbNumCaixas = new System.Windows.Forms.Label();
             this.dgv_ListaCaixasFiltrados = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Val_Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip_OpcoesCaixa = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.fECHACAIXAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dELETECAIXAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -142,19 +155,6 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel28 = new System.Windows.Forms.TableLayoutPanel();
             this.label48 = new System.Windows.Forms.Label();
             this.lbCartaoDebGlobal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.STATUS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Val_Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.horario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Natureza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -530,7 +530,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel16, 2, 0);
@@ -601,7 +601,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(66, 49);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(65, 49);
             this.tableLayoutPanel15.TabIndex = 0;
             // 
             // label24
@@ -613,7 +613,7 @@ namespace FichaTecnicaFacil.Views
             this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(3, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(60, 24);
+            this.label24.Size = new System.Drawing.Size(59, 24);
             this.label24.TabIndex = 0;
             this.label24.Text = "SAÍ/TOTAL:";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -626,7 +626,7 @@ namespace FichaTecnicaFacil.Views
             this.lbSaidaTotalCaixa.ForeColor = System.Drawing.Color.Blue;
             this.lbSaidaTotalCaixa.Location = new System.Drawing.Point(3, 24);
             this.lbSaidaTotalCaixa.Name = "lbSaidaTotalCaixa";
-            this.lbSaidaTotalCaixa.Size = new System.Drawing.Size(60, 25);
+            this.lbSaidaTotalCaixa.Size = new System.Drawing.Size(59, 25);
             this.lbSaidaTotalCaixa.TabIndex = 1;
             this.lbSaidaTotalCaixa.Text = "0,00 R$";
             this.lbSaidaTotalCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -638,7 +638,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel16.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.lbDiferenca, 0, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(149, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(148, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -680,7 +680,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.lbHorarioAbertura, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(256, 3);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(255, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -722,7 +722,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel18.Controls.Add(this.label30, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.lbHoraFechamento, 0, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(388, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(387, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -764,7 +764,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.Controls.Add(this.lbSaldoFinal, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.lbValFinal, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(510, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(509, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -806,12 +806,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel20.Controls.Add(this.lbValQuebra, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.label35, 0, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(594, 3);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(593, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(85, 49);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(86, 49);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
             // lbValQuebra
@@ -823,7 +823,7 @@ namespace FichaTecnicaFacil.Views
             this.lbValQuebra.ForeColor = System.Drawing.Color.White;
             this.lbValQuebra.Location = new System.Drawing.Point(3, 0);
             this.lbValQuebra.Name = "lbValQuebra";
-            this.lbValQuebra.Size = new System.Drawing.Size(79, 24);
+            this.lbValQuebra.Size = new System.Drawing.Size(80, 24);
             this.lbValQuebra.TabIndex = 0;
             this.lbValQuebra.Text = "Valor/Queb.";
             this.lbValQuebra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,7 +836,7 @@ namespace FichaTecnicaFacil.Views
             this.label35.ForeColor = System.Drawing.Color.Blue;
             this.label35.Location = new System.Drawing.Point(3, 24);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(79, 25);
+            this.label35.Size = new System.Drawing.Size(80, 25);
             this.label35.TabIndex = 1;
             this.label35.Text = "00:00";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1150,6 +1150,60 @@ namespace FichaTecnicaFacil.Views
             this.dgvFluxoDados.TabIndex = 1;
             this.dgvFluxoDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFluxoDados_CellContentClick);
             // 
+            // ID
+            // 
+            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 30;
+            // 
+            // Descricao
+            // 
+            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            // 
+            // Valor
+            // 
+            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            this.Tipo.Width = 115;
+            // 
+            // horario
+            // 
+            this.horario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.horario.HeaderText = "Horario";
+            this.horario.Name = "horario";
+            this.horario.ReadOnly = true;
+            this.horario.Width = 60;
+            // 
+            // dta
+            // 
+            this.dta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dta.HeaderText = "Data";
+            this.dta.Name = "dta";
+            this.dta.ReadOnly = true;
+            this.dta.Width = 70;
+            // 
+            // Natureza
+            // 
+            this.Natureza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Natureza.HeaderText = "Natureza";
+            this.Natureza.Name = "Natureza";
+            this.Natureza.ReadOnly = true;
+            this.Natureza.Width = 75;
+            // 
             // menuStrip_OpcoesMov
             // 
             this.menuStrip_OpcoesMov.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1180,6 +1234,16 @@ namespace FichaTecnicaFacil.Views
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(686, 37);
             this.panel1.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(587, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(86, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Aplicar Filtros:";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lbCodCaixa
             // 
@@ -1349,6 +1413,45 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaCaixasFiltrados.TabIndex = 0;
             this.dgv_ListaCaixasFiltrados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaCaixasFiltrados_CellContentClick);
             this.dgv_ListaCaixasFiltrados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaCaixasFiltrados_CellDoubleClick);
+            // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 45;
+            // 
+            // Data
+            // 
+            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Data.HeaderText = "Data";
+            this.Data.Name = "Data";
+            this.Data.ReadOnly = true;
+            this.Data.Width = 70;
+            // 
+            // Hora
+            // 
+            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
+            this.Hora.Width = 55;
+            // 
+            // STATUS
+            // 
+            this.STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.STATUS.HeaderText = "Status";
+            this.STATUS.Name = "STATUS";
+            this.STATUS.ReadOnly = true;
+            this.STATUS.Width = 65;
+            // 
+            // Val_Inicio
+            // 
+            this.Val_Inicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Val_Inicio.HeaderText = "Valor/Inicio";
+            this.Val_Inicio.Name = "Val_Inicio";
+            this.Val_Inicio.ReadOnly = true;
             // 
             // menuStrip_OpcoesCaixa
             // 
@@ -1705,109 +1808,6 @@ namespace FichaTecnicaFacil.Views
             this.lbCartaoDebGlobal.TabIndex = 1;
             this.lbCartaoDebGlobal.Text = "00:00";
             this.lbCartaoDebGlobal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(587, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Aplicar Filtros:";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 45;
-            // 
-            // Data
-            // 
-            this.Data.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Data.HeaderText = "Data";
-            this.Data.Name = "Data";
-            this.Data.ReadOnly = true;
-            this.Data.Width = 70;
-            // 
-            // Hora
-            // 
-            this.Hora.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
-            this.Hora.Width = 55;
-            // 
-            // STATUS
-            // 
-            this.STATUS.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.STATUS.HeaderText = "Status";
-            this.STATUS.Name = "STATUS";
-            this.STATUS.ReadOnly = true;
-            this.STATUS.Width = 65;
-            // 
-            // Val_Inicio
-            // 
-            this.Val_Inicio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Val_Inicio.HeaderText = "Valor/Inicio";
-            this.Val_Inicio.Name = "Val_Inicio";
-            this.Val_Inicio.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 30;
-            // 
-            // Descricao
-            // 
-            this.Descricao.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            this.Tipo.Width = 115;
-            // 
-            // horario
-            // 
-            this.horario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.horario.HeaderText = "Horario";
-            this.horario.Name = "horario";
-            this.horario.ReadOnly = true;
-            this.horario.Width = 60;
-            // 
-            // dta
-            // 
-            this.dta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dta.HeaderText = "Data";
-            this.dta.Name = "dta";
-            this.dta.ReadOnly = true;
-            this.dta.Width = 70;
-            // 
-            // Natureza
-            // 
-            this.Natureza.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Natureza.HeaderText = "Natureza";
-            this.Natureza.Name = "Natureza";
-            this.Natureza.ReadOnly = true;
-            this.Natureza.Width = 75;
             // 
             // FrmCaixa
             // 
