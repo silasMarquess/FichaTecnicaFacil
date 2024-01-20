@@ -65,6 +65,7 @@ namespace FichaTecnicaFacil.Views
                 _control.CadastradaCaixa(c);
                 _paiControl.getNumCaixasAbertos();
                 MessageBox.Show("Caixa Cadastrado Aberto com sucesso !");
+                this.Close();
 
             }catch(DomainException ex)
             {

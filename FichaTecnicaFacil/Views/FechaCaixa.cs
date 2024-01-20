@@ -33,7 +33,7 @@ namespace FichaTecnicaFacil.Views
             txtDataFechamento.Text = DateTime.Now.ToShortDateString();
             txtValorInicio.Text = c.ValorInicio.ToString("F2")+" R$";
             txtTotalEntrada.Text = c.getEntradaGeral().ToString("F2") + " R$";
-            txtSaldoLiquido.Text = (c.getEntradaGeral() - c.getTotalSaida()).ToString("F2");
+            txtSaldoLiquido.Text ="R$ "+c.getDiferenca().ToString("F2");
 
             //calculo duração
             DateTime dataHoje = DateTime.Now;
@@ -64,6 +64,7 @@ namespace FichaTecnicaFacil.Views
             txtValorFechamento.Text = c.ValorFechamento.ToString("F2") + " R$";
             txtValorQuebra.Text = "0,00 R$";
             txtStatus.Text = c.statusCaixa.ToString();
+
             if (c.statusCaixa == statusCaixa.CAIXA_ABERTO)
             {
                 txtStatus.ForeColor = Color.Green;
@@ -108,6 +109,7 @@ namespace FichaTecnicaFacil.Views
                 DBConexao.ModifyOperation(CaixaDAO.UpdateStatusCaixa, _caixa, statusCaixa.CAIXA_FECHADO);
                 MessageBox.Show("Caixa Fechado com sucesso!");
                 _paiControl.getNumCaixasAbertos();
+                this.Close();
             }
             catch (DomainException EX)
             {
@@ -126,7 +128,7 @@ namespace FichaTecnicaFacil.Views
             {
                 try
                 {
-                    double valorVirtual = (_caixa.getEntradaGeral() - _caixa.getTotalSaida());
+                    double valorVirtual = _caixa.getDiferenca();
                     double valorFechamento = double.Parse(txtValorFechamento.Text);
                     double valorQuebra = valorVirtual - valorFechamento;
                     if (valorQuebra < 0)

@@ -223,6 +223,7 @@ namespace FichaTecnicaFacil.Controler
             double cartaoCreditogeral = 0;
             double cartaoDebitoGeral = 0;
             double totalDinheiro = 0;
+            double valorInicioGeral = 0;
 
             foreach (Caixa c in lista)
             {
@@ -232,9 +233,10 @@ namespace FichaTecnicaFacil.Controler
                 cartaoCreditogeral += c.getTotalEntradaCartaoCredito();
                 cartaoDebitoGeral += c.getTotalEntradaCartaoDebito();
                 totalDinheiro += c.getTotalEntradaEspecie();
+                valorInicioGeral += c.ValorInicio;
             }
 
-            diferenca = entradaGeral - despesaGeral;
+            diferenca = (entradaGeral+valorInicioGeral) - despesaGeral;
             _form.LbEntradaGlobal.Text = "R$ " + entradaGeral.ToString("F2");
             _form.lbDespesaGlobal.Text = "R$ " + despesaGeral.ToString("F2");
             _form.lbDiferencaGlobal.Text = "R$ " + diferenca.ToString("F2");

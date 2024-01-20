@@ -168,10 +168,11 @@ namespace FichaTecnicaFacil.DAO
         public static List<Pedido> getListaPedidosPorPrazo(DateTime dataIn, DateTime dataOut)
         {
             List<Pedido> lista = new List<Pedido>();
-            string query = "select * from Pedido where PrazoEntrega>=@dataIn and PrazoEntrega <= @dataOut";
+            string query = "select * from Pedido where PrazoEntrega>=@dataIn and PrazoEntrega <= @dataOut and statusPedido = @status";
             MySqlCommand cmd = new MySqlCommand(query, DBConexao._conexao);
             cmd.Parameters.AddWithValue("@dataIn", dataIn);
             cmd.Parameters.AddWithValue("@dataOut", dataOut);
+            cmd.Parameters.AddWithValue("@status", (int)statusPedido.PERDIDO_ABERTO);
             MySqlDataReader rd = cmd.ExecuteReader();
 
             while (rd.Read())

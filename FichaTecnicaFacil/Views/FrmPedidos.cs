@@ -54,7 +54,7 @@ namespace FichaTecnicaFacil.Views
             try
             {
                 string nome = txtCadPedNomeReceita.Text;
-                if (nome == string.Empty) throw new DomainException("Erro nada filtrado");
+                if (nome == string.Empty) throw new DomainException("Nada filtrado");
                 listaReceitaFiltrada = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaReceita, nome);
                 _control.MostraListaReceita(listaReceitaFiltrada);
 
@@ -105,6 +105,7 @@ namespace FichaTecnicaFacil.Views
         {
             _pedidoAtual = new Pedido();
             _pedidoAtual.CodigoPedido = _control.GenerateCodigoReceita();
+            Dta_PrazoEntrega.Value = DateTime.Now;
             Gbox_CabecalhoPedido.Text = "PEDIDO NUMERO -" + _pedidoAtual.CodigoPedido;
         }
 
@@ -153,8 +154,10 @@ namespace FichaTecnicaFacil.Views
             try
             {
                 //validação de dados
-                if (txtNomeCliente.Text == string.Empty) throw new DomainException("Erro: Nome de cliente nãp pode ser vazio");
+                if (txtNomeCliente.Text == string.Empty) throw new DomainException("Erro: Nome de cliente não pode ser vazio");
                 if (txtContatoCliente.Text == string.Empty) throw new DomainException("Erro: Telefone de cliente não pode ser vazio");
+                DateTime dataEntrega = Dta_PrazoEntrega.Value;
+                if (dataEntrega < DateTime.Now) throw new DomainException("Erro: data de entrega não pode ser no passado");
                 _pedidoAtual.NomeCLiente = txtNomeCliente.Text;
                 _pedidoAtual.TelefoneCliente = txtContatoCliente.Text;
                 _pedidoAtual.Status = statusPedido.PERDIDO_ABERTO;
@@ -406,6 +409,10 @@ namespace FichaTecnicaFacil.Views
                 if (CbFormaPag1.Text == string.Empty) throw new DomainException("Erro: Nemhuma forma de pagamento selecionada");
                 if (txtNomeCliente.Text == string.Empty) throw new DomainException("Erro: Nome de cliente nãp pode ser vazio");
                 if (txtContatoCliente.Text == string.Empty) throw new DomainException("Erro: Telefone de cliente não pode ser vazio");
+                DateTime dataEntrega = Dta_PrazoEntrega.Value;
+                if (dataEntrega < (new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day))) throw new DomainException("Erro: data de entrega não pode ser no passado");
+                if (CbFormaPag1.SelectedIndex == 4) throw new DomainException("Forma de pagamento selecionada é invalida");
+                
                 _pedidoAtual.NomeCLiente = txtNomeCliente.Text;
                 _pedidoAtual.Pagamento = (TipoPag)CbFormaPag1.SelectedIndex;
                 _pedidoAtual.TelefoneCliente = txtContatoCliente.Text;
@@ -450,6 +457,7 @@ namespace FichaTecnicaFacil.Views
                 DialogResult res = MessageBox.Show("Deseja de fato faturar o pedido(esta operação não pode ser desfeita ta )", "confirme:", MessageBoxButtons.YesNo);
                 if (res == DialogResult.No) throw new DomainException("Operação cancelada");
                 if (CbFormaPag2.Text == string.Empty) throw new DomainException("Erro:  nemhuma forma de pagamento selecionada");
+                if (CbFormaPag2.SelectedIndex == 4) throw new DomainException("Forma de Pagamento selecionada é invalida");
                 p.Pagamento = (TipoPag)CbFormaPag2.SelectedIndex;
 
                 _control.UpdateStatusPedido(p);

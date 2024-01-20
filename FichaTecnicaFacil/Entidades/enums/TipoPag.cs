@@ -10,9 +10,8 @@ namespace FichaTecnicaFacil.Entidades.enums
     {
         DINHEIRO = 0,
         PIX = 1,
-        Á_PRAZO = 2,
-        C_CRÉDITO = 3,
-        C_DÉBITO = 4,
-        NÃO_PAGO=5
+        C_CRÉDITO = 2,
+        C_DÉBITO = 3,
+        NÃO_PAGO=4
     }
 }

@@ -80,7 +80,7 @@ namespace FichaTecnicaFacil.Entidades
 
         public double getDiferenca()
         {
-            double dif = getEntradaGeral() - getTotalSaida();
+            double dif = (getEntradaGeral()+this.ValorInicio) - getTotalSaida();
             return dif;
         }
 

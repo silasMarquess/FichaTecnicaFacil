@@ -77,8 +77,8 @@ namespace FichaTecnicaFacil.Views
             this.lbSaldoFinal = new System.Windows.Forms.Label();
             this.lbValFinal = new System.Windows.Forms.Label();
             this.tableLayoutPanel20 = new System.Windows.Forms.TableLayoutPanel();
+            this.lbValQuebra1 = new System.Windows.Forms.Label();
             this.lbValQuebra = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -530,7 +530,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel16, 2, 0);
@@ -558,7 +558,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(68, 49);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(67, 49);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // label22
@@ -570,7 +570,7 @@ namespace FichaTecnicaFacil.Views
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(3, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(62, 24);
+            this.label22.Size = new System.Drawing.Size(61, 24);
             this.label22.TabIndex = 0;
             this.label22.Text = "ENT/TOTAL:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -583,7 +583,7 @@ namespace FichaTecnicaFacil.Views
             this.lbEntradaTotalCaixa.ForeColor = System.Drawing.Color.Blue;
             this.lbEntradaTotalCaixa.Location = new System.Drawing.Point(3, 24);
             this.lbEntradaTotalCaixa.Name = "lbEntradaTotalCaixa";
-            this.lbEntradaTotalCaixa.Size = new System.Drawing.Size(62, 25);
+            this.lbEntradaTotalCaixa.Size = new System.Drawing.Size(61, 25);
             this.lbEntradaTotalCaixa.TabIndex = 1;
             this.lbEntradaTotalCaixa.Text = "0,00 R$";
             this.lbEntradaTotalCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -596,7 +596,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel15.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.lbSaidaTotalCaixa, 0, 1);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(77, 3);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(76, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -638,7 +638,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel16.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.lbDiferenca, 0, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(148, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(147, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -680,7 +680,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.lbHorarioAbertura, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(255, 3);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(254, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -722,7 +722,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel18.Controls.Add(this.label30, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.lbHoraFechamento, 0, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(387, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(386, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -764,7 +764,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.Controls.Add(this.lbSaldoFinal, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.lbValFinal, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(509, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(508, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -803,43 +803,43 @@ namespace FichaTecnicaFacil.Views
             // 
             this.tableLayoutPanel20.ColumnCount = 1;
             this.tableLayoutPanel20.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Controls.Add(this.lbValQuebra, 0, 0);
-            this.tableLayoutPanel20.Controls.Add(this.label35, 0, 1);
+            this.tableLayoutPanel20.Controls.Add(this.lbValQuebra1, 0, 0);
+            this.tableLayoutPanel20.Controls.Add(this.lbValQuebra, 0, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(593, 3);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(592, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(86, 49);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(87, 49);
             this.tableLayoutPanel20.TabIndex = 0;
+            // 
+            // lbValQuebra1
+            // 
+            this.lbValQuebra1.AutoSize = true;
+            this.lbValQuebra1.BackColor = System.Drawing.Color.ForestGreen;
+            this.lbValQuebra1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbValQuebra1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValQuebra1.ForeColor = System.Drawing.Color.White;
+            this.lbValQuebra1.Location = new System.Drawing.Point(3, 0);
+            this.lbValQuebra1.Name = "lbValQuebra1";
+            this.lbValQuebra1.Size = new System.Drawing.Size(81, 24);
+            this.lbValQuebra1.TabIndex = 0;
+            this.lbValQuebra1.Text = "Valor/Queb.";
+            this.lbValQuebra1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbValQuebra
             // 
             this.lbValQuebra.AutoSize = true;
-            this.lbValQuebra.BackColor = System.Drawing.Color.ForestGreen;
             this.lbValQuebra.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbValQuebra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbValQuebra.ForeColor = System.Drawing.Color.White;
-            this.lbValQuebra.Location = new System.Drawing.Point(3, 0);
+            this.lbValQuebra.ForeColor = System.Drawing.Color.Blue;
+            this.lbValQuebra.Location = new System.Drawing.Point(3, 24);
             this.lbValQuebra.Name = "lbValQuebra";
-            this.lbValQuebra.Size = new System.Drawing.Size(80, 24);
-            this.lbValQuebra.TabIndex = 0;
-            this.lbValQuebra.Text = "Valor/Queb.";
+            this.lbValQuebra.Size = new System.Drawing.Size(81, 25);
+            this.lbValQuebra.TabIndex = 1;
+            this.lbValQuebra.Text = "00:00";
             this.lbValQuebra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.ForeColor = System.Drawing.Color.Blue;
-            this.label35.Location = new System.Drawing.Point(3, 24);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(80, 25);
-            this.label35.TabIndex = 1;
-            this.label35.Text = "00:00";
-            this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox6
             // 
@@ -1928,7 +1928,6 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel19;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
-        private System.Windows.Forms.Label label35;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
@@ -1983,7 +1982,7 @@ namespace FichaTecnicaFacil.Views
         public System.Windows.Forms.Label lbDiferenca;
         public System.Windows.Forms.Label lbHorarioAbertura;
         public System.Windows.Forms.Label lbHoraFechamento;
-        public System.Windows.Forms.Label lbValQuebra;
+        public System.Windows.Forms.Label lbValQuebra1;
         public System.Windows.Forms.Label LbEntradaGlobal;
         public System.Windows.Forms.Label lbDiferencaGlobal;
         public System.Windows.Forms.Label LbEntradaDinheiroGlobal;
@@ -2013,5 +2012,6 @@ namespace FichaTecnicaFacil.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn horario;
         private System.Windows.Forms.DataGridViewTextBoxColumn dta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Natureza;
+        public System.Windows.Forms.Label lbValQuebra;
     }
 }

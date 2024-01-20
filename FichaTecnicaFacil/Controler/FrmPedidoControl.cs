@@ -24,6 +24,21 @@ namespace FichaTecnicaFacil.Controler
 
         public void ControlInsertPedido(Pedido p)
         {
+            List<Caixa> listaCaixa = DBConexao.getLisObjectOperation(CaixaDAO.getListaCaixaAberto);
+
+            if (listaCaixa.Count == 0) throw new DomainException("Erro: Nemhum caixa aberto. Impossivel faturar pedido");
+            Caixa c = listaCaixa[0];
+            Fluxo f = new Fluxo();
+            f.Caixa = c;
+            f.data = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            f.Descricao = "Venda Realizada - " + p.NomeCLiente;
+            f.Horario = DateTime.Now;
+            f.Tipo = tipoFluxo.FLUXO_ENTRADA;
+            f.Natureza = p.Pagamento;
+            double totalDesconto = double.Parse(_form.txtDesconto.Text);
+            f.Valor = p.CalculaTotalLiquidoPedido(totalDesconto);
+
+            DBConexao.ModifyOperation(CaixaDAO.Insertfluxo, f);
             Action<Pedido> acao = PedidosDAO.InsertPedido;
             DBConexao.ModifyOperation(acao, p);
 
