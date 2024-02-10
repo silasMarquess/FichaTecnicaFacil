@@ -24,6 +24,11 @@ namespace FichaTecnicaFacil.Controler
             _formPai = formPai;
         }
 
+        public FichaTecnicaControl()
+        {
+
+        }
+
         internal void ClosedOperation()
         {
             _form.Close();
@@ -150,7 +155,6 @@ namespace FichaTecnicaFacil.Controler
 
             Action<Receita> act = FichaTenicaDAO.InsertFicha;
             act += FichaTenicaDAO.InsertItemReceita;
-
             DBConexao.ModifyOperation(act, receita);
 
             MessageBox.Show("Receita Cadastrada com sucesso !");
@@ -264,7 +268,7 @@ namespace FichaTecnicaFacil.Controler
             _form.CBoxMargemLucroPerc.Checked = true;
             _form.txtMargemLucroPerc.Text = r.MargemLucro.ToString("F2");
             _form.txtPrecoFinal.Text = r.CalcularTotalReceita(r.GastosGerais, r.ValorMaoObra, r.MargemLucro,somaIngrediente).ToString("F2");
-
+            _form.txtPrecoFinal.Text = r.Total.ToString("F2");
         }
 
         public void DeleteReceita()

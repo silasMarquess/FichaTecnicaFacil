@@ -530,7 +530,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel16, 2, 0);
@@ -601,7 +601,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel15.Size = new System.Drawing.Size(65, 49);
+            this.tableLayoutPanel15.Size = new System.Drawing.Size(64, 49);
             this.tableLayoutPanel15.TabIndex = 0;
             // 
             // label24
@@ -613,7 +613,7 @@ namespace FichaTecnicaFacil.Views
             this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(3, 0);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 24);
+            this.label24.Size = new System.Drawing.Size(58, 24);
             this.label24.TabIndex = 0;
             this.label24.Text = "SAÍ/TOTAL:";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -626,7 +626,7 @@ namespace FichaTecnicaFacil.Views
             this.lbSaidaTotalCaixa.ForeColor = System.Drawing.Color.Blue;
             this.lbSaidaTotalCaixa.Location = new System.Drawing.Point(3, 24);
             this.lbSaidaTotalCaixa.Name = "lbSaidaTotalCaixa";
-            this.lbSaidaTotalCaixa.Size = new System.Drawing.Size(59, 25);
+            this.lbSaidaTotalCaixa.Size = new System.Drawing.Size(58, 25);
             this.lbSaidaTotalCaixa.TabIndex = 1;
             this.lbSaidaTotalCaixa.Text = "0,00 R$";
             this.lbSaidaTotalCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -638,7 +638,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel16.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.lbDiferenca, 0, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(147, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(146, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -680,7 +680,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.lbHorarioAbertura, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(254, 3);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(253, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -722,7 +722,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel18.Controls.Add(this.label30, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.lbHoraFechamento, 0, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(386, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(385, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -764,7 +764,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.Controls.Add(this.lbSaldoFinal, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.lbValFinal, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(508, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(507, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -806,12 +806,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel20.Controls.Add(this.lbValQuebra1, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.lbValQuebra, 0, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(592, 3);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(591, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(87, 49);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(88, 49);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
             // lbValQuebra1
@@ -823,7 +823,7 @@ namespace FichaTecnicaFacil.Views
             this.lbValQuebra1.ForeColor = System.Drawing.Color.White;
             this.lbValQuebra1.Location = new System.Drawing.Point(3, 0);
             this.lbValQuebra1.Name = "lbValQuebra1";
-            this.lbValQuebra1.Size = new System.Drawing.Size(81, 24);
+            this.lbValQuebra1.Size = new System.Drawing.Size(82, 24);
             this.lbValQuebra1.TabIndex = 0;
             this.lbValQuebra1.Text = "Valor/Queb.";
             this.lbValQuebra1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,7 +836,7 @@ namespace FichaTecnicaFacil.Views
             this.lbValQuebra.ForeColor = System.Drawing.Color.Blue;
             this.lbValQuebra.Location = new System.Drawing.Point(3, 24);
             this.lbValQuebra.Name = "lbValQuebra";
-            this.lbValQuebra.Size = new System.Drawing.Size(81, 25);
+            this.lbValQuebra.Size = new System.Drawing.Size(82, 25);
             this.lbValQuebra.TabIndex = 1;
             this.lbValQuebra.Text = "00:00";
             this.lbValQuebra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1817,6 +1817,7 @@ namespace FichaTecnicaFacil.Views
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "FrmCaixa";
             this.Text = "Caixa";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCaixa_FormClosed);
             this.Load += new System.EventHandler(this.FrmCaixa_Load);
             this.tableLayoutPanel1.ResumeLayout(false);

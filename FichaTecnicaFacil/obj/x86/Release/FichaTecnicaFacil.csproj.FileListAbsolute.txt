@@ -240,3 +240,4 @@ C:\Users\silas\OneDrive\Documentos\dev\FichaTecnicaFacil\FichaTecnicaFacil\obj\x
 C:\Users\silas\OneDrive\Documentos\dev\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Release\FichaTecnicaFacil.csproj.CopyComplete
 C:\Users\silas\OneDrive\Documentos\dev\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Release\FichaTecnicaFacil.exe
 C:\Users\silas\OneDrive\Documentos\dev\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Release\FichaTecnicaFacil.pdb
+C:\Users\silas\OneDrive\Documentos\dev\FichaTecnicaFacil\FichaTecnicaFacil\obj\x86\Release\FichaTecnicaFacil.Views.FrmCadManualReceita.resources

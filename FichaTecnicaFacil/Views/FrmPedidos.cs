@@ -18,12 +18,11 @@ namespace FichaTecnicaFacil.Views
     {
 
         private FrmPedidoControl _control;
-
-
-        private Pedido _pedidoAtual;
+        public Pedido _pedidoAtual;
         private Form1Controler _formControler;
         private List<Receita> listaReceitaFiltrada;
         private List<Pedido> _ListaPedido;
+
         public FrmPedidos()
         {
             InitializeComponent();
@@ -482,6 +481,18 @@ namespace FichaTecnicaFacil.Views
                 txtTotalLiquido.Text = _pedidoAtual.CalculaTotalLiquidoPedido(double.Parse(txtDesconto.Text)).ToString("F2");
                _pedidoAtual.Desconto = double.Parse(txtDesconto.Text);
           
+        }
+
+        private void dgv_ListaReceitasCadastradas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnEntradaManual_Click(object sender, EventArgs e)
+        {
+            FrmCadManualReceita receita = new FrmCadManualReceita();
+            receita = new FrmCadManualReceita(this);
+            receita.ShowDialog();
         }
     }
 }

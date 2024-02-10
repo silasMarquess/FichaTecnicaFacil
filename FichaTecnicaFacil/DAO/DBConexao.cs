@@ -13,7 +13,7 @@ namespace FichaTecnicaFacil.DAO
     {
         public static MySqlConnection _conexao;
         string query = "server=db-fichatec.mysql.uhserver.com;userid=silasadmin;password=S1i2l3a4s5@; database=db_fichatec";
-
+        string url2 = "server=localhost; userid=silas; password=182520; database=db_fichatec";
 
 
         public static void ModifyOperation<T>(Action<T> act, T obj)

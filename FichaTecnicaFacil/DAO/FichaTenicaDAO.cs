@@ -82,13 +82,33 @@ namespace FichaTecnicaFacil.DAO
                 DateTime data = rd.GetDateTime("data");
                 double margemLucro = rd.GetDouble("MargemLucro");
                 double valorMaoObra = rd.GetDouble("ValorMaoObra");
-                string validade = rd.GetString("validade");
+                string validade;
+
+                if (rd["validade"] == null)
+                {
+                    validade = "Não Informado";
+                }
+                else
+                {
+                    validade = rd["validade"].ToString();
+                }
+
+
                 string descricao = rd.GetString("descricaoReceita");
-                string redimento = rd.GetString("rendimento");
+                string redimento;
+
+                if (rd["rendimento"] == null)
+                {
+                    redimento = "Não Informado";
+                }
+                else
+                {
+                    redimento = rd["rendimento"].ToString();
+                }
                 double gastosGerais = rd.GetDouble("gastosGerais");
                 double total = rd.GetDouble("vl_total");
 
-                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais,total);
+                Receita receita = new Receita(id, redimento, margemLucro, valorMaoObra, validade, descricao, data, gastosGerais, total);
                 lista.Add(receita);
             }
             return lista;
@@ -108,9 +128,30 @@ namespace FichaTecnicaFacil.DAO
                 DateTime data = rd.GetDateTime("data");
                 double margemLucro = rd.GetDouble("MargemLucro");
                 double valorMaoObra = rd.GetDouble("ValorMaoObra");
-                string validade = rd.GetString("validade");
+                string validade;
+
+                if (rd["validade"] == null)
+                {
+                    validade = "Não Informado";
+                }
+                else
+                {
+                    validade = rd.GetString("validade");
+                }
+
+
                 string descricao = rd.GetString("descricaoReceita");
-                string redimento = rd.GetString("rendimento");
+                string redimento;
+
+                if (rd["rendimento"] == null)
+                {
+                    redimento = "Não Informado";
+                }
+                else
+                {
+                    redimento = rd["rendimento"].ToString();
+                }
+
                 double gastosGerais = rd.GetDouble("gastosGerais");
                 double total = rd.GetDouble("vl_total");
 

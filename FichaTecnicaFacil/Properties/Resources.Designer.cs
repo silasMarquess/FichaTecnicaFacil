@@ -113,6 +113,16 @@ namespace FichaTecnicaFacil.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_adicionar_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-adicionar-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_atualizar_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8_atualizar_32", resourceCulture);
@@ -191,7 +201,7 @@ namespace FichaTecnicaFacil.Properties {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a server=db-fichatec.mysql.uhserver.com;userid=silasadmin;password=S1i2l3a4s5@; database=db_fichatec.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a server=localhost; userid=root; password=182520; database=db_fichatec.
         /// </summary>
         internal static string URL {
             get {

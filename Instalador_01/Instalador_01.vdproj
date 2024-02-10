@@ -537,6 +537,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_D20BBF3FE75A429A915D917D6B8A2F87"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E7105E20D11744F1BE88E97D268C98F1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -563,12 +569,6 @@
         {
         "MsmKey" = "8:_FF522AF856C38AA45DB524849D48EDE1"
         "OwnerKey" = "8:_E7105E20D11744F1BE88E97D268C98F1"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_658D6B2416B2C9165A412FB22E9A2391"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -745,6 +745,12 @@
         "OwnerKey" = "8:_037A33584753EC350A8393C857E8A964"
         "MsmSig" = "8:_UNDEFINED"
         }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_658D6B2416B2C9165A412FB22E9A2391"
+        "MsmSig" = "8:_UNDEFINED"
+        }
     }
     "Configurations"
     {
@@ -763,6 +769,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -779,6 +793,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1676,6 +1698,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D20BBF3FE75A429A915D917D6B8A2F87"
+            {
+            "SourcePath" = "8:..\\..\\..\\..\\..\\Downloads\\doc_106706.ico"
+            "TargetName" = "8:doc_106706.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_DD5C9BB47FFF47F290F55A5170B87998"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F1D5F65F403D522102D02D5C427DA8F2"
             {
             "AssemblyRegister" = "3:1"
@@ -1764,6 +1806,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_A33F00EE1DBC4D2B8AA262263A729246"
+                    {
+                    "Name" = "8:silasdev.marques"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_C4F835C67C614A60B4D79532D3CA43CC"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_DD5C9BB47FFF47F290F55A5170B87998"
@@ -1808,7 +1861,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:Instalador_01"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:MARQUES XEROX"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -1915,6 +1968,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_02D0367506FB46758940F381A1A8042A"
+            {
+            "Name" = "8:CAIXA AMOR DE DOCE"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_E7105E20D11744F1BE88E97D268C98F1"
+            "Folder" = "8:_A33F00EE1DBC4D2B8AA262263A729246"
+            "WorkingFolder" = "8:_DD5C9BB47FFF47F290F55A5170B87998"
+            "Icon" = "8:_D20BBF3FE75A429A915D917D6B8A2F87"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_EF9557F02CDB43E78D29433815497522"
+            {
+            "Name" = "8:CAIXA AMOR DE DOCE"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:3"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_E7105E20D11744F1BE88E97D268C98F1"
+            "Folder" = "8:_6129B27D31FA4586AC224AA44E4D7C23"
+            "WorkingFolder" = "8:_DD5C9BB47FFF47F290F55A5170B87998"
+            "Icon" = "8:_D20BBF3FE75A429A915D917D6B8A2F87"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
