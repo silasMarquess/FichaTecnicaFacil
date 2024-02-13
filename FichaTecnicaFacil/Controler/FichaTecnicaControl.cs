@@ -56,7 +56,6 @@ namespace FichaTecnicaFacil.Controler
                 DataGridViewRow linha = (DataGridViewRow)_form.dgv_ListaProdutos.Rows[i].Clone();
                 linha.Cells[0].Value = lista[i].Id.ToString();
                 linha.Cells[1].Value = lista[i].Descricao.ToString();
-                linha.Cells[1].Style.ForeColor = System.Drawing.Color.Blue;
                 linha.Cells[2].Value = "R$ " + lista[i].PrecoEmbalagem.ToString("F2");
                 linha.Cells[3].Value = lista[i].ConteudoEmbalagem.ToString();
                 linha.Cells[4].Value = lista[i].Un.ToString();

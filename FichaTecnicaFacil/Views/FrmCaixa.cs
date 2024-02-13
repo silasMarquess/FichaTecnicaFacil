@@ -267,5 +267,15 @@ namespace FichaTecnicaFacil.Views
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dta_In_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -217,7 +217,7 @@ namespace FichaTecnicaFacil.Views
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(15)))), ((int)(((byte)(11)))));
             this.groupBox1.Controls.Add(this.btnLancarMovimentacao);
             this.groupBox1.Controls.Add(this.CbTipoMovimentacao);
             this.groupBox1.Controls.Add(this.CbNatureza);
@@ -237,6 +237,7 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CADASTRAR MOVIMENTAÇÃO DE CAIXA:";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnLancarMovimentacao
             // 
@@ -251,9 +252,10 @@ namespace FichaTecnicaFacil.Views
             // 
             // CbTipoMovimentacao
             // 
-            this.CbTipoMovimentacao.BackColor = System.Drawing.Color.Yellow;
+            this.CbTipoMovimentacao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
             this.CbTipoMovimentacao.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CbTipoMovimentacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbTipoMovimentacao.ForeColor = System.Drawing.Color.Black;
             this.CbTipoMovimentacao.FormattingEnabled = true;
             this.CbTipoMovimentacao.Items.AddRange(new object[] {
             "ENTRADA",
@@ -266,9 +268,10 @@ namespace FichaTecnicaFacil.Views
             // 
             // CbNatureza
             // 
-            this.CbNatureza.BackColor = System.Drawing.Color.Yellow;
+            this.CbNatureza.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
             this.CbNatureza.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.CbNatureza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbNatureza.ForeColor = System.Drawing.Color.Black;
             this.CbNatureza.FormattingEnabled = true;
             this.CbNatureza.Items.AddRange(new object[] {
             "DINHEIRO",
@@ -302,8 +305,9 @@ namespace FichaTecnicaFacil.Views
             // 
             // txtValor
             // 
-            this.txtValor.BackColor = System.Drawing.Color.Yellow;
+            this.txtValor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
             this.txtValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValor.ForeColor = System.Drawing.Color.Black;
             this.txtValor.Location = new System.Drawing.Point(470, 22);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(62, 23);
@@ -322,9 +326,10 @@ namespace FichaTecnicaFacil.Views
             // 
             // txtDescricao
             // 
-            this.txtDescricao.BackColor = System.Drawing.Color.Yellow;
+            this.txtDescricao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
             this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.ForeColor = System.Drawing.Color.Black;
             this.txtDescricao.Location = new System.Drawing.Point(154, 22);
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(248, 23);
@@ -342,8 +347,9 @@ namespace FichaTecnicaFacil.Views
             // 
             // txtIdMov
             // 
-            this.txtIdMov.BackColor = System.Drawing.Color.Yellow;
+            this.txtIdMov.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
             this.txtIdMov.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdMov.ForeColor = System.Drawing.Color.Black;
             this.txtIdMov.Location = new System.Drawing.Point(31, 22);
             this.txtIdMov.Name = "txtIdMov";
             this.txtIdMov.Size = new System.Drawing.Size(44, 23);
@@ -401,22 +407,28 @@ namespace FichaTecnicaFacil.Views
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(464, 18);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 23);
             this.button4.TabIndex = 3;
             this.button4.Text = "Fecha Caixa Atual";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(378, 18);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 23);
             this.button3.TabIndex = 2;
             this.button3.Text = "Abrir Novo";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnAtualizar
@@ -465,6 +477,7 @@ namespace FichaTecnicaFacil.Views
             this.dta_In.Name = "dta_In";
             this.dta_In.Size = new System.Drawing.Size(88, 20);
             this.dta_In.TabIndex = 1;
+            this.dta_In.ValueChanged += new System.EventHandler(this.dta_In_ValueChanged);
             // 
             // label6
             // 
@@ -530,7 +543,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 84F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel14, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel15, 1, 0);
             this.tableLayoutPanel13.Controls.Add(this.tableLayoutPanel16, 2, 0);
@@ -558,7 +571,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel14.RowCount = 2;
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(67, 49);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(66, 49);
             this.tableLayoutPanel14.TabIndex = 0;
             // 
             // label22
@@ -570,7 +583,7 @@ namespace FichaTecnicaFacil.Views
             this.label22.ForeColor = System.Drawing.Color.White;
             this.label22.Location = new System.Drawing.Point(3, 0);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(61, 24);
+            this.label22.Size = new System.Drawing.Size(60, 24);
             this.label22.TabIndex = 0;
             this.label22.Text = "ENT/TOTAL:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -583,7 +596,7 @@ namespace FichaTecnicaFacil.Views
             this.lbEntradaTotalCaixa.ForeColor = System.Drawing.Color.Blue;
             this.lbEntradaTotalCaixa.Location = new System.Drawing.Point(3, 24);
             this.lbEntradaTotalCaixa.Name = "lbEntradaTotalCaixa";
-            this.lbEntradaTotalCaixa.Size = new System.Drawing.Size(61, 25);
+            this.lbEntradaTotalCaixa.Size = new System.Drawing.Size(60, 25);
             this.lbEntradaTotalCaixa.TabIndex = 1;
             this.lbEntradaTotalCaixa.Text = "0,00 R$";
             this.lbEntradaTotalCaixa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -596,7 +609,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel15.Controls.Add(this.label24, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.lbSaidaTotalCaixa, 0, 1);
             this.tableLayoutPanel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel15.Location = new System.Drawing.Point(76, 3);
+            this.tableLayoutPanel15.Location = new System.Drawing.Point(75, 3);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
             this.tableLayoutPanel15.RowCount = 2;
             this.tableLayoutPanel15.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -638,7 +651,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel16.Controls.Add(this.label26, 0, 0);
             this.tableLayoutPanel16.Controls.Add(this.lbDiferenca, 0, 1);
             this.tableLayoutPanel16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel16.Location = new System.Drawing.Point(146, 3);
+            this.tableLayoutPanel16.Location = new System.Drawing.Point(145, 3);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
             this.tableLayoutPanel16.RowCount = 2;
             this.tableLayoutPanel16.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -680,7 +693,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel17.Controls.Add(this.label28, 0, 0);
             this.tableLayoutPanel17.Controls.Add(this.lbHorarioAbertura, 0, 1);
             this.tableLayoutPanel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel17.Location = new System.Drawing.Point(253, 3);
+            this.tableLayoutPanel17.Location = new System.Drawing.Point(252, 3);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
             this.tableLayoutPanel17.RowCount = 2;
             this.tableLayoutPanel17.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -722,7 +735,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel18.Controls.Add(this.label30, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.lbHoraFechamento, 0, 1);
             this.tableLayoutPanel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel18.Location = new System.Drawing.Point(385, 3);
+            this.tableLayoutPanel18.Location = new System.Drawing.Point(384, 3);
             this.tableLayoutPanel18.Name = "tableLayoutPanel18";
             this.tableLayoutPanel18.RowCount = 2;
             this.tableLayoutPanel18.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -764,7 +777,7 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel19.Controls.Add(this.lbSaldoFinal, 0, 0);
             this.tableLayoutPanel19.Controls.Add(this.lbValFinal, 0, 1);
             this.tableLayoutPanel19.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel19.Location = new System.Drawing.Point(507, 3);
+            this.tableLayoutPanel19.Location = new System.Drawing.Point(506, 3);
             this.tableLayoutPanel19.Name = "tableLayoutPanel19";
             this.tableLayoutPanel19.RowCount = 2;
             this.tableLayoutPanel19.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -806,12 +819,12 @@ namespace FichaTecnicaFacil.Views
             this.tableLayoutPanel20.Controls.Add(this.lbValQuebra1, 0, 0);
             this.tableLayoutPanel20.Controls.Add(this.lbValQuebra, 0, 1);
             this.tableLayoutPanel20.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel20.Location = new System.Drawing.Point(591, 3);
+            this.tableLayoutPanel20.Location = new System.Drawing.Point(590, 3);
             this.tableLayoutPanel20.Name = "tableLayoutPanel20";
             this.tableLayoutPanel20.RowCount = 2;
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel20.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel20.Size = new System.Drawing.Size(88, 49);
+            this.tableLayoutPanel20.Size = new System.Drawing.Size(89, 49);
             this.tableLayoutPanel20.TabIndex = 0;
             // 
             // lbValQuebra1
@@ -823,7 +836,7 @@ namespace FichaTecnicaFacil.Views
             this.lbValQuebra1.ForeColor = System.Drawing.Color.White;
             this.lbValQuebra1.Location = new System.Drawing.Point(3, 0);
             this.lbValQuebra1.Name = "lbValQuebra1";
-            this.lbValQuebra1.Size = new System.Drawing.Size(82, 24);
+            this.lbValQuebra1.Size = new System.Drawing.Size(83, 24);
             this.lbValQuebra1.TabIndex = 0;
             this.lbValQuebra1.Text = "Valor/Queb.";
             this.lbValQuebra1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -836,7 +849,7 @@ namespace FichaTecnicaFacil.Views
             this.lbValQuebra.ForeColor = System.Drawing.Color.Blue;
             this.lbValQuebra.Location = new System.Drawing.Point(3, 24);
             this.lbValQuebra.Name = "lbValQuebra";
-            this.lbValQuebra.Size = new System.Drawing.Size(82, 25);
+            this.lbValQuebra.Size = new System.Drawing.Size(83, 25);
             this.lbValQuebra.TabIndex = 1;
             this.lbValQuebra.Text = "00:00";
             this.lbValQuebra.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1294,8 +1307,8 @@ namespace FichaTecnicaFacil.Views
             // 
             // CbNaturezaMovFilter
             // 
-            this.CbNaturezaMovFilter.BackColor = System.Drawing.Color.Yellow;
-            this.CbNaturezaMovFilter.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CbNaturezaMovFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
+            this.CbNaturezaMovFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CbNaturezaMovFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbNaturezaMovFilter.FormattingEnabled = true;
             this.CbNaturezaMovFilter.Items.AddRange(new object[] {
@@ -1312,8 +1325,8 @@ namespace FichaTecnicaFacil.Views
             // 
             // CbTipoMovFilter
             // 
-            this.CbTipoMovFilter.BackColor = System.Drawing.Color.Yellow;
-            this.CbTipoMovFilter.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.CbTipoMovFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(186)))), ((int)(((byte)(35)))));
+            this.CbTipoMovFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CbTipoMovFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbTipoMovFilter.FormattingEnabled = true;
             this.CbTipoMovFilter.Items.AddRange(new object[] {

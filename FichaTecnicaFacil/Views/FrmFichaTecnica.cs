@@ -781,5 +781,45 @@ namespace FichaTecnicaFacil.Views
         {
 
         }
+
+        private void Cb_UNIngrediente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_ValidadeReceita_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_RendimentoReceita_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_IdReceita_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_dataCadastro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_PrecoEmbalagem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
