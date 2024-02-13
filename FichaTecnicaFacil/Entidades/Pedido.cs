@@ -62,7 +62,14 @@ namespace FichaTecnicaFacil.Entidades
             double total = 0;
             foreach (Receita r in ListaReceita)
             {
-                total += r.CalcularTotalReceita(r.GastosGerais, r.ValorMaoObra, r.MargemLucro);
+                if (r.ListaIngrediente.Count == 0)
+                {
+                    total += r.Total;
+                }
+                else
+                {
+                    total += r.CalcularTotalReceita(r.GastosGerais, r.ValorMaoObra, r.MargemLucro);
+                }
             }
             string totalS = total.ToString("F2");
             return double.Parse(totalS);

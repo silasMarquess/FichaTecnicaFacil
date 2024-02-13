@@ -17,7 +17,7 @@ namespace FichaTecnicaFacil.Views
     public partial class FrmPedidos : Form
     {
 
-        private FrmPedidoControl _control;
+        public FrmPedidoControl _control;
         public Pedido _pedidoAtual;
         private Form1Controler _formControler;
         private List<Receita> listaReceitaFiltrada;
@@ -336,6 +336,10 @@ namespace FichaTecnicaFacil.Views
                         }
                     }
                     _control.MostraListaReceitaCarrinho(_pedidoAtual.ListaReceita);
+                    txtTotalBruto.Text = _pedidoAtual.CalculaTotalPedido().ToString("F2");
+                    double desconto = double.Parse(txtDesconto.Text);
+                    txtTotalLiquido.Text = _pedidoAtual.CalculaTotalLiquidoPedido(desconto).ToString("F2");
+
                 }
             }
             catch (DomainException ex)
@@ -493,6 +497,22 @@ namespace FichaTecnicaFacil.Views
             FrmCadManualReceita receita = new FrmCadManualReceita();
             receita = new FrmCadManualReceita(this);
             receita.ShowDialog();
+        }
+
+        private void txtCadPedNomeReceita_TextChanged_1(object sender, EventArgs e)
+        {
+            try
+            {
+                string nome = txtCadPedNomeReceita.Text;
+                if (nome == string.Empty) throw new DomainException("Nada filtrado");
+                listaReceitaFiltrada = DBConexao.getLisObjectOperation(FichaTenicaDAO.getListaReceita, nome);
+                _control.MostraListaReceita(listaReceitaFiltrada);
+
+            }
+            catch (DomainException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -136,7 +136,7 @@ namespace FichaTecnicaFacil.DAO
                 }
                 else
                 {
-                    validade = rd.GetString("validade");
+                    validade = rd["validade"].ToString();
                 }
 
 

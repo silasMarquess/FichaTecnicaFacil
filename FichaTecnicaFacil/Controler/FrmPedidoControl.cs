@@ -13,7 +13,7 @@ using FichaTecnicaFacil.Views;
 
 namespace FichaTecnicaFacil.Controler
 {
-    class FrmPedidoControl
+    public class FrmPedidoControl
     {
         private FrmPedidos _form;
 
@@ -79,7 +79,10 @@ namespace FichaTecnicaFacil.Controler
                 linha.Cells[0].Value = lista[i].Id.ToString();
                 linha.Cells[1].Value = lista[i].Descricao.ToString();
 
-                linha.Cells[2].Value = "R$ "+lista[i].CalcularTotalReceita(lista[i].GastosGerais, lista[i].ValorMaoObra, lista[i].MargemLucro).ToString("F2");
+               // linha.Cells[2].Value = "R$ "+lista[i].CalcularTotalReceita(lista[i].GastosGerais, lista[i].ValorMaoObra, lista[i].MargemLucro).ToString("F2");
+                linha.Cells[2].Value = "R$ " + lista[i].Total.ToString("F2");
+
+
                 _form.dgvCadListaReceitasPedido.Rows.Add(linha);
             }
         }

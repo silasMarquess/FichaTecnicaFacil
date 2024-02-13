@@ -81,11 +81,13 @@ namespace FichaTecnicaFacil.Entidades
 
         public double CalcularTotalReceita(double gastosGerais, double ValorMaoObra,double margemLucro)
         {
+            this.Total = this.CalculaCustoReceita(gastosGerais, ValorMaoObra) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra) * margemLucro * 0.01;
             return this.CalculaCustoReceita(gastosGerais, ValorMaoObra) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra) * margemLucro * 0.01;
         }
 
         public double CalcularTotalReceita(double gastosGerais, double ValorMaoObra, double margemLucro, double totalIngrediente)
         {
+            this.Total= this.CalculaCustoReceita(gastosGerais, ValorMaoObra, totalIngrediente) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra, totalIngrediente) * margemLucro * 0.01;
             return this.CalculaCustoReceita(gastosGerais, ValorMaoObra,totalIngrediente) + this.CalculaCustoReceita(gastosGerais, ValorMaoObra,totalIngrediente) * margemLucro * 0.01;
         }
 

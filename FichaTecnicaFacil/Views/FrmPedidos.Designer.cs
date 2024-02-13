@@ -29,10 +29,10 @@ namespace FichaTecnicaFacil.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.TabControlPedidos = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -287,14 +287,14 @@ namespace FichaTecnicaFacil.Views
             this.dgvCadListaReceitasPedido.BackgroundColor = System.Drawing.Color.Chocolate;
             this.dgvCadListaReceitasPedido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCadListaReceitasPedido.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCadListaReceitasPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCadListaReceitasPedido.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCadListaReceitasPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCadListaReceitasPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -654,14 +654,14 @@ namespace FichaTecnicaFacil.Views
             this.dgv_ListaReceitasCadastradas.BackgroundColor = System.Drawing.Color.Wheat;
             this.dgv_ListaReceitasCadastradas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ListaReceitasCadastradas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ListaReceitasCadastradas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ListaReceitasCadastradas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ListaReceitasCadastradas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idReceita,
@@ -672,12 +672,12 @@ namespace FichaTecnicaFacil.Views
             this.add});
             this.dgv_ListaReceitasCadastradas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_ListaReceitasCadastradas.EnableHeadersVisualStyles = false;
-            this.dgv_ListaReceitasCadastradas.Location = new System.Drawing.Point(0, 63);
+            this.dgv_ListaReceitasCadastradas.Location = new System.Drawing.Point(0, 62);
             this.dgv_ListaReceitasCadastradas.Margin = new System.Windows.Forms.Padding(0);
             this.dgv_ListaReceitasCadastradas.Name = "dgv_ListaReceitasCadastradas";
             this.dgv_ListaReceitasCadastradas.ReadOnly = true;
             this.dgv_ListaReceitasCadastradas.RowHeadersVisible = false;
-            this.dgv_ListaReceitasCadastradas.Size = new System.Drawing.Size(1085, 238);
+            this.dgv_ListaReceitasCadastradas.Size = new System.Drawing.Size(1085, 239);
             this.dgv_ListaReceitasCadastradas.TabIndex = 1;
             this.dgv_ListaReceitasCadastradas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaReceitasCadastradas_CellClick);
             this.dgv_ListaReceitasCadastradas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_ListaReceitasCadastradas_CellContentClick);
@@ -735,17 +735,18 @@ namespace FichaTecnicaFacil.Views
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1079, 57);
+            this.groupBox1.Size = new System.Drawing.Size(1079, 56);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CAMPO DE PESQUISA:";
             // 
             // btnEntradaManual
             // 
+            this.btnEntradaManual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnEntradaManual.FlatAppearance.BorderSize = 0;
             this.btnEntradaManual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntradaManual.Image = global::FichaTecnicaFacil.Properties.Resources.icons8_adicionar_32;
-            this.btnEntradaManual.Location = new System.Drawing.Point(395, 11);
+            this.btnEntradaManual.Location = new System.Drawing.Point(931, 11);
             this.btnEntradaManual.Name = "btnEntradaManual";
             this.btnEntradaManual.Size = new System.Drawing.Size(142, 43);
             this.btnEntradaManual.TabIndex = 8;
@@ -759,11 +760,11 @@ namespace FichaTecnicaFacil.Views
             this.txtCadPedNomeReceita.BackColor = System.Drawing.Color.Yellow;
             this.txtCadPedNomeReceita.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCadPedNomeReceita.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.txtCadPedNomeReceita.Location = new System.Drawing.Point(9, 21);
+            this.txtCadPedNomeReceita.Location = new System.Drawing.Point(9, 22);
             this.txtCadPedNomeReceita.Name = "txtCadPedNomeReceita";
-            this.txtCadPedNomeReceita.Size = new System.Drawing.Size(380, 23);
+            this.txtCadPedNomeReceita.Size = new System.Drawing.Size(292, 23);
             this.txtCadPedNomeReceita.TabIndex = 7;
-            this.txtCadPedNomeReceita.Text = "informe nome da receita";
+            this.txtCadPedNomeReceita.TextChanged += new System.EventHandler(this.txtCadPedNomeReceita_TextChanged_1);
             // 
             // tabPage2
             // 
@@ -994,14 +995,14 @@ namespace FichaTecnicaFacil.Views
             this.dgvConsultaListaPedidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvConsultaListaPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvConsultaListaPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvConsultaListaPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvConsultaListaPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvConsultaListaPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvConsultaListaPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn6,
@@ -1098,14 +1099,14 @@ namespace FichaTecnicaFacil.Views
             this.dgvItensPedidos.BackgroundColor = System.Drawing.Color.White;
             this.dgvItensPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvItensPedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Azure;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItensPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Azure;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItensPedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvItensPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItensPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn7,

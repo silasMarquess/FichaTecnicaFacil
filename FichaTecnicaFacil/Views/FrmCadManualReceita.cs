@@ -70,6 +70,10 @@ namespace FichaTecnicaFacil.Views
                     _fPedidos._pedidoAtual.AddReceita(r);
                 }
 
+                _fPedidos._control.MostraListaReceitaCarrinho(_fPedidos._pedidoAtual.ListaReceita);
+                _fPedidos.txtTotalBruto.Text = "R$ " + _fPedidos._pedidoAtual.CalculaTotalPedido().ToString("F2");
+                double desconto = double.Parse(_fPedidos.txtDesconto.Text);
+                _fPedidos.txtTotalLiquido.Text = _fPedidos._pedidoAtual.CalculaTotalLiquidoPedido(desconto).ToString("F2");
                 MessageBox.Show("Novo Item Adicionado com sucesso !");
 
 
